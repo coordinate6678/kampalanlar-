@@ -96,6 +96,16 @@ export const landingPageDefinitions: LandingPageDefinition[] = [
     metaDescription:
       "Göl kenarı kamp alanları. Abant Gölü, Sapanca-Kartepe hattında göl manzaralı tesisli kamp noktaları ve planlama ipuçları.",
   },
+  {
+    slug: "ucretsiz-kamp-alanlari",
+    title: "Ücretsiz Kamp Alanları — Düşük Maliyetli Doğa Tesisleri",
+    h1: "Ücretsiz Kamp Alanları",
+    icon: "🏕️",
+    filterKey: "ucretsiz",
+    minCampsites: 3,
+    metaDescription:
+      "Türkiye'de ücretsiz veya düşük maliyetli kamp yapılabilecek alanlar. Assos, Gökçeada ve Olympos hattında bütçe dostu tesisler.",
+  },
 ];
 
 export function getActiveLandingPages(): LandingPageDefinition[] {

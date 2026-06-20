@@ -240,6 +240,9 @@ export function buildCampsiteJsonLd(
       addressRegion: provinceName,
       addressCountry: "TR",
     },
+    ...(campsite.telephone && { telephone: campsite.telephone }),
+    ...(campsite.website && { sameAs: campsite.website }),
+    ...(campsite.priceRange && { priceRange: campsite.priceRange }),
   };
 }
 

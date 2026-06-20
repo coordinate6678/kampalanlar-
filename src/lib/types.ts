@@ -88,6 +88,9 @@ export interface Campsite {
   transport: string;
   createdAt: string;
   updatedAt?: string;
+  telephone?: string;
+  website?: string;
+  priceRange?: string;
 }
 
 export interface Category {

@@ -46,41 +46,44 @@ Build hatasız tamamlanmalıdır. Vercel, Netlify veya benzeri platformlara depl
 
 ## Yeni Veri Ekleme
 
-Veriler `src/data/` klasöründeki TypeScript dosyalarında tutulur.
+Veriler `src/data/` klasöründeki TypeScript ve JSON dosyalarında tutulur.
 
-### Yeni İl Ekleme
+### Yeni İl / İlçe Ekleme
 
-`src/data/provinces.ts` dosyasına yeni bir `Province` objesi ekleyin:
+`src/data/iller.json` dosyasındaki ilgili bölgeye il veya ilçe objesi ekleyin:
 
-```typescript
+```json
 {
-  slug: "trabzon",           // URL'de kullanılacak slug (küçük harf, tire)
-  name: "Trabzon",
-  description: "...",        // SEO metni (min. 200 kelime önerilir)
-  image: "https://...",      // Unsplash veya kendi CDN'iniz
-  popular: true,             // Ana sayfada gösterilsin mi
-  coordinates: { lat: 41.0, lng: 39.7 },
+  "slug": "trabzon",
+  "name": "Trabzon",
+  "description": "...",
+  "image": "https://...",
+  "popular": true,
+  "coordinates": { "lat": 41.0, "lng": 39.7 },
+  "districts": [
+    {
+      "slug": "uzungol",
+      "name": "Uzungöl",
+      "description": "...",
+      "neighbors": ["caykara", "ikizdere"],
+      "coordinates": { "lat": 40.6, "lng": 40.3 }
+    }
+  ]
 }
 ```
 
-### Yeni İlçe Ekleme
-
-`src/data/districts.ts` dosyasına ekleyin. `provinceSlug` mevcut il slug'ı ile eşleşmeli:
-
-```typescript
-{
-  slug: "uzungol",
-  name: "Uzungöl",
-  provinceSlug: "trabzon",
-  description: "...",        // İl metninden farklı, özgün SEO içeriği
-  neighbors: ["caykara", "ikizdere"],
-  coordinates: { lat: 40.6, lng: 40.3 },
-}
-```
+İlçe eklerken `neighbors` dizisindeki slug'ların mevcut ilçelerle eşleştiğinden emin olun.
 
 ### Yeni Kamp Alanı Ekleme
 
-`src/data/campsites.ts` dosyasına ekleyin:
+`src/data/campsites/{bölge}.ts` dosyasına ekleyin — bölgeye göre dosya seçin:
+
+- `ege.ts`
+- `marmara.ts`
+- `akdeniz.ts`
+- `karadeniz.ts`
+
+Kayıtlar `src/data/campsites/index.ts` üzerinden birleştirilir.
 
 ```typescript
 {
@@ -91,14 +94,18 @@ Veriler `src/data/` klasöründeki TypeScript dosyalarında tutulur.
   shortDescription: "...",
   description: "...",
   features: [{ icon: "🌲", label: "Orman İçi" }],
-  images: ["https://images.unsplash.com/..."],
+  images: [IMAGES.forest, IMAGES.valley],
   rating: 4.5,
   reviewCount: 50,
   category: "orman",
   coordinates: { lat: 40.6, lng: 40.3 },
-  googleMapsEmbed: "https://www.google.com/maps/embed?pb=...",
+  googleMapsEmbed: mapEmbed(40.6, 40.3),
   transport: "Ulaşım bilgisi...",
   createdAt: "2026-06-19",
+  // Opsiyonel:
+  telephone: "+90 ...",
+  website: "https://...",
+  priceRange: "150-300 TL/gece",
 }
 ```
 
@@ -111,12 +118,24 @@ src/
 ├── app/                    # Next.js App Router sayfaları
 │   ├── kamp-alanlari/
 │   │   └── [il]/[ilce]/[slug]/
+│   ├── kategori/[slug]/
+│   ├── rehberler/[slug]/
+│   ├── [slug]/             # Tematik landing sayfaları
 │   ├── arama/
 │   ├── sitemap.ts
 │   └── robots.ts
 ├── components/             # React bileşenleri
-├── data/                   # Statik veri (il, ilçe, kamp yeri)
-└── lib/                    # Yardımcı fonksiyonlar, tipler, SEO
+├── data/
+│   ├── iller.json          # İl / ilçe coğrafi veri
+│   ├── campsites/          # Bölgesel kamp kayıtları (ege, marmara, ...)
+│   ├── categories.ts
+│   ├── guides.ts
+│   ├── landing-pages.ts
+│   └── corporate-pages.ts
+└── lib/                    # Yardımcı fonksiyonlar, tipler, SEO, içerik
+    ├── content/            # Editöryal metinler (il/ilçe/kamp supplement)
+    ├── landing-pages/
+    └── seo/
 ```
 
 ## Renk Paleti

@@ -388,6 +388,40 @@ export const landingPageContent: Record<string, LandingPageContent> = {
       },
     ],
   },
+
+  "ucretsiz-kamp-alanlari": {
+    image: PLACE.assosCoast,
+    intro:
+      "Türkiye'de ücretsiz veya düşük maliyetli kamp arayanlar için Assos, Gökçeada ve Olympos hattı bütçe dostu seçenekler sunar. Aşağıdaki liste yalnızca açıklamasında ücretsiz altyapı veya düşük maliyetli konaklama belirtilmiş gerçek tesis kayıtlarını içerir.",
+    paragraphs: [
+      "Ücretsiz kamp deneyimi çoğu zaman tamamen sıfır maliyet anlamına gelmez; ortak mangal alanı, plaj ateşi etkinliği veya ücretsiz patika bilgisi gibi hizmetler bütçeyi düşürür. Assos Zeus Ormanı Kampı minimal altyapısı ve ücretsiz kamp ateşi alanıyla bushcraft tarzı kamp arayanlara uygundur.",
+      "Assos Kadırga Kamp ortak mangal ve piknik alanını ücretsiz sunarken parseller uygun fiyatlıdır. Gökçeada Aydıncık Kamp sezon içinde ücretsiz plaj ateşi etkinlikleri düzenler. Olympos Ağaç Ev Kamp genç gezginler için uygun fiyatlı çadır alanları ve ücretsiz Yanartaş patika bilgisi sağlar.",
+      "Ücretsiz kamp planlamasında tesis giriş ücreti, elektrik/su bağlantısı ve sezon kontenjanını önceden teyit edin. Resmi olmayan sahil ve orman alanlarında kamp yapmak yasaktır; aşağıdaki tesisler kayıtlı ve yasal konaklama noktalarıdır.",
+      "Aşağıdaki kartlarda her tesisin il, ilçe, ulaşım ve altyapı detayları yer alır. Bütçe planlaması için kişi başı günlük 150–400 TL aralığı çadır parselleri için tipiktir; tam ücretsiz deneyim arayanlar ortak alan avantajlarını değerlendirmelidir.",
+    ],
+    tips: [
+      "Tesis girişinde ücretsiz altyapı (mangal, ateş alanı) listesini sorun.",
+      "Sezon dışı (mayıs öncesi, eylül sonrası) fiyatlar genelde daha düşüktür.",
+      "Yasal olmayan sahil/orman kampından kaçının; ceza ve güvenlik riski vardır.",
+    ],
+    faq: [
+      {
+        question: "Türkiye'de tamamen ücretsiz kamp yapılır mı?",
+        answer:
+          "Özel tesislerde genelde parsel ücreti vardır; bazı tesisler ortak mangal, ateş alanı veya etkinlikleri ücretsiz sunar. Bu sayfa bu tür tesisleri listeler.",
+      },
+      {
+        question: "Kaç ücretsiz/düşük maliyetli tesis listeleniyor?",
+        answer:
+          "Veritabanında açıklamasında ücretsiz altyapı belirtilen tesisler listelenir; sayı güncellemelere göre değişebilir.",
+      },
+      {
+        question: "Assos'ta bütçe dostu kamp var mı?",
+        answer:
+          "Evet. Assos Kadırga Kamp ve Assos Zeus Ormanı Kampı ücretsiz ortak alan avantajları sunar.",
+      },
+    ],
+  },
 };
 
 export function getLandingPageContent(slug: string): LandingPageContent | undefined {

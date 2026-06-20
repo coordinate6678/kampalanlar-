@@ -10,7 +10,8 @@ export type LandingFilterKey =
   | "ege-region"
   | "akdeniz-region"
   | "orman"
-  | "gol-kenari";
+  | "gol-kenari"
+  | "ucretsiz";
 
 export const ISTANBUL_NEARBY_PROVINCES = [
   "izmit",
@@ -66,6 +67,11 @@ export const landingFilters: Record<
         (c.provinceSlug === "izmit" && c.districtSlug === "kartepe")
       );
     }),
+
+  ucretsiz: (all) =>
+    all.filter((c) =>
+      /ücretsiz|bedava|free/i.test(`${c.shortDescription} ${c.description}`)
+    ),
 };
 
 export function getCampsitesForLandingFilter(
