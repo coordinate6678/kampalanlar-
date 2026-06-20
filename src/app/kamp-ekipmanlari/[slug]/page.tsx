@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { headers } from "next/headers";
 import Link from "next/link";
 import { PlaceImage } from "@/components/ui/PlaceImage";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
@@ -47,6 +48,7 @@ export async function generateMetadata({
 
 export default async function EquipmentDetailPage({ params }: PageProps) {
   const { slug } = await params;
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const item = getEquipmentBySlug(slug);
   const content = getEquipmentContent(slug);
 
@@ -65,6 +67,7 @@ export default async function EquipmentDetailPage({ params }: PageProps) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
       <JsonLd
+        nonce={nonce}
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, equipmentPath),
           buildArticleJsonLd({

@@ -20,6 +20,7 @@ import {
   buildItemListJsonLd,
 } from "@/lib/seo/json-ld";
 import { canonicalUrl } from "@/lib/seo";
+import { headers } from "next/headers";
 
 export const metadata: Metadata = buildMetadata({
   title: "Kamp Rehberleri",
@@ -37,7 +38,8 @@ const categoryOrder: GuideCategory[] = [
   "guvenlik",
 ];
 
-export default function GuidesIndexPage() {
+export default async function GuidesIndexPage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const breadcrumbItems = [
     { label: "Ana Sayfa", href: "/" },
     { label: "Rehberler" },
@@ -51,6 +53,7 @@ export default function GuidesIndexPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
       <JsonLd
+        nonce={nonce}
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, "/rehberler"),
           buildCollectionPageJsonLd({

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { headers } from "next/headers";
 import { PlaceImage } from "@/components/ui/PlaceImage";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { DistrictCard } from "@/components/cards/DistrictCard";
@@ -70,6 +71,7 @@ export async function generateMetadata({
 
 export default async function ProvincePage({ params }: PageProps) {
   const { il } = await params;
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const province = getProvinceBySlug(il);
 
   if (!province) {
@@ -101,6 +103,7 @@ export default async function ProvincePage({ params }: PageProps) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
       <JsonLd
+        nonce={nonce}
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, provincePath),
           buildCollectionPageJsonLd({
@@ -236,6 +239,7 @@ export default async function ProvincePage({ params }: PageProps) {
           </section>
 
           <PageFaqSection
+            nonce={nonce}
             items={getProvinceFaqItems(il, province.name, campsiteCount)}
           />
           </>

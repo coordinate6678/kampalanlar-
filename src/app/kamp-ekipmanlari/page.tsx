@@ -12,6 +12,7 @@ import {
 import { buildMetadata, metaDescription } from "@/lib/seo";
 import { buildBreadcrumbJsonLd, buildWebPageJsonLd } from "@/lib/seo/json-ld";
 import { EQUIPMENT_INDEX_IMAGE } from "@/data/media/equipment-images";
+import { headers } from "next/headers";
 
 export const metadata = buildMetadata({
   title: "Kamp Ekipmanları Rehberi",
@@ -22,7 +23,8 @@ export const metadata = buildMetadata({
   image: EQUIPMENT_INDEX_IMAGE,
 });
 
-export default function EquipmentIndexPage() {
+export default async function EquipmentIndexPage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const breadcrumbItems = [
     { label: "Ana Sayfa", href: "/" },
     { label: "Kamp Ekipmanları" },
@@ -31,6 +33,7 @@ export default function EquipmentIndexPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
       <JsonLd
+        nonce={nonce}
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, "/kamp-ekipmanlari"),
           buildWebPageJsonLd({

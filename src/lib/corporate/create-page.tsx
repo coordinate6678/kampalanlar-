@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { headers } from "next/headers";
 import {
   CorporatePageView,
   buildCorporatePageMetadata,
@@ -13,10 +14,11 @@ export function createCorporatePageLoader(slug: string) {
       if (!page) return {};
       return buildCorporatePageMetadata(page);
     },
-    Page: () => {
+    Page: async () => {
       const page = getCorporatePage(slug);
       if (!page) notFound();
-      return <CorporatePageView page={page} />;
+      const nonce = (await headers()).get("x-nonce") ?? undefined;
+      return <CorporatePageView page={page} nonce={nonce} />;
     },
   };
 }

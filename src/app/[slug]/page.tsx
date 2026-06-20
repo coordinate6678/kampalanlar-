@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { headers } from "next/headers";
 import {
   LandingPageView,
   buildLandingPageMetadata,
@@ -31,6 +32,7 @@ export async function generateMetadata({
 
 export default async function LandingSlugPage({ params }: PageProps) {
   const { slug } = await params;
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const resolved = resolveLandingPage(slug);
 
   if (!resolved) {
@@ -42,6 +44,7 @@ export default async function LandingSlugPage({ params }: PageProps) {
       def={resolved.def}
       content={resolved.content}
       campsites={resolved.campsites}
+      nonce={nonce}
     />
   );
 }
