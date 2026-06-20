@@ -9,6 +9,8 @@ export interface LandingPageDefinition {
   filterKey: LandingFilterKey;
   minCampsites: number;
   metaDescription: string;
+  /** Kategori sayfasıyla birebir örtüşen listeler için canonical hedefi */
+  canonicalPath?: string;
 }
 
 export const landingPageDefinitions: LandingPageDefinition[] = [
@@ -21,6 +23,7 @@ export const landingPageDefinitions: LandingPageDefinition[] = [
     minCampsites: 3,
     metaDescription:
       "Türkiye'deki deniz kenarı kamp alanları listesi. Ege ve Akdeniz kıyısında meltem, koy seçimi ve tesisli sahil kamp noktaları.",
+    canonicalPath: "/kategori/deniz-kenari",
   },
   {
     slug: "karavan-kamp-alanlari",
@@ -81,6 +84,7 @@ export const landingPageDefinitions: LandingPageDefinition[] = [
     minCampsites: 3,
     metaDescription:
       "Orman içi kamp alanları rehberi. Kartepe, Olympos, Kazdağı ve Alaçatı hattında gölge, serinlik ve doğa tesisleri.",
+    canonicalPath: "/kategori/orman",
   },
   {
     slug: "gol-kenari-kamp-alanlari",

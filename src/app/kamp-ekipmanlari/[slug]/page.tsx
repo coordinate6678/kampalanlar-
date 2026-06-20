@@ -41,7 +41,7 @@ export async function generateMetadata({
     title: `${item.name} — Kamp Ekipmanları Rehberi`,
     description,
     path: `/kamp-ekipmanlari/${slug}`,
-    image: content.image,
+    skipOgImage: true,
   });
 }
 

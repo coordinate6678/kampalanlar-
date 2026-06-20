@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: base,
       lastModified: toSitemapDate(SITE_CONTENT_UPDATED_AT),
-      changeFrequency: "daily",
+      changeFrequency: "weekly",
       priority: 1,
     },
     {

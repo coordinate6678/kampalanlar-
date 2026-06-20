@@ -25,19 +25,21 @@ interface LandingPageViewProps {
 
 export function buildLandingPageMetadata(
   def: LandingPageDefinition,
-  content: LandingPageContent,
+  _content: LandingPageContent,
   count: number
 ) {
   return buildMetadata({
     title: def.title,
     description: metaDescription(`${def.metaDescription} ${count} tesis listeleniyor.`),
     path: `/${def.slug}`,
-    image: content.image,
+    canonicalOverride: def.canonicalPath,
+    skipOgImage: true,
   });
 }
 
 export function LandingPageView({ def, content, campsites }: LandingPageViewProps) {
   const path = `/${def.slug}`;
+  const schemaPath = def.canonicalPath ?? path;
   const breadcrumbItems = [
     { label: "Ana Sayfa", href: "/" },
     { label: "Kamp Alanları", href: "/kamp-alanlari" },
@@ -59,7 +61,7 @@ export function LandingPageView({ def, content, campsites }: LandingPageViewProp
           buildCollectionPageJsonLd({
             name: def.h1,
             description: content.intro,
-            path,
+            path: schemaPath,
           }),
           buildItemListJsonLd(campsiteListItems, def.h1),
         ]}

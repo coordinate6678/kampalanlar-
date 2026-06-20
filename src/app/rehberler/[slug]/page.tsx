@@ -44,7 +44,7 @@ export async function generateMetadata({
     title: guide.title,
     description: metaDescription(`${guide.description} ${content.intro}`),
     path: getGuidePath(slug),
-    image: content.image,
+    skipOgImage: true,
   });
 
   return {

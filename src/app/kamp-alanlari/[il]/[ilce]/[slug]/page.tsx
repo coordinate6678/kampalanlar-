@@ -61,6 +61,7 @@ export async function generateMetadata({
       campsite.shortDescription
     ),
     path: `/kamp-alanlari/${il}/${ilce}/${slug}`,
+    skipOgImage: true,
   });
 }
 

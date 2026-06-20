@@ -46,6 +46,7 @@ export async function generateMetadata({
       getCampsitesByCategory(slug).length
     ),
     path: `/kategori/${slug}`,
+    skipOgImage: true,
   });
 }
 

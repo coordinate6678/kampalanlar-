@@ -43,6 +43,8 @@ export function buildMetadata({
   noindex = false,
   image,
   skipCanonical = false,
+  canonicalOverride,
+  skipOgImage = false,
 }: {
   title: string;
   description: string;
@@ -50,8 +52,14 @@ export function buildMetadata({
   noindex?: boolean;
   image?: string;
   skipCanonical?: boolean;
+  /** Canonical hedefi farklıysa (örn. landing → kategori) */
+  canonicalOverride?: string;
+  /** Route opengraph-image.tsx dosyasının metadata üretmesi için */
+  skipOgImage?: boolean;
 }) {
-  const url = canonicalUrl(path);
+  const url = canonicalOverride
+    ? canonicalUrl(canonicalOverride)
+    : canonicalUrl(path);
   const fullTitle = buildTitle(title);
   const desc = metaDescription(description);
   const ogImage = absoluteImageUrl(image);
@@ -74,20 +82,22 @@ export function buildMetadata({
       siteName: SITE_NAME,
       locale: "tr_TR",
       type: "website" as const,
-      images: [
-        {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: fullTitle,
-        },
-      ],
+      ...(!skipOgImage && {
+        images: [
+          {
+            url: ogImage,
+            width: 1200,
+            height: 630,
+            alt: fullTitle,
+          },
+        ],
+      }),
     },
     twitter: {
       card: "summary_large_image" as const,
       title: fullTitle,
       description: desc,
-      images: [ogImage],
+      ...(!skipOgImage && { images: [ogImage] }),
     },
   };
 }
