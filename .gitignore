@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/test-results
+/playwright-report
 
 # next.js
 /.next/
@@ -19,19 +21,27 @@
 
 # production
 /build
+/dist
+
+# turborepo / turbopack cache
+.turbo
 
 # misc
 .DS_Store
+**/.DS_Store
+Thumbs.db
 *.pem
 
-# debug
+# debug / logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
 
-# env files (can opt-in for committing if needed)
+# env files — never commit secrets
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -39,3 +49,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE / editor local
+.idea
+.vscode/*
+!.vscode/extensions.json
+.cursor/
+
+# bundle analyzer (local reports)
+.next/analyze/
+
+# generated local reports (reproducible via scripts)
+scripts/content-analysis-report.json
