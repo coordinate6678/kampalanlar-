@@ -2,10 +2,9 @@ type JsonLdData = Record<string, unknown>;
 
 type JsonLdProps = {
   data: JsonLdData | JsonLdData[];
-  nonce?: string;
 };
 
-export function JsonLd({ data, nonce }: JsonLdProps) {
+export function JsonLd({ data }: JsonLdProps) {
   const schemas = Array.isArray(data) ? data : [data];
 
   return (
@@ -14,7 +13,6 @@ export function JsonLd({ data, nonce }: JsonLdProps) {
         <script
           key={index}
           type="application/ld+json"
-          nonce={nonce}
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}

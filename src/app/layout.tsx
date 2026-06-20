@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { DM_Sans, Fraunces } from "next/font/google";
-import { headers } from "next/headers";
 import { TopAdBanner } from "@/components/ads/TopAdBanner";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -28,21 +27,16 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
-
   return (
     <html lang="tr" className={`${dmSans.variable} ${fraunces.variable}`}>
       <body className="min-h-screen flex flex-col font-sans antialiased">
         <SkipToMain />
-        <JsonLd
-          data={[buildWebSiteJsonLd(), buildOrganizationJsonLd()]}
-          nonce={nonce}
-        />
+        <JsonLd data={[buildWebSiteJsonLd(), buildOrganizationJsonLd()]} />
         <div className="sticky top-0 z-50 relative">
           <Header />
           <TopAdBanner />

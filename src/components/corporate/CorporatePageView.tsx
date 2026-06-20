@@ -26,10 +26,9 @@ export function buildCorporatePageMetadata(page: CorporatePage) {
 
 interface CorporatePageViewProps {
   page: CorporatePage;
-  nonce?: string;
 }
 
-export function CorporatePageView({ page, nonce }: CorporatePageViewProps) {
+export function CorporatePageView({ page }: CorporatePageViewProps) {
   const path = getCorporatePagePath(page.slug);
   const breadcrumbItems = [
     { label: "Ana Sayfa", href: "/" },
@@ -39,7 +38,6 @@ export function CorporatePageView({ page, nonce }: CorporatePageViewProps) {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 lg:px-6">
       <JsonLd
-        nonce={nonce}
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, path),
           buildWebPageJsonLd({

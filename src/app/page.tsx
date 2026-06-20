@@ -13,7 +13,6 @@ import { buildFaqJsonLd, buildWebPageJsonLd } from "@/lib/seo/json-ld";
 import { homepageFaqItems } from "@/lib/content/faq-content";
 import { SITE_DESCRIPTION } from "@/lib/constants";
 import { buildMetadata } from "@/lib/seo";
-import { headers } from "next/headers";
 
 export const metadata = buildMetadata({
   title: "Kamp Alanları Rehberi",
@@ -21,13 +20,10 @@ export const metadata = buildMetadata({
   path: "/",
 });
 
-export default async function HomePage() {
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
-
+export default function HomePage() {
   return (
     <>
       <JsonLd
-        nonce={nonce}
         data={[
           buildWebPageJsonLd({
             name: "Kamp Alanları Rehberi",

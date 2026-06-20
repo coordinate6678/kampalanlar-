@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { headers } from "next/headers";
 import { PlaceImage } from "@/components/ui/PlaceImage";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { CampsiteCard } from "@/components/cards/CampsiteCard";
@@ -72,7 +71,6 @@ export async function generateMetadata({
 
 export default async function DistrictPage({ params }: PageProps) {
   const { il, ilce } = await params;
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const province = getProvinceBySlug(il);
   const district = getDistrictBySlug(il, ilce);
 
@@ -106,7 +104,6 @@ export default async function DistrictPage({ params }: PageProps) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
       <JsonLd
-        nonce={nonce}
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, districtPath),
           buildCollectionPageJsonLd({
@@ -230,7 +227,6 @@ export default async function DistrictPage({ params }: PageProps) {
           <NeighborDistricts neighbors={neighbors} provinceSlug={il} />
 
           <PageFaqSection
-            nonce={nonce}
             items={getDistrictFaqItems(
               `${il}/${ilce}`,
               district.name,

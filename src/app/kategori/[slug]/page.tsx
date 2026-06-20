@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { headers } from "next/headers";
 import { PlaceImage } from "@/components/ui/PlaceImage";
 import Link from "next/link";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
@@ -53,7 +52,6 @@ export async function generateMetadata({
 
 export default async function CategoryPage({ params }: PageProps) {
   const { slug } = await params;
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const category = getCategoryBySlug(slug);
   const content = getCategoryContent(slug);
 
@@ -79,7 +77,6 @@ export default async function CategoryPage({ params }: PageProps) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
       <JsonLd
-        nonce={nonce}
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, categoryPath),
           buildCollectionPageJsonLd({
@@ -212,7 +209,6 @@ export default async function CategoryPage({ params }: PageProps) {
           </section>
 
           <PageFaqSection
-            nonce={nonce}
             items={getCategoryFaqItems(
               category.slug,
               category.name,

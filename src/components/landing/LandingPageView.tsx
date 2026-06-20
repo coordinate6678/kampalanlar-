@@ -21,7 +21,6 @@ interface LandingPageViewProps {
   def: LandingPageDefinition;
   content: LandingPageContent;
   campsites: Campsite[];
-  nonce?: string;
 }
 
 export function buildLandingPageMetadata(
@@ -38,12 +37,7 @@ export function buildLandingPageMetadata(
   });
 }
 
-export function LandingPageView({
-  def,
-  content,
-  campsites,
-  nonce,
-}: LandingPageViewProps) {
+export function LandingPageView({ def, content, campsites }: LandingPageViewProps) {
   const path = `/${def.slug}`;
   const schemaPath = def.canonicalPath ?? path;
   const breadcrumbItems = [
@@ -62,7 +56,6 @@ export function LandingPageView({
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
       <JsonLd
-        nonce={nonce}
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, path),
           buildCollectionPageJsonLd({
@@ -163,7 +156,7 @@ export function LandingPageView({
               </div>
             </section>
 
-            <PageFaqSection items={content.faq} nonce={nonce} />
+            <PageFaqSection items={content.faq} />
           </>
         }
         sidebar={<SearchWidget />}

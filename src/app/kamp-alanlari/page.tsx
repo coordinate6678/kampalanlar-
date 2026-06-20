@@ -22,7 +22,6 @@ import {
   buildItemListJsonLd,
 } from "@/lib/seo/json-ld";
 import { getDistrictLinkLabel, getProvinceLinkLabel } from "@/lib/utils/seoText";
-import { headers } from "next/headers";
 
 export const revalidate = 3600;
 
@@ -34,8 +33,7 @@ export const metadata = buildMetadata({
   path: "/kamp-alanlari",
 });
 
-export default async function KampAlanlariHubPage() {
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
+export default function KampAlanlariHubPage() {
   const provinces = getAllProvinces().filter((p) => isProvinceIndexable(p.slug));
   const popular = getPopularProvinces();
   const featuredDistricts = provinces.flatMap((province) =>
@@ -58,7 +56,6 @@ export default async function KampAlanlariHubPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
       <JsonLd
-        nonce={nonce}
         data={[
           buildBreadcrumbJsonLd(
             [

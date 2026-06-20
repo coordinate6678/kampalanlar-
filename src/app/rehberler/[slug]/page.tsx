@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { headers } from "next/headers";
 import Link from "next/link";
 import { PlaceImage } from "@/components/ui/PlaceImage";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
@@ -62,7 +61,6 @@ export async function generateMetadata({
 
 export default async function GuideDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const guide = getGuideBySlug(slug);
   const content = getGuideContent(slug);
 
@@ -84,7 +82,6 @@ export default async function GuideDetailPage({ params }: PageProps) {
   return (
     <article className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
       <JsonLd
-        nonce={nonce}
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, guidePath),
           buildArticleJsonLd({
@@ -202,7 +199,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
               </div>
             </section>
 
-            <PageFaqSection items={content.faq} nonce={nonce} />
+            <PageFaqSection items={content.faq} />
           </>
         }
         sidebar={<SearchWidget />}

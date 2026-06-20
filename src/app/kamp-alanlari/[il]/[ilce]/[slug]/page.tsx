@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { headers } from "next/headers";
 import { PlaceImage } from "@/components/ui/PlaceImage";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { NearbyCampsites } from "@/components/campsite/NearbyCampsites";
@@ -68,7 +67,6 @@ export async function generateMetadata({
 
 export default async function CampsiteDetailPage({ params }: PageProps) {
   const { il, ilce, slug } = await params;
-  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const province = getProvinceBySlug(il);
   const district = getDistrictBySlug(il, ilce);
   const campsite = getCampsiteBySlug(il, ilce, slug);
@@ -93,7 +91,6 @@ export default async function CampsiteDetailPage({ params }: PageProps) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
       <JsonLd
-        nonce={nonce}
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, path),
           buildWebPageJsonLd({
