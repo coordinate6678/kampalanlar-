@@ -5,60 +5,15 @@
       "name": "Marmara",
       "provinces": [
         {
-          "slug": "izmit",
-          "name": "Kocaeli",
-          "description": "İstanbul'a yakınlığıyla Kocaeli, hafta sonu kaçamakları için ideal kamp noktaları barındırır.",
-          "image": "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800&q=80",
-          "popular": true,
-          "coordinates": { "lat": 40.7654, "lng": 29.9408 },
-          "districts": [
-            {
-              "slug": "kartepe",
-              "name": "Kartepe",
-              "description": "Kartepe, İstanbul'a en yakın orman kamp destinasyonlarından biridir.",
-              "neighbors": ["izmit-merkez", "gebze"],
-              "coordinates": { "lat": 40.7528, "lng": 30.0233 },
-              "featured": true
-            }
-          ]
-        },
-        {
-          "slug": "canakkale",
-          "name": "Çanakkale",
-          "description": "Çanakkale, Gelibolu Yarımadası'nın tarihi dokusu ile Assos ve Gökçeada'nın doğal güzelliklerini bir arada sunar.",
-          "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80",
-          "popular": true,
-          "coordinates": { "lat": 40.1553, "lng": 26.4142 },
-          "districts": [
-            {
-              "slug": "assos",
-              "name": "Assos (Ayvacık)",
-              "description": "Assos, antik Athena Tapınağı ve eşsiz gün batımı manzarasıyla kamp severlerin uğrak noktasıdır.",
-              "neighbors": ["ayvacik", "ezine"],
-              "coordinates": { "lat": 39.4903, "lng": 26.3367 },
-              "featured": true,
-              "hiddenGem": true,
-              "hiddenGemSummary": "Antik kent manzaralı, kalabalıktan uzak Ege koyu"
-            },
-            {
-              "slug": "gokceada",
-              "name": "Gökçeada",
-              "description": "Türkiye'nin en büyük adası Gökçeada, bakir plajları ve rüzgâr sörfü noktalarıyla ünlüdür.",
-              "neighbors": ["bozcaada", "ezine"],
-              "coordinates": { "lat": 40.1972, "lng": 25.9083 },
-              "featured": true,
-              "hiddenGem": true,
-              "hiddenGemSummary": "Adaların en sakin kamp rotası, bakir plajlar"
-            }
-          ]
-        },
-        {
-          "slug": "istanbul",
-          "name": "İstanbul",
-          "description": "İstanbul çevresinde Belgrad Ormanı ve Şile sahillerinde hafta sonu kamp imkânları bulunur.",
-          "image": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80",
+          "slug": "bilecik",
+          "name": "Bilecik",
+          "description": "Bilecik, Marmara ile İç Anadolu geçişinde Sakarya Nehri vadisinde konumlanır; Osmanlı Devleti'nin kuruluş yeri olarak tarihî öneme sahiptir.",
+          "image": "",
           "popular": false,
-          "coordinates": { "lat": 41.0082, "lng": 28.9784 },
+          "coordinates": {
+            "lat": 40.1426,
+            "lng": 29.9793
+          },
           "districts": []
         },
         {
@@ -67,7 +22,85 @@
           "description": "Uludağ eteklerinde ve Mudanya sahillerinde doğa kampları mevcuttur.",
           "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 40.1885, "lng": 29.061 },
+          "coordinates": {
+            "lat": 40.1885,
+            "lng": 29.061
+          },
+          "districts": []
+        },
+        {
+          "slug": "edirne",
+          "name": "Edirne",
+          "description": "Edirne, Marmara bölgesinin Trakya kesiminde Meriç Nehri sınırında yer alır; Osmanlı başkent mirası ve Trakya ovası tarımıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 41.6772,
+            "lng": 26.5556
+          },
+          "districts": []
+        },
+        {
+          "slug": "istanbul",
+          "name": "İstanbul",
+          "description": "İstanbul çevresinde Belgrad Ormanı ve Şile sahillerinde hafta sonu kamp imkânları bulunur.",
+          "image": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80",
+          "popular": false,
+          "coordinates": {
+            "lat": 41.0082,
+            "lng": 28.9784
+          },
+          "districts": []
+        },
+        {
+          "slug": "kirklareli",
+          "name": "Kırklareli",
+          "description": "Kırklareli, Marmara'nın batısında Istranca Dağları ve Longoz Ormanları ile çevrili bir ildir; Trakya'nın kuzeyinde yer alır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 41.7351,
+            "lng": 27.2253
+          },
+          "districts": []
+        },
+        {
+          "slug": "izmit",
+          "name": "Kocaeli",
+          "description": "İstanbul'a yakınlığıyla Kocaeli, hafta sonu kaçamakları için ideal kamp noktaları barındırır.",
+          "image": "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800&q=80",
+          "popular": true,
+          "coordinates": {
+            "lat": 40.7654,
+            "lng": 29.9408
+          },
+          "districts": [
+            {
+              "slug": "kartepe",
+              "name": "Kartepe",
+              "description": "Kartepe, İstanbul'a en yakın orman kamp destinasyonlarından biridir.",
+              "neighbors": [
+                "izmit-merkez",
+                "gebze"
+              ],
+              "coordinates": {
+                "lat": 40.7528,
+                "lng": 30.0233
+              },
+              "featured": true
+            }
+          ]
+        },
+        {
+          "slug": "sakarya",
+          "name": "Sakarya",
+          "description": "Sakarya, Marmara bölgesinde Sapanca Gölü ve Sakarya Nehri havzasıyla bilinen, İstanbul ile Ankara arasında stratejik konumda bir ildir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 40.7569,
+            "lng": 30.3781
+          },
           "districts": []
         },
         {
@@ -76,8 +109,68 @@
           "description": "Marmara kıyısında şarap bağları arasında kamp yapılabilecek sakin noktalar sunar.",
           "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 40.978, "lng": 27.511 },
+          "coordinates": {
+            "lat": 40.978,
+            "lng": 27.511
+          },
           "districts": []
+        },
+        {
+          "slug": "yalova",
+          "name": "Yalova",
+          "description": "Yalova, Marmara'nın güneyinde İzmit Körfezi kıyısında yer alır; termal kaynakları ve yemyeşil kıyı şeridiyle tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 40.65,
+            "lng": 29.2767
+          },
+          "districts": []
+        },
+        {
+          "slug": "canakkale",
+          "name": "Çanakkale",
+          "description": "Çanakkale, Gelibolu Yarımadası'nın tarihi dokusu ile Assos ve Gökçeada'nın doğal güzelliklerini bir arada sunar.",
+          "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80",
+          "popular": true,
+          "coordinates": {
+            "lat": 40.1553,
+            "lng": 26.4142
+          },
+          "districts": [
+            {
+              "slug": "assos",
+              "name": "Assos (Ayvacık)",
+              "description": "Assos, antik Athena Tapınağı ve eşsiz gün batımı manzarasıyla kamp severlerin uğrak noktasıdır.",
+              "neighbors": [
+                "ayvacik",
+                "ezine"
+              ],
+              "coordinates": {
+                "lat": 39.4903,
+                "lng": 26.3367
+              },
+              "featured": true,
+              "hiddenGem": true,
+              "hiddenGemSummary": "Antik kent manzaralı, kalabalıktan uzak Ege koyu"
+            },
+            {
+              "slug": "gokceada",
+              "name": "Gökçeada",
+              "description": "Türkiye'nin en büyük adası Gökçeada, bakir plajları ve rüzgâr sörfü noktalarıyla ünlüdür.",
+              "neighbors": [
+                "bozcaada",
+                "ezine"
+              ],
+              "coordinates": {
+                "lat": 40.1972,
+                "lng": 25.9083
+              },
+              "featured": true,
+              "hiddenGem": true,
+              "hiddenGemSummary": "Adaların en sakin kamp rotası, bakir plajlar"
+            }
+          ]
         }
       ]
     },
@@ -86,114 +179,16 @@
       "name": "Ege",
       "provinces": [
         {
-          "slug": "izmir",
-          "name": "İzmir",
-          "description": "Ege'nin incisi İzmir, Çeşme'den Foça'ya uzanan sahilleri ve Kazdağları eteklerindeki orman kamp alanlarıyla kampçılar için zengin seçenekler sunar.",
-          "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80",
-          "popular": true,
-          "coordinates": { "lat": 38.4237, "lng": 27.1428 },
-          "districts": [
-            {
-              "slug": "cesme",
-              "name": "Çeşme",
-              "description": "Çeşme Yarımadası, rüzgâr sörfü cenneti olarak bilinir.",
-              "neighbors": ["urla", "karaburun"],
-              "coordinates": { "lat": 38.3228, "lng": 26.3064 },
-              "featured": true
-            },
-            {
-              "slug": "urla",
-              "name": "Urla",
-              "description": "Urla, bağları ve sakin koylarıyla öne çıkan bir Ege ilçesidir.",
-              "neighbors": ["cesme", "seferihisar"],
-              "coordinates": { "lat": 38.3222, "lng": 26.7647 },
-              "featured": true
-            },
-            {
-              "slug": "seferihisar",
-              "name": "Seferihisar",
-              "description": "Türkiye'nin ilk Cittaslow ilçesi Seferihisar, doğal yaşamı koruyan kamp alanlarıyla dikkat çeker.",
-              "neighbors": ["urla", "menderes"],
-              "coordinates": { "lat": 38.1972, "lng": 26.8397 },
-              "featured": true
-            },
-            {
-              "slug": "dikili",
-              "name": "Dikili",
-              "description": "Dikili, Kazdağı eteklerinde denizle buluşan doğal güzellikleriyle kamp tutkunlarının gözdesidir.",
-              "neighbors": ["bergama", "aliaga"],
-              "coordinates": { "lat": 39.0714, "lng": 26.8892 },
-              "featured": true,
-              "hiddenGem": true,
-              "hiddenGemSummary": "Kazdağı eteklerinde henüz keşfedilmemiş koylar"
-            }
-          ]
-        },
-        {
-          "slug": "mugla",
-          "name": "Muğla",
-          "description": "Muğla, Bodrum'dan Fethiye'ye uzanan muhteşem kıyı şeridiyle Türkiye'nin en çok tercih edilen kamp bölgelerinden biridir.",
-          "image": "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=800&q=80",
-          "popular": true,
-          "coordinates": { "lat": 37.2153, "lng": 28.3636 },
-          "districts": [
-            {
-              "slug": "fethiye",
-              "name": "Fethiye",
-              "description": "Fethiye, Ölüdeniz ve Kabak Koyu gibi efsanevi kamp noktalarına ev sahipliği yapar.",
-              "neighbors": ["dalaman", "ortaca"],
-              "coordinates": { "lat": 36.6213, "lng": 29.1164 },
-              "featured": true
-            },
-            {
-              "slug": "datca",
-              "name": "Datça",
-              "description": "Datça Yarımadası, Ege ile Akdeniz'in buluştuğu bakir bir coğrafyadır.",
-              "neighbors": ["marmaris", "fethiye"],
-              "coordinates": { "lat": 36.7272, "lng": 27.6869 },
-              "featured": true,
-              "hiddenGem": true,
-              "hiddenGemSummary": "Yarımadanın bakir koyları, Knidos'a yakın"
-            },
-            {
-              "slug": "marmaris",
-              "name": "Marmaris",
-              "description": "Marmaris, yeşil ormanları ve mavi koylarıyla kamp ve yat turizminin merkezidir.",
-              "neighbors": ["datca", "fethiye"],
-              "coordinates": { "lat": 36.855, "lng": 28.2742 },
-              "featured": true,
-              "hiddenGem": true,
-              "hiddenGemSummary": "Gökova kıyısındaki sakin koy kamp noktaları"
-            }
-          ]
-        },
-        {
-          "slug": "balikesir",
-          "name": "Balıkesir",
-          "description": "Balıkesir, Kazdağı Milli Parkı ve Ayvalık-Adalar bölgesiyle kamp severlere eşsiz fırsatlar sunar.",
-          "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
-          "popular": true,
-          "coordinates": { "lat": 39.6484, "lng": 27.8826 },
-          "districts": [
-            {
-              "slug": "edremit",
-              "name": "Edremit",
-              "description": "Edremit Körfezi, zeytinlikler arasında deniz kenarı kamp imkânı sunar.",
-              "neighbors": ["ayvalik", "burhaniye"],
-              "coordinates": { "lat": 39.5961, "lng": 27.0244 },
-              "featured": true
-            },
-            {
-              "slug": "ayvalik",
-              "name": "Ayvalık",
-              "description": "Ayvalık ve Cunda Adası, Ege'nin en romantik kamp destinasyonlarından biridir.",
-              "neighbors": ["edremit", "burhaniye"],
-              "coordinates": { "lat": 39.3192, "lng": 26.6958 },
-              "featured": true,
-              "hiddenGem": true,
-              "hiddenGemSummary": "Cunda Adası ve zeytinlikler arası sakin kamplar"
-            }
-          ]
+          "slug": "afyonkarahisar",
+          "name": "Afyonkarahisar",
+          "description": "Afyonkarahisar, Ege ile İç Anadolu arasında yüksek bir plato üzerinde konumlanır; termal kaynakları ve mermer ocaklarıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 38.7507,
+            "lng": 30.5567
+          },
+          "districts": []
         },
         {
           "slug": "aydin",
@@ -201,7 +196,148 @@
           "description": "Kuşadası ve Didim çevresinde deniz kenarı kamp alanları bulunur.",
           "image": "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 37.8444, "lng": 27.8458 },
+          "coordinates": {
+            "lat": 37.8444,
+            "lng": 27.8458
+          },
+          "districts": []
+        },
+        {
+          "slug": "balikesir",
+          "name": "Balıkesir",
+          "description": "Balıkesir, Kazdağı Milli Parkı ve Ayvalık-Adalar bölgesiyle kamp severlere eşsiz fırsatlar sunar.",
+          "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+          "popular": true,
+          "coordinates": {
+            "lat": 39.6484,
+            "lng": 27.8826
+          },
+          "districts": [
+            {
+              "slug": "edremit",
+              "name": "Edremit",
+              "description": "Edremit Körfezi, zeytinlikler arasında deniz kenarı kamp imkânı sunar.",
+              "neighbors": [
+                "ayvalik",
+                "burhaniye"
+              ],
+              "coordinates": {
+                "lat": 39.5961,
+                "lng": 27.0244
+              },
+              "featured": true
+            },
+            {
+              "slug": "ayvalik",
+              "name": "Ayvalık",
+              "description": "Ayvalık ve Cunda Adası, Ege'nin en romantik kamp destinasyonlarından biridir.",
+              "neighbors": [
+                "edremit",
+                "burhaniye"
+              ],
+              "coordinates": {
+                "lat": 39.3192,
+                "lng": 26.6958
+              },
+              "featured": true,
+              "hiddenGem": true,
+              "hiddenGemSummary": "Cunda Adası ve zeytinlikler arası sakin kamplar"
+            }
+          ]
+        },
+        {
+          "slug": "denizli",
+          "name": "Denizli",
+          "description": "Denizli, Ege bölgesinin güneydoğusunda Büyük Menderes havzasında yer alır; Pamukkale travertenleri ve tekstil sanayisiyle ünlüdür.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.7765,
+            "lng": 29.0864
+          },
+          "districts": []
+        },
+        {
+          "slug": "izmir",
+          "name": "İzmir",
+          "description": "Ege'nin incisi İzmir, Çeşme'den Foça'ya uzanan sahilleri ve Kazdağları eteklerindeki orman kamp alanlarıyla kampçılar için zengin seçenekler sunar.",
+          "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80",
+          "popular": true,
+          "coordinates": {
+            "lat": 38.4237,
+            "lng": 27.1428
+          },
+          "districts": [
+            {
+              "slug": "cesme",
+              "name": "Çeşme",
+              "description": "Çeşme Yarımadası, rüzgâr sörfü cenneti olarak bilinir.",
+              "neighbors": [
+                "urla",
+                "karaburun"
+              ],
+              "coordinates": {
+                "lat": 38.3228,
+                "lng": 26.3064
+              },
+              "featured": true
+            },
+            {
+              "slug": "urla",
+              "name": "Urla",
+              "description": "Urla, bağları ve sakin koylarıyla öne çıkan bir Ege ilçesidir.",
+              "neighbors": [
+                "cesme",
+                "seferihisar"
+              ],
+              "coordinates": {
+                "lat": 38.3222,
+                "lng": 26.7647
+              },
+              "featured": true
+            },
+            {
+              "slug": "seferihisar",
+              "name": "Seferihisar",
+              "description": "Türkiye'nin ilk Cittaslow ilçesi Seferihisar, doğal yaşamı koruyan kamp alanlarıyla dikkat çeker.",
+              "neighbors": [
+                "urla",
+                "menderes"
+              ],
+              "coordinates": {
+                "lat": 38.1972,
+                "lng": 26.8397
+              },
+              "featured": true
+            },
+            {
+              "slug": "dikili",
+              "name": "Dikili",
+              "description": "Dikili, Kazdağı eteklerinde denizle buluşan doğal güzellikleriyle kamp tutkunlarının gözdesidir.",
+              "neighbors": [
+                "bergama",
+                "aliaga"
+              ],
+              "coordinates": {
+                "lat": 39.0714,
+                "lng": 26.8892
+              },
+              "featured": true,
+              "hiddenGem": true,
+              "hiddenGemSummary": "Kazdağı eteklerinde henüz keşfedilmemiş koylar"
+            }
+          ]
+        },
+        {
+          "slug": "kutahya",
+          "name": "Kütahya",
+          "description": "Kütahya, Ege bölgesinin kuzeydoğusunda Gediz ve Porsuk çayları havzasında yer alır; çini sanatı ve porselen üretimiyle bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 39.4167,
+            "lng": 29.9833
+          },
           "districts": []
         },
         {
@@ -210,7 +346,81 @@
           "description": "Spil Dağı Milli Parkı çevresinde orman kampı imkânları sunar.",
           "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 38.6191, "lng": 27.4289 },
+          "coordinates": {
+            "lat": 38.6191,
+            "lng": 27.4289
+          },
+          "districts": []
+        },
+        {
+          "slug": "mugla",
+          "name": "Muğla",
+          "description": "Muğla, Bodrum'dan Fethiye'ye uzanan muhteşem kıyı şeridiyle Türkiye'nin en çok tercih edilen kamp bölgelerinden biridir.",
+          "image": "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=800&q=80",
+          "popular": true,
+          "coordinates": {
+            "lat": 37.2153,
+            "lng": 28.3636
+          },
+          "districts": [
+            {
+              "slug": "fethiye",
+              "name": "Fethiye",
+              "description": "Fethiye, Ölüdeniz ve Kabak Koyu gibi efsanevi kamp noktalarına ev sahipliği yapar.",
+              "neighbors": [
+                "dalaman",
+                "ortaca"
+              ],
+              "coordinates": {
+                "lat": 36.6213,
+                "lng": 29.1164
+              },
+              "featured": true
+            },
+            {
+              "slug": "datca",
+              "name": "Datça",
+              "description": "Datça Yarımadası, Ege ile Akdeniz'in buluştuğu bakir bir coğrafyadır.",
+              "neighbors": [
+                "marmaris",
+                "fethiye"
+              ],
+              "coordinates": {
+                "lat": 36.7272,
+                "lng": 27.6869
+              },
+              "featured": true,
+              "hiddenGem": true,
+              "hiddenGemSummary": "Yarımadanın bakir koyları, Knidos'a yakın"
+            },
+            {
+              "slug": "marmaris",
+              "name": "Marmaris",
+              "description": "Marmaris, yeşil ormanları ve mavi koylarıyla kamp ve yat turizminin merkezidir.",
+              "neighbors": [
+                "datca",
+                "fethiye"
+              ],
+              "coordinates": {
+                "lat": 36.855,
+                "lng": 28.2742
+              },
+              "featured": true,
+              "hiddenGem": true,
+              "hiddenGemSummary": "Gökova kıyısındaki sakin koy kamp noktaları"
+            }
+          ]
+        },
+        {
+          "slug": "usak",
+          "name": "Uşak",
+          "description": "Uşak, Ege bölgesinin iç kesimlerinde Banaz ve Ulubey vadileri arasında yer alır; halı dokumacılığı ve arkeolojik Buldan kültürüyle tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 38.6823,
+            "lng": 29.4082
+          },
           "districts": []
         }
       ]
@@ -220,27 +430,54 @@
       "name": "Akdeniz",
       "provinces": [
         {
+          "slug": "adana",
+          "name": "Adana",
+          "description": "Adana, Akdeniz bölgesinin doğusunda Çukurova ovasında Seyhan ve Ceyhan nehirleri arasında yer alır; verimli tarım arazileri ve subtropikal iklimiyle bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.0,
+            "lng": 35.3213
+          },
+          "districts": []
+        },
+        {
           "slug": "antalya",
           "name": "Antalya",
           "description": "Akdeniz'in en popüler kamp destinasyonlarından Antalya; Kaş, Kalkan ve Olympos gibi efsanevi noktalarıyla ünlüdür.",
           "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
           "popular": true,
-          "coordinates": { "lat": 36.8969, "lng": 30.7133 },
+          "coordinates": {
+            "lat": 36.8969,
+            "lng": 30.7133
+          },
           "districts": [
             {
               "slug": "kas",
               "name": "Kaş",
               "description": "Kaş, Likya Yolu üzerindeki konumuyla trekking ve kamp tutkunlarının vazgeçilmezidir.",
-              "neighbors": ["kalkan", "demre"],
-              "coordinates": { "lat": 36.2017, "lng": 29.6375 },
+              "neighbors": [
+                "kalkan",
+                "demre"
+              ],
+              "coordinates": {
+                "lat": 36.2017,
+                "lng": 29.6375
+              },
               "featured": true
             },
             {
               "slug": "kalkan",
               "name": "Kalkan",
               "description": "Kalkan, beyaz evleri ve sakin koylarıyla Akdeniz'in en şık beldelerinden biridir.",
-              "neighbors": ["kas", "elmali"],
-              "coordinates": { "lat": 36.2653, "lng": 29.4133 },
+              "neighbors": [
+                "kas",
+                "elmali"
+              ],
+              "coordinates": {
+                "lat": 36.2653,
+                "lng": 29.4133
+              },
               "featured": true,
               "hiddenGem": true,
               "hiddenGemSummary": "Kaputaş üstünde turist kalabalığından uzak koylar"
@@ -249,19 +486,28 @@
               "slug": "olympos",
               "name": "Olympos",
               "description": "Olympos, antik kent kalıntıları arasında kamp yapma imkânı sunan dünyaca ünlü bir destinasyondur.",
-              "neighbors": ["kemer", "finike"],
-              "coordinates": { "lat": 36.3967, "lng": 30.4744 },
+              "neighbors": [
+                "kemer",
+                "finike"
+              ],
+              "coordinates": {
+                "lat": 36.3967,
+                "lng": 30.4744
+              },
               "featured": true
             }
           ]
         },
         {
-          "slug": "mersin",
-          "name": "Mersin",
-          "description": "Kızkalesi ve Anamur çevresinde deniz kenarı kamp noktaları mevcuttur.",
-          "image": "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=800&q=80",
+          "slug": "burdur",
+          "name": "Burdur",
+          "description": "Burdur, Akdeniz bölgesinin kuzeyinde Göller Yöresi'nde yer alır; Burdur Gölü ve Salda Gölü gibi kapalı havza gölleriyle bilinir.",
+          "image": "",
           "popular": false,
-          "coordinates": { "lat": 36.8, "lng": 34.6333 },
+          "coordinates": {
+            "lat": 37.7203,
+            "lng": 30.2908
+          },
           "districts": []
         },
         {
@@ -270,7 +516,58 @@
           "description": "Samandağ sahillerinde ve Amanos Dağları eteklerinde kamp yapılabilir.",
           "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 36.2023, "lng": 36.1613 },
+          "coordinates": {
+            "lat": 36.2023,
+            "lng": 36.1613
+          },
+          "districts": []
+        },
+        {
+          "slug": "isparta",
+          "name": "Isparta",
+          "description": "Isparta, Akdeniz bölgesinin kuzeyinde Toros Dağları eteklerinde konumlanır; gül tarımı ve elma üretimiyle tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.7648,
+            "lng": 30.5566
+          },
+          "districts": []
+        },
+        {
+          "slug": "kahramanmaras",
+          "name": "Kahramanmaraş",
+          "description": "Kahramanmaraş, Akdeniz ile Doğu Anadolu geçişinde Ahir Dağı ve Berit Dağı çevresinde konumlanır; dondurması ve tekstil sanayisiyle ünlüdür.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.5858,
+            "lng": 36.9371
+          },
+          "districts": []
+        },
+        {
+          "slug": "mersin",
+          "name": "Mersin",
+          "description": "Kızkalesi ve Anamur çevresinde deniz kenarı kamp noktaları mevcuttur.",
+          "image": "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=800&q=80",
+          "popular": false,
+          "coordinates": {
+            "lat": 36.8,
+            "lng": 34.6333
+          },
+          "districts": []
+        },
+        {
+          "slug": "osmaniye",
+          "name": "Osmaniye",
+          "description": "Osmaniye, Akdeniz bölgesinde Amanos Dağları ile Çukurova arasında yer alır; fıstık üretimi ve dağlık-kıyı geçiş coğrafyasıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.0742,
+            "lng": 36.2478
+          },
           "districts": []
         }
       ]
@@ -280,19 +577,40 @@
       "name": "Karadeniz",
       "provinces": [
         {
+          "slug": "amasya",
+          "name": "Amasya",
+          "description": "Amasya, Karadeniz bölgesinin güneyinde Yeşilırmak vadisinde yer alır; kaya mezarları ve elma bahçeleriyle bilinen tarihî bir il merkezidir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 40.6499,
+            "lng": 35.8353
+          },
+          "districts": []
+        },
+        {
           "slug": "artvin",
           "name": "Artvin",
           "description": "Karadeniz'in en doğusunda yer alan Artvin, yemyeşil vadileri ve Kaçkar Dağları eteklerindeki kamp alanlarıyla macera tutkunlarının gözdesidir.",
           "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
           "popular": true,
-          "coordinates": { "lat": 41.1828, "lng": 41.8183 },
+          "coordinates": {
+            "lat": 41.1828,
+            "lng": 41.8183
+          },
           "districts": [
             {
               "slug": "yusufeli",
               "name": "Yusufeli",
               "description": "Yusufeli, Kaçkar Dağları eteklerinde rafting ve dağ kampının merkezidir.",
-              "neighbors": ["arhavi", "savsat"],
-              "coordinates": { "lat": 40.8203, "lng": 41.5372 },
+              "neighbors": [
+                "arhavi",
+                "savsat"
+              ],
+              "coordinates": {
+                "lat": 40.8203,
+                "lng": 41.5372
+              },
               "featured": true,
               "hiddenGem": true,
               "hiddenGemSummary": "Çoruh vadisinde macera kampı ve yayla rotaları"
@@ -300,19 +618,52 @@
           ]
         },
         {
+          "slug": "bartin",
+          "name": "Bartın",
+          "description": "Bartın, Karadeniz'in batı kıyısında yer alır; Bartın Çayı ağzı ve Amasra gibi doğal limanlarıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 41.6344,
+            "lng": 32.3375
+          },
+          "districts": []
+        },
+        {
+          "slug": "bayburt",
+          "name": "Bayburt",
+          "description": "Bayburt, Karadeniz bölgesinin doğusunda yüksek bir plato üzerinde konumlanır; Çoruh Nehri havzası ve sert kıtasal iklimiyle bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 40.2552,
+            "lng": 40.2249
+          },
+          "districts": []
+        },
+        {
           "slug": "bolu",
           "name": "Bolu",
           "description": "Bolu, Abant Gölü ve Yedigöller Milli Parkı ile Türkiye'nin en sevilen orman kamp destinasyonlarından biridir.",
           "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
           "popular": true,
-          "coordinates": { "lat": 40.735, "lng": 31.6089 },
+          "coordinates": {
+            "lat": 40.735,
+            "lng": 31.6089
+          },
           "districts": [
             {
               "slug": "mudurnu",
               "name": "Mudurnu",
               "description": "Mudurnu, Osmanlı mimarisi ve çevresindeki doğal alanlarıyla kamp için sakin bir alternatif sunar.",
-              "neighbors": ["bolu-merkez", "gerede"],
-              "coordinates": { "lat": 40.7356, "lng": 31.2075 },
+              "neighbors": [
+                "bolu-merkez",
+                "gerede"
+              ],
+              "coordinates": {
+                "lat": 40.7356,
+                "lng": 31.2075
+              },
               "featured": true,
               "hiddenGem": true,
               "hiddenGemSummary": "Yedigöller yolunda tarihi dokulu orman kampı"
@@ -320,12 +671,75 @@
           ]
         },
         {
-          "slug": "trabzon",
-          "name": "Trabzon",
-          "description": "Uzungöl ve Ayder çevresinde yayla kampları popülerdir.",
-          "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+          "slug": "duzce",
+          "name": "Düzce",
+          "description": "Düzce, Karadeniz bölgesinin batısında Bolu ile Sakarya arasında yer alır; fındık tarımı ve ormanlık alanlarıyla bilinir.",
+          "image": "",
           "popular": false,
-          "coordinates": { "lat": 41.0027, "lng": 39.7168 },
+          "coordinates": {
+            "lat": 40.8438,
+            "lng": 31.1565
+          },
+          "districts": []
+        },
+        {
+          "slug": "giresun",
+          "name": "Giresun",
+          "description": "Giresun, Karadeniz kıyısında Giresun Adası ve fındık tarımıyla tanınan bir ildir; dağlık iç kesimleriyle yeşil bir peyzaja sahiptir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 40.9128,
+            "lng": 38.3895
+          },
+          "districts": []
+        },
+        {
+          "slug": "gumushane",
+          "name": "Gümüşhane",
+          "description": "Gümüşhane, Karadeniz bölgesinin doğusunda Kelkit Vadisi boyunca uzanır; gümüş madenciliği geçmişi ve dağlık coğrafyasıyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 40.4603,
+            "lng": 39.4814
+          },
+          "districts": []
+        },
+        {
+          "slug": "karabuk",
+          "name": "Karabuk",
+          "description": "Karabuk, Karadeniz bölgesinin batısında Filyos vadisinde konumlanır; demir-çelik sanayisi ve Safranbolu evleriyle ünlüdür.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 41.2061,
+            "lng": 32.6204
+          },
+          "districts": []
+        },
+        {
+          "slug": "kastamonu",
+          "name": "Kastamonu",
+          "description": "Kastamonu, Karadeniz bölgesinin batısında Ilgaz Dağı ve Küre Dağları arasında yer alır; ahşap mimarisi ve ormanlık alanlarıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 41.3887,
+            "lng": 33.7827
+          },
+          "districts": []
+        },
+        {
+          "slug": "ordu",
+          "name": "Ordu",
+          "description": "Ordu, Karadeniz kıyısında Boztepe tepesi ve fındık üretimiyle tanınır; yeşil dağ yamaçları denizle birleşir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 40.9839,
+            "lng": 37.8764
+          },
           "districts": []
         },
         {
@@ -334,7 +748,82 @@
           "description": "Kaçkar Dağları ve Fırtına Vadisi'nde trekking kampları mevcuttur.",
           "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 41.0201, "lng": 40.5234 },
+          "coordinates": {
+            "lat": 41.0201,
+            "lng": 40.5234
+          },
+          "districts": []
+        },
+        {
+          "slug": "samsun",
+          "name": "Samsun",
+          "description": "Samsun, Karadeniz bölgesinin en büyük liman kentlerinden biridir; Kızılırmak deltası ve geniş kıyı ovasıyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 41.2928,
+            "lng": 36.3313
+          },
+          "districts": []
+        },
+        {
+          "slug": "sinop",
+          "name": "Sinop",
+          "description": "Sinop, Karadeniz'in en kuzey noktasında bir yarımada üzerinde yer alır; doğal limanı ve sert kıyı iklimiyle tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 42.0264,
+            "lng": 35.1551
+          },
+          "districts": []
+        },
+        {
+          "slug": "tokat",
+          "name": "Tokat",
+          "description": "Tokat, Karadeniz bölgesinin güneyinde Yeşilırmak havzasının yukarı kesiminde konumlanır; bağcılık ve tarihî konaklarıyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 40.3167,
+            "lng": 36.55
+          },
+          "districts": []
+        },
+        {
+          "slug": "trabzon",
+          "name": "Trabzon",
+          "description": "Uzungöl ve Ayder çevresinde yayla kampları popülerdir.",
+          "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
+          "popular": false,
+          "coordinates": {
+            "lat": 41.0027,
+            "lng": 39.7168
+          },
+          "districts": []
+        },
+        {
+          "slug": "zonguldak",
+          "name": "Zonguldak",
+          "description": "Zonguldak, Karadeniz'in batısında taş kömürü havzası ve limanıyla tanınır; Filyos ve Devrek vadileri arasında yer alır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 41.4564,
+            "lng": 31.7987
+          },
+          "districts": []
+        },
+        {
+          "slug": "corum",
+          "name": "Çorum",
+          "description": "Çorum, Karadeniz ile İç Anadolu geçişinde Kızılırmak havzasının orta kesiminde yer alır; Hitit başkenti Hattuşa kalıntılarıyla tarihî öneme sahiptir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 40.5506,
+            "lng": 34.9556
+          },
           "districts": []
         }
       ]
@@ -344,12 +833,87 @@
       "name": "İç Anadolu",
       "provinces": [
         {
+          "slug": "aksaray",
+          "name": "Aksaray",
+          "description": "Aksaray, İç Anadolu'da Tuz Gölü'nün güneydoğusunda konumlanır; Ihlara Vadisi ve Kapadokya sınırındaki kaya oluşumlarıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 38.3687,
+            "lng": 34.037
+          },
+          "districts": []
+        },
+        {
           "slug": "ankara",
           "name": "Ankara",
           "description": "Soğuksu Milli Parkı ve Kızılcahamam çevresinde orman kamp alanları bulunur.",
           "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 39.9334, "lng": 32.8597 },
+          "coordinates": {
+            "lat": 39.9334,
+            "lng": 32.8597
+          },
+          "districts": []
+        },
+        {
+          "slug": "eskisehir",
+          "name": "Eskişehir",
+          "description": "Eskişehir, İç Anadolu'nun batısında Porsuk Çayı vadisinde konumlanır; Porsuk Nehri, Odunpazarı tarihî dokusu ve sanayi kenti kimliğiyle tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 39.7767,
+            "lng": 30.5206
+          },
+          "districts": []
+        },
+        {
+          "slug": "karaman",
+          "name": "Karaman",
+          "description": "Karaman, İç Anadolu'nun güneyinde Toros Dağları'nın kuzey eteklerinde yer alır; Karaman ovası ve tarihî Karamanoğlu mirasıyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.1759,
+            "lng": 33.2287
+          },
+          "districts": []
+        },
+        {
+          "slug": "kayseri",
+          "name": "Kayseri",
+          "description": "Kayseri, İç Anadolu bölgesinde Erciyes Dağı eteklerinde yer alır; volkanik platolar ve tarihî Kültepe (Kaniş) kalıntılarıyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 38.7312,
+            "lng": 35.4787
+          },
+          "districts": []
+        },
+        {
+          "slug": "kirikkale",
+          "name": "Kırıkkale",
+          "description": "Kırıkkale, İç Anadolu'da Ankara'ya yakın Kızılırmak havzasında konumlanır; sanayi kenti olarak gelişmiş ve düz ova coğrafyasına sahiptir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 39.8468,
+            "lng": 33.5153
+          },
+          "districts": []
+        },
+        {
+          "slug": "kirsehir",
+          "name": "Kırşehir",
+          "description": "Kırşehir, İç Anadolu'nun ortasında Kızılırmak'ın güneyinde konumlanır; volkanik Kapadokya sınırı ve halı-bez dokumacılığıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 39.1425,
+            "lng": 34.1709
+          },
           "districts": []
         },
         {
@@ -358,7 +922,10 @@
           "description": "Beyşehir Gölü kıyılarında ve Taurus Dağları eteklerinde kamp imkânları vardır.",
           "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 37.8746, "lng": 32.4932 },
+          "coordinates": {
+            "lat": 37.8746,
+            "lng": 32.4932
+          },
           "districts": []
         },
         {
@@ -367,7 +934,58 @@
           "description": "Kapadokya vadilerinde benzersiz kaya oluşumları arasında kamp deneyimi sunar.",
           "image": "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 38.6244, "lng": 34.7239 },
+          "coordinates": {
+            "lat": 38.6244,
+            "lng": 34.7239
+          },
+          "districts": []
+        },
+        {
+          "slug": "nigde",
+          "name": "Niğde",
+          "description": "Niğde, İç Anadolu'nun güneyinde Aladağlar ve Hasan Dağı çevresinde yer alır; Aladağ Gölleri ve volkanik arazi yapısıyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.9667,
+            "lng": 34.6833
+          },
+          "districts": []
+        },
+        {
+          "slug": "sivas",
+          "name": "Sivas",
+          "description": "Sivas, İç Anadolu'nun doğusunda yüksek plato iklimiyle tanınır; Kızılırmak ve Yeşilırmak havzalarının kaynak bölgelerine yakın konumdadır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 39.7477,
+            "lng": 37.0179
+          },
+          "districts": []
+        },
+        {
+          "slug": "yozgat",
+          "name": "Yozgat",
+          "description": "Yozgat, İç Anadolu bölgesinin kuzeyinde geniş step ve orman-step geçiş alanlarında yer alır; Çekerek havzası ve yüksek platolarıyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 39.8181,
+            "lng": 34.8147
+          },
+          "districts": []
+        },
+        {
+          "slug": "cankiri",
+          "name": "Çankırı",
+          "description": "Çankırı, İç Anadolu'nun kuzeyinde Ilgaz Dağı geçişinde yer alır; tuz madenciliği ve orman-step peyzajıyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 40.6013,
+            "lng": 33.6134
+          },
           "districts": []
         }
       ]
@@ -377,12 +995,159 @@
       "name": "Doğu Anadolu",
       "provinces": [
         {
+          "slug": "ardahan",
+          "name": "Ardahan",
+          "description": "Ardahan, Doğu Anadolu'nun kuzeydoğusunda Gürcistan sınırında konumlanır; Çıldır Gölü ve yüksek rakımlı yaylalarıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 41.1105,
+            "lng": 42.7022
+          },
+          "districts": []
+        },
+        {
+          "slug": "agri",
+          "name": "Ağrı",
+          "description": "Ağrı, Doğu Anadolu'nun doğusunda Türkiye'nin en yüksek noktası Ağrı Dağı (Ararat) ile tanınır; yüksek platolar ve sert kıtasal iklim hüküm sürer.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 39.7191,
+            "lng": 43.0503
+          },
+          "districts": []
+        },
+        {
+          "slug": "bingol",
+          "name": "Bingöl",
+          "description": "Bingöl, Doğu Anadolu bölgesinde Bingöl Dağları ve Murat Nehri kolları arasında yer alır; yüksek platolar ve göller bölgesi coğrafyasıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 38.8854,
+            "lng": 40.498
+          },
+          "districts": []
+        },
+        {
+          "slug": "bitlis",
+          "name": "Bitlis",
+          "description": "Bitlis, Doğu Anadolu'nun güneydoğusunda Van Gölü havzasında yer alır; Nemrut Krater Gölü ve tarihî Bitlis evleriyle bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 38.4,
+            "lng": 42.1167
+          },
+          "districts": []
+        },
+        {
+          "slug": "elazig",
+          "name": "Elazığ",
+          "description": "Elazığ, Doğu Anadolu'nun batısında Fırat Nehri havzasında konumlanır; Keban Baraj Gölü ve Harput Kalesi ile bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 38.681,
+            "lng": 39.2264
+          },
+          "districts": []
+        },
+        {
+          "slug": "erzincan",
+          "name": "Erzincan",
+          "description": "Erzincan, Doğu Anadolu bölgesinde Fırat Nehri havzasının üst kesiminde yer alır; geniş ovalar ve deprem coğrafyasıyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 39.75,
+            "lng": 39.5
+          },
+          "districts": []
+        },
+        {
           "slug": "erzurum",
           "name": "Erzurum",
           "description": "Palandöken ve Tortum Şelalesi çevresinde yüksek rakımlı kamp alanları mevcuttur.",
           "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 39.9043, "lng": 41.2679 },
+          "coordinates": {
+            "lat": 39.9043,
+            "lng": 41.2679
+          },
+          "districts": []
+        },
+        {
+          "slug": "hakkari",
+          "name": "Hakkari",
+          "description": "Hakkari, Doğu Anadolu'nun en güneydoğusunda Cilo ve Sat dağları arasında yer alır; yüksek dağlık coğrafya ve sınır bölgesi konumuyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.5744,
+            "lng": 43.7408
+          },
+          "districts": []
+        },
+        {
+          "slug": "igdir",
+          "name": "Iğdır",
+          "description": "Iğdır, Doğu Anadolu'nun en doğusunda Aras Nehri vadisinde yer alır; Ağrı Dağı manzarası ve alçak ova iklimiyle bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 39.9167,
+            "lng": 44.0333
+          },
+          "districts": []
+        },
+        {
+          "slug": "kars",
+          "name": "Kars",
+          "description": "Kars, Doğu Anadolu'nun kuzeydoğusunda Ermenistan sınırında yer alır; rus dönemi mimarisi ve yüksek platolarıyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 40.6013,
+            "lng": 43.0975
+          },
+          "districts": []
+        },
+        {
+          "slug": "malatya",
+          "name": "Malatya",
+          "description": "Malatya, Doğu Anadolu ile Güneydoğu Anadolu geçişinde geniş bir ovada yer alır; kayısı üretimi ve Fırat havzası coğrafyasıyla ünlüdür.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 38.3552,
+            "lng": 38.3095
+          },
+          "districts": []
+        },
+        {
+          "slug": "mus",
+          "name": "Muş",
+          "description": "Muş, Doğu Anadolu bölgesinde Muş Ovası ve Murat Nehri havzasında konumlanır; geniş tarım ovaları ve sert kışlarıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 38.9462,
+            "lng": 41.7539
+          },
+          "districts": []
+        },
+        {
+          "slug": "tunceli",
+          "name": "Tunceli",
+          "description": "Tunceli, Doğu Anadolu bölgesinde Munzur Dağları ve Munzur Vadisi Milli Parkı ile tanınır; dağlık ve ormanlık coğrafyası hâkimdir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 39.1079,
+            "lng": 39.5401
+          },
           "districts": []
         },
         {
@@ -391,7 +1156,10 @@
           "description": "Van Gölü kıyılarında ve Akdamar Adası çevresinde kamp yapılabilir.",
           "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 38.4942, "lng": 43.38 },
+          "coordinates": {
+            "lat": 38.4942,
+            "lng": 43.38
+          },
           "districts": []
         }
       ]
@@ -401,21 +1169,39 @@
       "name": "Güneydoğu Anadolu",
       "provinces": [
         {
-          "slug": "sanliurfa",
-          "name": "Şanlıurfa",
-          "description": "Halfeti ve Birecik çevresinde Fırat kıyısında doğa kampları bulunur.",
-          "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80",
+          "slug": "adiyaman",
+          "name": "Adıyaman",
+          "description": "Adıyaman, Güneydoğu Anadolu'da Fırat Nehri kıyısında konumlanır; Nemrut Dağı heykelleri ve Atatürk Baraj Gölü manzarasıyla ünlüdür.",
+          "image": "",
           "popular": false,
-          "coordinates": { "lat": 37.1591, "lng": 38.7969 },
+          "coordinates": {
+            "lat": 37.7648,
+            "lng": 38.2786
+          },
           "districts": []
         },
         {
-          "slug": "mardin",
-          "name": "Mardin",
-          "description": "Mezopotamya ovasına bakan teraslı kamp noktaları eşsiz manzaralar sunar.",
-          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+          "slug": "batman",
+          "name": "Batman",
+          "description": "Batman, Güneydoğu Anadolu'da Batman Çayı vadisinde konumlanır; petrol sanayisi ve Dicle havzası ovasıyla bilinir.",
+          "image": "",
           "popular": false,
-          "coordinates": { "lat": 37.3212, "lng": 40.7245 },
+          "coordinates": {
+            "lat": 37.8812,
+            "lng": 41.1351
+          },
+          "districts": []
+        },
+        {
+          "slug": "diyarbakir",
+          "name": "Diyarbakır",
+          "description": "Diyarbakır, Güneydoğu Anadolu bölgesinde Dicle Nehri kıyısında yer alır; bazalt surları ve Mezopotamya ovası coğrafyasıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.9144,
+            "lng": 40.2306
+          },
           "districts": []
         },
         {
@@ -424,7 +1210,70 @@
           "description": "Nizip ve Rumkale çevresinde tarihi atmosferde kamp imkânları vardır.",
           "image": "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=800&q=80",
           "popular": false,
-          "coordinates": { "lat": 37.0662, "lng": 37.3833 },
+          "coordinates": {
+            "lat": 37.0662,
+            "lng": 37.3833
+          },
+          "districts": []
+        },
+        {
+          "slug": "kilis",
+          "name": "Kilis",
+          "description": "Kilis, Güneydoğu Anadolu'nun batısında Suriye sınırında yer alır; küçük ova coğrafyası ve zeytin-bakla tarımıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 36.7184,
+            "lng": 37.1212
+          },
+          "districts": []
+        },
+        {
+          "slug": "mardin",
+          "name": "Mardin",
+          "description": "Mezopotamya ovasına bakan teraslı kamp noktaları eşsiz manzaralar sunar.",
+          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.3212,
+            "lng": 40.7245
+          },
+          "districts": []
+        },
+        {
+          "slug": "siirt",
+          "name": "Siirt",
+          "description": "Siirt, Güneydoğu Anadolu'nun doğusunda Botan vadisinde yer alır; dağlık iç kesimleri ve Dicle havzası geçiş coğrafyasıyla tanınır.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.9333,
+            "lng": 41.95
+          },
+          "districts": []
+        },
+        {
+          "slug": "sanliurfa",
+          "name": "Şanlıurfa",
+          "description": "Halfeti ve Birecik çevresinde Fırat kıyısında doğa kampları bulunur.",
+          "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.1591,
+            "lng": 38.7969
+          },
+          "districts": []
+        },
+        {
+          "slug": "sirnak",
+          "name": "Şırnak",
+          "description": "Şırnak, Güneydoğu Anadolu'nun güneydoğusunda Cudi ve Gabar dağları arasında konumlanır; sınır bölgesi coğrafyası ve dağlık arazi yapısıyla bilinir.",
+          "image": "",
+          "popular": false,
+          "coordinates": {
+            "lat": 37.5164,
+            "lng": 42.4611
+          },
           "districts": []
         }
       ]
