@@ -3,10 +3,12 @@ import { listingSupplements } from "@/lib/content/guides/supplements/listings";
 import { beginnerSupplements } from "@/lib/content/guides/supplements/beginner";
 import { equipmentSupplements } from "@/lib/content/guides/supplements/equipment";
 import { safetySupplements } from "@/lib/content/guides/supplements/safety";
+import { advancedSupplements } from "@/lib/content/guides/supplements/advanced";
 
 export const guideSupplements: Record<string, GuideSupplement> = {
   ...listingSupplements,
   ...beginnerSupplements,
   ...equipmentSupplements,
   ...safetySupplements,
+  ...advancedSupplements,
 };

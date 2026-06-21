@@ -5,6 +5,7 @@ import { CampsiteCard } from "@/components/cards/CampsiteCard";
 import { ContentGrid } from "@/components/layout/ContentGrid";
 import { SearchWidget } from "@/components/layout/SearchWidget";
 import { PageFaqSection } from "@/components/content/PageFaqSection";
+import { getLandingFaqItems } from "@/lib/content/page-faq-content";
 import { JsonLd } from "@/components/seo/JsonLd";
 import type { LandingPageDefinition } from "@/data/landing-pages";
 import type { LandingPageContent } from "@/lib/landing-pages/content";
@@ -156,7 +157,7 @@ export function LandingPageView({ def, content, campsites }: LandingPageViewProp
               </div>
             </section>
 
-            <PageFaqSection items={content.faq} />
+            <PageFaqSection items={getLandingFaqItems(def.slug, content.faq)} />
           </>
         }
         sidebar={<SearchWidget />}

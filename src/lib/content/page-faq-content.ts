@@ -26,6 +26,16 @@ const categoryFaqOverrides: Record<string, FaqItem[]> = {
       answer:
         "Popüler koylar yaz sezonunda otopark sorunu yaşar; erken varış avantaj sağlar. Feribot gerektiren adalarda araç kontenjanı sınırlı olabilir. Rehberimizdeki ulaşım notları ve harita bağlantıları rota planlamasına yardımcı olur.",
     },
+    {
+      question: "Deniz kenarı kampında hangi mevsimde rezervasyon gerekir?",
+      answer:
+        "Temmuz-ağustos ve bayram dönemlerinde popüler kıyı tesislerinde erken rezervasyon önerilir. Mayıs-haziran ve eylül daha sakin ve ılıman alternatifler sunar.",
+    },
+    {
+      question: "Deniz kenarı kampında çadır tipi nasıl seçilir?",
+      answer:
+        "3 mevsim çadır, sağlam gerdirme ve iyi havalandırma deniz kenarı için minimum gereksinimdir. Meltem gecelerinde kum torbası veya ağırlık sistemi stabilite sağlar.",
+    },
   ],
   dag: [
     {
@@ -47,6 +57,16 @@ const categoryFaqOverrides: Record<string, FaqItem[]> = {
       question: "Dağ kampında ateş yakma kuralları neler?",
       answer:
         "Orman yangını döneminde açık ateş çoğu alanda yasaktır. Mevcut ateş çukurlarını kullanın ve tamamen söndürün. Gazlı ocak taşımak hem güvenli hem de yasal açıdan daha uygundur.",
+    },
+    {
+      question: "Dağ kampında gece soğuğuna karşı minimum ekipman nedir?",
+      answer:
+        "Katmanlı giyim, uyku tulumu (gece min. -5°C altında konfor), yalıtımlı mat ve termal içlik temel settir. Rakım arttıkça ekipman gereksinimi yükselir.",
+    },
+    {
+      question: "Dağ kamp alanı seçerken su kaynağı nasıl değerlendirilir?",
+      answer:
+        "Akarsu varsa kaynatma veya filtreleme planlayın; kaynak yoksa taşıma kapasitesi hesaplanmalıdır. Su kaynağına mesafe kurulum noktasını belirler.",
     },
   ],
   orman: [
@@ -70,6 +90,16 @@ const categoryFaqOverrides: Record<string, FaqItem[]> = {
       answer:
         "Orman yolları dar ve virajlı olabilir; gece sürüşünden kaçının. Belirlenmiş otopark alanlarını kullanın; yol kenarına park etmek yangın riskini artırır. Rehberimizdeki orman kategorisi tesislerinin ulaşım notlarını inceleyin.",
     },
+    {
+      question: "Orman kampında hangi ayda kamp yapmak daha uygundur?",
+      answer:
+        "İlkbahar ve sonbahar nem ve sıcaklık dengesi açısından idealdir. Yaz ortasında yangın yasağı ve kalabalık artabilir; güncel orman duyurularını takip edin.",
+    },
+    {
+      question: "Orman kampında çadır kurulumu nereye yapılmalı?",
+      answer:
+        "Düz, taşsız zemin, yüksek dal riski olmayan ağaç mesafesi ve su birikintisi olmayan alan tercih edilmelidir. Vadi tabanları ani yağmurda risk taşır.",
+    },
   ],
   kislik: [
     {
@@ -91,6 +121,16 @@ const categoryFaqOverrides: Record<string, FaqItem[]> = {
       question: "Kış kampında gün ışığı ve enerji ihtiyacı nasıl planlanır?",
       answer:
         "Kış günleri kısadır; kurulum ve aktiviteyi gün ışığına göre planlayın. Headlamp ve yedek pil şarttır. Güneş paneli verimi düşer; powerbank stoğu taşıyın.",
+    },
+    {
+      question: "Kışlık kamp alanlarında kar yağışı kamp planını nasıl etkiler?",
+      answer:
+        "Yoğun kar yol kapanışına ve erişim gecikmesine yol açabilir; esnek tarih ve alternatif rota planlayın. Tesisin kış sezonu açık olduğunu önceden teyit edin.",
+    },
+    {
+      question: "Kış kampında uyku sistemi nasıl seçilir?",
+      answer:
+        "Gece minimum sıcaklığının en az 5°C altında konfor dereceli tulum, R5+ mat ve termal iç katman birlikte kullanılmalıdır. Islak giysi hemen değiştirilmelidir.",
     },
   ],
   festival: [
@@ -114,6 +154,16 @@ const categoryFaqOverrides: Record<string, FaqItem[]> = {
       answer:
         "Leave no trace ilkesine uyun; tüm atıkları toplayın. Çadır ve zemin izolasyonunu kontrol ederek ayrılın. Ayrılış saatinde trafik yoğunluğu yaşanır; planınızı buna göre yapın.",
     },
+    {
+      question: "Festival kamp alanında hava koşullarına nasıl hazırlanılır?",
+      answer:
+        "Gece sıcaklığı ve ani yağmur festival alanlarında konforu düşürür; yağmurluk ve ekstra katman taşıyın. Çadır sabitlemesini kalabalık öncesi tamamlayın.",
+    },
+    {
+      question: "Festival kampında ekipman güvenliği nasıl sağlanır?",
+      answer:
+        "Değerli eşyaları araçta kilitleyin veya tesis kasalarını kullanın. Gece hırsızlık riskine karşı çadır içinde görünür bırakmayın.",
+    },
   ],
   karavan: [
     {
@@ -135,6 +185,16 @@ const categoryFaqOverrides: Record<string, FaqItem[]> = {
       question: "Karavan parkı rezervasyonu yoğun sezonda ne kadar önceden yapılmalı?",
       answer:
         "Temmuz–ağustos ve bayram dönemlerinde popüler parklar haftalar öncesinden dolabilir. Elektrikli kontenjan ayrı sınırlı olabilir. Rehberimizdeki karavan tesislerinin iletişim bilgilerinden önceden teyit alın.",
+    },
+    {
+      question: "Karavan kampında kış hazırlığı neleri kapsar?",
+      answer:
+        "Boru donması, tank ısıtıcı, propan yedek stoku ve kar lastiği/zincir planlanmalıdır. Gece havalandırma nem yoğuşmasını azaltır.",
+    },
+    {
+      question: "Karavan ile kısa süreli kamp için minimum altyapı nedir?",
+      answer:
+        "1–2 gecelik duraklarda su doldurma ve atık boşaltma noktası yeterli olabilir; elektrik için adaptör ve uzatma taşıyın. Tam park tercih edilmezse güç yedek planı şarttır.",
     },
   ],
   bungalov: [
@@ -158,8 +218,85 @@ const categoryFaqOverrides: Record<string, FaqItem[]> = {
       answer:
         "Evcil hayvan kabulü ve yaş sınırı tesis bazında değişir; rezervasyon öncesi yazılı teyit alın. Çocuklu aileler için güvenli alan ve yatak düzeni sorulmalıdır.",
     },
+    {
+      question: "Bungalov kamp alanı seçerken konum kriterleri neler?",
+      answer:
+        "Deniz, göl veya orman erişimi, ulaşım mesafesi ve gece sessizliği temel kriterlerdir. Altyapı (market, sağlık) yakınlığı aileler için önemlidir.",
+    },
+    {
+      question: "Bungalov ve çadır kampı bütçe farkı nasıl değerlendirilir?",
+      answer:
+        "Bungalov genelde gecelik ücreti daha yüksektir ancak ekipman kiralama/alım maliyetini azaltır. Uzun konaklamada haftalık indirim sorulabilir.",
+    },
   ],
 };
+
+const landingFaqOverrides: Record<string, FaqItem[]> = {
+  "deniz-kenari-kamp-alanlari": [
+    {
+      question: "Deniz kenarı kamp landing sayfasındaki tesisler nasıl seçiliyor?",
+      answer:
+        "Listelenen tesisler veritabanımızda deniz kenarı kategorisinde kayıtlı gerçek kamp noktalarıdır; sayı güncellemelere göre değişebilir.",
+    },
+    {
+      question: "Deniz kenarı kamp için hangi ekipmanlar şart?",
+      answer:
+        "3 mevsim çadır, gerdirme seti, güneş koruması, bol su ve gece serinliği için ince termal katman temel settir.",
+    },
+    {
+      question: "Deniz kenarı kamp landing sayfası ile kategori sayfası arasındaki fark nedir?",
+      answer:
+        "İçerik aynı tesis havuzunu farklı rehber formatında sunabilir; canonical yönlendirme arama motoru tekrarını önler.",
+    },
+  ],
+  "karavan-kamp-alanlari": [
+    {
+      question: "Karavan kamp alanları listesinde elektrik bilgisi nereden gelir?",
+      answer:
+        "Tesis kayıtlarındaki altyapı alanlarından; detay sayfasında amper ve bağlantı tipi belirtilir.",
+    },
+    {
+      question: "Karavan boyutu rezervasyonu etkiler mi?",
+      answer:
+        "Evet; uzun veya geniş araçlar için tesisle önceden boyut paylaşımı yapılmalıdır.",
+    },
+    {
+      question: "Karavan kampında günlük maliyet nasıl planlanır?",
+      answer:
+        "Tesis ücreti, elektrik, su, atık boşaltma ve yakıt kalemlerini ayrı bütçelendirin; uzun konaklamada indirim sorulabilir.",
+    },
+  ],
+  "ucretsiz-kamp-alanlari": [
+    {
+      question: "Ücretsiz kamp landing sayfası tamamen ücretsiz mi garanti eder?",
+      answer:
+        "Hayır; düşük maliyetli veya sembolik ücretli tesisleri de içerebilir. Her tesis sayfasındaki ücret bilgisini kontrol edin.",
+    },
+    {
+      question: "Ücretsiz kamp alanlarında izin gerekir mi?",
+      answer:
+        "Alan bazında değişir; orman, sahil ve özel arazi kuralları farklıdır. Tesis veya yerel yönetim duyurularını takip edin.",
+    },
+    {
+      question: "Ücretsiz kamp için hangi mevsim daha uygundur?",
+      answer:
+        "Geçiş mevsimleri (mayıs-haziran, eylül) yangın yasağı ve kalabalık açısından genelde daha yönetilebilir.",
+    },
+  ],
+};
+
+export function getLandingFaqItems(
+  slug: string,
+  fallback: FaqItem[]
+): FaqItem[] {
+  const extra = landingFaqOverrides[slug];
+  if (!extra) return fallback;
+  const existing = new Set(fallback.map((f) => f.question));
+  return [
+    ...fallback,
+    ...extra.filter((f) => !existing.has(f.question)),
+  ];
+}
 
 export function getProvinceFaqItems(
   provinceSlug: string,

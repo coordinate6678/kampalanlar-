@@ -1,14 +1,7 @@
 import { EQUIPMENT_IMAGES } from "@/data/media/equipment-images";
+import type { EquipmentContent } from "@/lib/types";
 
-export interface EquipmentContent {
-  image: string;
-  intro: string;
-  purpose: string;
-  paragraphs: string[];
-  features: string[];
-  tips: string[];
-  related: { label: string; href: string }[];
-}
+export type { EquipmentContent };
 
 export const equipmentIndexContent = {
   intro:
@@ -44,6 +37,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Yağmurlu havada flysheet ile iç çadır arasına dokunmayın; su sızıntısı olur.",
       "Kuru çadırı iyice havalandırıp evde saklayın; küf oluşumunu önler.",
     ],
+    buyingGuide:
+      "Giriş seviyede 2–3 mevsim çadırlar hafta sonu yaz kampı için yeterlidir; su sütunu ve kazık sayısı sınırlı olabilir. Orta segment modeller daha iyi havalandırma, ek gerdirme noktası ve daha dayanıklı flysheet sunar. Üst segment veya dört mevsim çadırlar kış, yüksek rakım ve meltemli kıyılarda stabilite sağlar; ağırlık ve fiyat artar. Kişi sayısından bir kişi büyük seçmek ekipman paylaşımı için alan bırakır.",
     related: [
       { label: "Uyku Matı", href: "/kamp-ekipmanlari/uyku-mati" },
       { label: "Uyku Tulumu", href: "/kamp-ekipmanlari/uyku-tulumu" },
@@ -73,6 +68,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Tulumu gün içinde havalandırın; biriken nemi kurutun.",
       "Uzun boy için 'long' versiyonları kontrol edin.",
     ],
+    buyingGuide:
+      "Giriş seviyesi sentetik tulumlar nemde performansını korur ve uygun fiyatlıdır; ağırlık ve paket hacmi yüksektir. Orta segment modeller daha iyi dikiş kalitesi ve daraltılmış kesim sunar. Üst segment down tulumlar hafif ve sıkıştırılabilir; kuru soğuk rotalarda verimlidir ancak ıslanınca izolasyon kaybı yaşar. Konfor derecesini gece minimum sıcaklığının 5°C altında seçin; mat kalitesi tulum performansını doğrudan etkiler.",
     related: [
       { label: "Uyku Matı", href: "/kamp-ekipmanlari/uyku-mati" },
       { label: "Katmanlı Giyim", href: "/kamp-ekipmanlari/giyim" },
@@ -102,6 +99,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Köpük matı dışarıda oturma minderi olarak da kullanabilirsiniz.",
       "Kış kampında mat üzerine yansıtıcı acil battaniye ekleyin.",
     ],
+    buyingGuide:
+      "Gözenekli köpük matlar giriş seviyesinde uygun fiyatlıdır; R-değeri sınırlıdır. Kendinden şişen hava matları orta segmentte konfor ve izolasyon dengesi sunar. Üst segment yüksek R-değerli hava matları kış kampında zemin soğuğunu keser; delinme riskine karşı yama seti taşıyın. Önce kamp türünüzü belirleyin: araç kampında kalın köpük kabul edilebilir, backpacking'de hacim kritiktir.",
     related: [
       { label: "Uyku Tulumu", href: "/kamp-ekipmanlari/uyku-tulumu" },
       { label: "Çadır", href: "/kamp-ekipmanlari/cadir" },
@@ -131,6 +130,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Tüpü ocaktan ayırarak taşıyın; vanadan sızıntı kontrolü yapın.",
       "Yangın yasağı dönemlerinde soğuk yemek ve termos planlayın.",
     ],
+    buyingGuide:
+      "Giriş seviyesi kartuş ocaklar hafta sonu kaçamağı için yeterlidir; rüzgâr performansı sınırlı olabilir. Orta segment ocaklar daha stabil alev ve daha iyi rüzgâr kalkanı sunar. Üst segment çok gözlü ocaklar grup yemeklerinde verim sağlar. Mangal ve kömür sistemleri araç kampında mantıklıdır; yangın yasağı dönemlerinde gaz ocak zorunlu alternatiftir.",
     related: [
       { label: "Kamp Mutfak Seti", href: "/kamp-ekipmanlari/mutfak-gerecleri" },
       { label: "Kamp Soğutucusu", href: "/kamp-ekipmanlari/sogutucu" },
@@ -160,6 +161,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Çadır içinde kırmızı mod kullanın.",
       "Feneri çadır direğine asarak gece lambası yapabilirsiniz.",
     ],
+    buyingGuide:
+      "Giriş seviyede 100–150 lumen kafa lambası kamp alanı içi hareket için yeterlidir. Orta segment 200–300 lumen modeller gece yürüyüşü ve harita okuma için uygundur; USB şarj veya yedek pil planlayın. Üst segment yüksek lumen, uzun pil ömrü ve IPX6+ su geçirmezlik uzun rotalarda avantaj sağlar. Kırmızı ışık modu gece görüşünü korur; caretta caretta alanlarında tercih edilir.",
     related: [
       { label: "Powerbank ve Solar", href: "/kamp-ekipmanlari/guc-kaynagi" },
       { label: "Harita ve Navigasyon", href: "/kamp-ekipmanlari/navigasyon" },
@@ -189,6 +192,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Çiğ et ve sebzeyi ayrı poşetlerde saklayın.",
       "Soft cooler kısa süreli plaj ve piknik için yeterlidir.",
     ],
+    buyingGuide:
+      "Giriş seviyede 20–30 litre sert gövdeli soğutucu hafta sonu kaçamakları için yeterlidir. Orta segment 40+ litre modeller aile kampında gıda stokunu uzatır; buz paketi ve gölge konumlandırma performansı belirler. Üst segment kalın izolasyon ve sızdırmaz kapak uzun konaklamada avantaj sağlar. Soft cooler kısa süreli kullanım içindir; çok günlük turlarda sert gövde tercih edin.",
     related: [
       { label: "Kamp Mutfak Seti", href: "/kamp-ekipmanlari/mutfak-gerecleri" },
       { label: "Ocak ve Mangal", href: "/kamp-ekipmanlari/ocak-mangal" },
@@ -218,6 +223,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Tencere setini ocakla birlikte deneyerek uyumu kontrol edin.",
       "Baharatları küçük doldurulabilir kutularda taşıyın.",
     ],
+    buyingGuide:
+      "Giriş seviyesi setler tek tencere ve basit kapak içerir. Orta segment setler tava, kesim tahtası ve ölçü kapları ekler. Üst segment hafif alüminyum veya titanyum setler backpacking için uygundur; fiyat artar. Tek tencere yemekleri kamp mutfağının omurgasıdır; gereksiz parça taşımayın.",
     related: [
       { label: "Ocak ve Mangal", href: "/kamp-ekipmanlari/ocak-mangal" },
       { label: "Kamp Soğutucusu", href: "/kamp-ekipmanlari/sogutucu" },
@@ -247,6 +254,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Yağmurlu havada dış kabuğu hemen giyin.",
       "Yedek çorap ve kuru içlik her zaman çantada olsun.",
     ],
+    buyingGuide:
+      "Giriş seviyede sentetik base layer ve basit polar orta katman yaz-sonbahar için yeterlidir. Orta segment merino yün taban katman ve rüzgâr geçirmez shell ani hava değişimlerinde konfor sağlar. Üst segment Gore-Tex veya eşdeğer hardshell kış ve dağ rotalarında yağmur ve rüzgâra karşı koruma sunar. Pamuklu kıyafetleri listeden çıkarın; katman sayısı mevsime göre ayarlanmalıdır.",
     related: [
       { label: "Uyku Tulumu", href: "/kamp-ekipmanlari/uyku-tulumu" },
       { label: "Sırt Çantası", href: "/kamp-ekipmanlari/sirt-cantasi" },
@@ -276,6 +285,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Ağır eşyayı orta-yüksek konuma yerleştirin.",
       "Yağmur kılıfını dış cebe kolay erişilebilir koyun.",
     ],
+    buyingGuide:
+      "40–50 litre giriş seviyesi sırt çantası hafta sonu için yeterlidir; sırt desteği sınırlı olabilir. Orta segment 50–65 litre modeller ayarlanabilir bel desteği sunar. Üst segment hafif çerçeve ve kaliteli yastıklama uzun yürüyüşlerde fark yaratır. Çantayı dolu iken mağazada deneyin; vücut oranınıza uygun sırt uzunluğu seçin.",
     related: [
       { label: "Uyku Tulumu", href: "/kamp-ekipmanlari/uyku-tulumu" },
       { label: "Harita ve Navigasyon", href: "/kamp-ekipmanlari/navigasyon" },
@@ -305,6 +316,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Arıtma tableti bekleme süresine uyun.",
       "Acil durumda minimum 1 L yedek su ayırın.",
     ],
+    buyingGuide:
+      "Plastik matara giriş seviyesidir; dayanıklı ve ucuzdur. Orta segment filtreli matara veya katlanır şişe hacim tasarrufu sağlar. Üst segment pompalı filtre ve arıtma tabletleri kombinasyonu güvenli doğal su kullanımı sunar. Kişi başı günlük 2–3 litre minimum planlayın; sıcak havalarda artırın.",
     related: [
       { label: "Kamp Mutfak Seti", href: "/kamp-ekipmanlari/mutfak-gerecleri" },
       { label: "İlk Yardım", href: "/kamp-ekipmanlari/ilk-yardim" },
@@ -334,6 +347,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Powerbank ile GPS kullanımını destekleyin.",
       "Grup halinde yürürken aralığı koruyun.",
     ],
+    buyingGuide:
+      "Giriş seviyede kağıt harita ve basit pusula pil gerektirmez; temel rota okuma becerisi şarttır. Orta segment offline GPS uygulaması ve powerbank kombinasyonu pratik sunar. Üst segment GPS cihazı veya altimetre dağ rotalarında ek güvenlik sağlar. Telefon sinyali zayıf bölgelerde fiziksel harita yedek olarak taşınmalıdır.",
     related: [
       { label: "Powerbank ve Solar", href: "/kamp-ekipmanlari/guc-kaynagi" },
       { label: "Fener", href: "/kamp-ekipmanlari/aydinlatma" },
@@ -363,6 +378,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Alerjiniz varsa epinefrin/auto-injector planlayın.",
       "112 ve en yakın sağlık merkezi numarasını kaydedin.",
     ],
+    buyingGuide:
+      "Giriş seviyede bandaj, antiseptik ve ağrı kesici içeren küçük set yeterlidir. Orta segment setler kene pensi, termal battaniye ve daha geniş ilaç yelpazesi içerir. Üst segment uzun süreli ve izole rotalar için genişletilmiş set gerektirir. Kişisel ilaçlar ve alerji bilgileri setten ayrı planlanmalıdır.",
     related: [
       { label: "Su Matarası", href: "/kamp-ekipmanlari/su-matri" },
       { label: "Katmanlı Giyim", href: "/kamp-ekipmanlari/giyim" },
@@ -392,6 +409,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Gereksiz uygulamaları kapatın; uçak modu batarya tasarrufu sağlar.",
       "Karavan kampında uzatma kablosu ve adaptör taşıyın.",
     ],
+    buyingGuide:
+      "Giriş seviyede 10.000 mAh powerbank birkaç telefon şarjı sağlar. Orta segment 20.000 mAh ve hızlı şarj desteği uzun kaçamaklarda yeterlidir. Üst segment solar panel veya büyük kapasiteli batarya off-grid konaklamada avantaj sağlar. Soğuk hava batarya verimini düşürür; powerbank'i uyku tulumunda saklayın.",
     related: [
       { label: "Fener", href: "/kamp-ekipmanlari/aydinlatma" },
       { label: "Navigasyon", href: "/kamp-ekipmanlari/navigasyon" },
@@ -421,6 +440,8 @@ export const equipmentContent: Record<string, EquipmentContent> = {
       "Deniz kenarında alçak sandalye rüzgâra daha dayanıklıdır.",
       "Minimal trekking için oturak minderi yeterli olabilir.",
     ],
+    buyingGuide:
+      "Giriş seviyede basit katlanır sandalye araç kampı için yeterlidir. Orta segment hafif alüminyum sandalye taşınabilirlik ve konfor dengesi sunar. Üst segment ultra hafif sandalye backpacking'e yaklaşır; fiyat artar. Minimalist kampçılar oturak minderi ile hacim kazanır; konfor beklentisine göre karar verin.",
     related: [
       { label: "Kamp Mutfak Seti", href: "/kamp-ekipmanlari/mutfak-gerecleri" },
       { label: "Kamp Soğutucusu", href: "/kamp-ekipmanlari/sogutucu" },

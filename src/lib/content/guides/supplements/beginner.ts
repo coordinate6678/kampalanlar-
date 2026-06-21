@@ -117,6 +117,103 @@ export const beginnerSupplements: Record<string, GuideSupplement> = {
           },
         ],
       },
+      {
+        id: "ilk-kamp-checklist-hafta",
+        heading: "1 Hafta Önce: Hazırlık Checklist'i",
+        paragraphs: [
+          "İlk kamp deneyiminde zamanlama en kritik faktördür. Bir hafta önce başlayan hazırlık, son dakika stresini ve eksik ekipman riskini büyük ölçüde azaltır. Aşağıdaki maddeleri sırayla tamamlayın; her birini işaretleyerek ilerlemek unutmayı önler.",
+        ],
+        checklist: [
+          "Kamp tarihi ve süresini netleştirin (1 gece / 2 gece)",
+          "Tesis veya alan rezervasyonu / izin sürecini başlatın",
+          "Hava durumu tahminini takip etmeye başlayın",
+          "Eksik ekipman listesini çıkarın ve satın alın",
+          "Çadır kurulumunu evde veya parkta test edin",
+          "Market alışveriş listesini yazın",
+          "Acil durum planını bir yakına bildirin",
+          "Araç bakımını kontrol edin (lastik, yakıt, feribot rezervasyonu)",
+        ],
+        links: [
+          {
+            label: "Kamp Ekipmanları Kontrol Listesi",
+            href: "/rehberler/kamp-ekipmanlari-kontrol-listesi",
+          },
+        ],
+      },
+      {
+        id: "ilk-kamp-checklist-gun",
+        heading: "1 Gün Önce: Son Hazırlık Checklist'i",
+        paragraphs: [
+          "Kamp gününden bir gece önce tüm ekipmanı gözden geçirmek, sabah acelesiyle yapılan paketleme hatalarını önler. Bu aşamada çadır, mat, tulum ve ocak mutlaka fiziksel olarak kontrol edilmelidir.",
+        ],
+        checklist: [
+          "Çadır, kazık, ip ve zemin örtüsünü kontrol edin",
+          "Uyku matı ve tulumu hava durumuna göre doğrulayın",
+          "Ocak kartuşu doluluğunu ve kafa lambası pillerini test edin",
+          "Su matarası, market alışverişi ve buz stokunu tamamlayın",
+          "İlk yardım çantası ve kişisel ilaçları paketleyin",
+          "Powerbank şarj edin; offline harita indirin",
+          "Hava durumu tahminini son kez kontrol edin",
+          "Tesisle varış saatini teyit edin",
+        ],
+      },
+      {
+        id: "ilk-kamp-checklist-kampta",
+        heading: "Kampta: Kurulum ve Konaklama Checklist'i",
+        paragraphs: [
+          "Kamp alanına vardığınızda doğru yer seçimi ve düzenli kurulum, gece konforunun temelini oluşturur. Gün batımından en az iki saat önce kurulumu tamamlamayı hedefleyin.",
+        ],
+        checklist: [
+          "Düz, drenajlı zemin seçin; vadi tabanından kaçının",
+          "Çadırı rüzgâr yönüne göre konumlandırın",
+          "Yiyecekleri çadır dışında kapalı kapta saklayın",
+          "Su stokunu erişilebilir noktaya koyun",
+          "Acil durum çantası ve kafa lambasını el altında tutun",
+          "Komşu çadırlara saygılı mesafe bırakın",
+          "Gece sessizliği ve ışık kurallarına uyun",
+          "Ayrılırken alanı temiz bırakın; çadırı kurutarak saklayın",
+        ],
+        links: [
+          {
+            label: "Kamp Güvenliği Rehberi",
+            href: "/rehberler/kamp-guvenligi-rehberi",
+          },
+        ],
+      },
+      {
+        id: "ilk-kamp-yer-secimi-genel",
+        heading: "Yer Seçimi Kriterleri: Genel Rehber",
+        paragraphs: [
+          "İlk kamp için altyapılı tesis tercih etmek en güvenli başlangıçtır: tuvalet, duş, aydınlatma ve güvenlik devriyesi gece stresini azaltır. Tesis seçerken ulaşım süresi, gece sıcaklık farkı ve mevsim koşullarını birlikte değerlendirin; uzun yol küçük çocuklar için yorucu olabilir.",
+          "Çadır kurulum alanı düz, hafif eğimli ve su birikintisi yapmayan zemin olmalıdır. Yüksek dallı ağaç altı, kıyı çizgisi hemen yanı ve vadi tabanı fırtına, sel ve dal düşmesi riski taşır. Rüzgâr yönünü gün batımından önce gözlemleyin; çadır kapısını korunaklı tarafa yönlendirin.",
+          "Deniz kenarında korunaklı koy, orman içinde gölge alan ve dağ rotasında rüzgârdan korunaklı düzlük farklı öncelikler gerektirir. Kamp alanları sayfasından tesis tipine göre filtreleme yaparak ilk rotanızı belirleyebilirsiniz.",
+        ],
+        links: [
+          {
+            label: "Kamp Alanları",
+            href: "/kamp-alanlari",
+          },
+        ],
+      },
+      {
+        id: "ilk-kamp-yaygin-hatalar-genel",
+        heading: "Yaygın Hatalar ve Nasıl Önlenir",
+        paragraphs: [
+          "En sık yapılan hatalar: gece karanlığında ilk çadır kurulumu, hafif uyku tulumu seçimi, yetersiz su stoku ve hava durumunu kontrol etmemek. Çözüm basit: bir hafta önce checklist, evde çadır testi ve gece minimum sıcaklığının 5°C altında tulum seçimi.",
+          "Çadırı kıyı çizgisine veya dere yatağına kurmak gece su birikintisi ve ani sel riski yaratır. Ateş yasağı dönemlerinde mangal denemek hem yasal sorun hem yangın tehlikesi getirir; gaz ocak her mevsim güvenli alternatiftir.",
+          "İlk kamp sonrası not tutmak bir sonraki seferi kolaylaştırır: hangi ekipman eksikti, gece ne kadar soğudu, tesis kuralları nelerdi? Bu geri bildirim döngüsü deneyimi hızla geliştirir.",
+        ],
+      },
+      {
+        id: "ilk-kamp-sonrasi",
+        heading: "İlk Kamp Sonrası: Değerlendirme ve Sonraki Adım",
+        paragraphs: [
+          "İlk kamp bittiğinde ekipmanı hemen temizleyin: çadırı kuruyarak kurutun, mat ve tulumu havalandırın, ocak başlığını tıkayın. Nemli saklama küf ve koku oluşturur; bir sonraki kamp deneyimini zedeler.",
+          "Kısa bir değerlendirme notu tutun: gece sıcaklığı beklentinizle uyuştu mu, hangi ekipman eksikti, tesis kuralları nelerdi? Bu not bir sonraki rota ve ekipman seçimini doğrudan iyileştirir.",
+          "İkinci kamp için hedefinizi bir küçük adım büyütün: bir gece daha uzatın, farklı bir kamp türü deneyin veya mevsim geçiş dönemini test edin. Aşamalı ilerleme güvenlik ve keyif dengesini korur; site rehberimizdeki il sayfalarından yeni rotalar keşfedebilirsiniz.",
+        ],
+        links: [{ label: "Türkiye Kamp Alanları", href: "/kamp-alanlari" }],
+      },
     ],
     relatedGuides: [
       {
@@ -137,6 +234,7 @@ export const beginnerSupplements: Record<string, GuideSupplement> = {
       "Her mevsim için önerilen rota listesi ve minimum ekipman seti aşağıda ayrı bölümlerde sunulur.",
       "Geçiş mevsimi stratejisi ve mevsim-ekipman eşleştirme tablosu rehberin son bölümünde özetlenir.",
       "Kış hipotermi riski ve yaz güneş yanığı önlemleri güvenlik odaklı ayrı paragraflarda açıklanır.",
+      "Geçiş mevsiminde yağmur olasılığı ve ani sıcaklık düşüşü plana dahil edilmelidir; esnek tarih seçimi riski azaltır.",
     ],
     sections: [
       {
@@ -239,6 +337,64 @@ export const beginnerSupplements: Record<string, GuideSupplement> = {
           "Geçiş mevsimi (mayıs, eylül) her iki dünyanın ekipmanını birleştirir: gündüz ince tişört, gece polar veya termal içlik. Yusufeli gibi yüksek rakım rotalarında yaz ortasında bile gece sıcaklığı 5°C altına inebilir; +5°C tulum minimum gereksinimdir.",
           "Mevsim dışı ekipman seçimi ciddi sağlık riski taşır: Abant ocak ayında 3 mevsim çadırla kamp hipotermi riski yaratır. Yaz ekipmanıyla Kartepe kış kampı denemek de aynı şekilde tehlikelidir; rota ve ekipman eşleşmesi güvenliğin temelidir.",
           "Türkiye'de en uzun kamp sezonu Ege kıyısında nisan-ekim arasıdır; Kaş, Ayvalık ve Datça bu pencerede en geniş rota seçeneğini sunar. İç bölgeler (Abant, Kartepe) ise yıl boyunca erişilebilir olsa da kış aylarında ekipman gereksinimi belirgin artar.",
+        ],
+      },
+      {
+        id: "mevsim-ekipman-karsilastirma-tablo",
+        heading: "Mevsim Ekipman Karşılaştırma Tablosu",
+        paragraphs: [
+          "YAZ KAMPİ — Çadır: 3 mevsim, hafif, iyi havalandırmalı. Uyku tulumu: +10°C ile +5°C konfor. Mat: R2–3. Giyim: ince katman, güneş kremi, şapka. Ekstra: böcek kovucu, 3L+ su/gün, hafif yağmurluk.",
+          "KIŞ KAMPİ — Çadır: 4 mevsim, düşük profilli, rüzgâr dirençli. Uyku tulumu: -10°C veya altı konfor. Mat: R5+. Giyim: termal içlik, polar, rüzgâr kesici, bere, eldiven. Ekstra: termos, el ısıtıcı, kuru giysi yedeği.",
+          "GEÇİŞ MEVSİMİ (mayıs, eylül) — Çadır: 3 mevsim. Uyku tulumu: +5°C konfor. Mat: R3–4. Giyim: gündüz ince, gece polar/termal. Ekstra: yağmurluk, su geçirmez torba, katmanlı sistem. Yüksek rakımda yaz ortasında bile gece +5°C tulum minimum gereksinimdir.",
+        ],
+        links: [
+          {
+            label: "Kamp Ekipmanları Kontrol Listesi",
+            href: "/rehberler/kamp-ekipmanlari-kontrol-listesi",
+          },
+          {
+            label: "Çadır Seçme Rehberi",
+            href: "/rehberler/cadir-secme-rehberi",
+          },
+        ],
+      },
+      {
+        id: "sicaklik-nem-yonetimi",
+        heading: "Sıcaklık ve Nem Yönetimi",
+        paragraphs: [
+          "Yaz kampında gündüz sıcaklığı 35°C'yi aşabilir; öğle saatlerinde gölgede dinlenme, bol su tüketimi ve açık renk giysi zorunludur. Isı çarpması belirtilerinde (baş dönmesi, bulantı) aktiviteyi durdurun, gölgeye geçin ve sıvı verin.",
+          "Kış kampında gece sıcaklığı gündüze göre 15–20°C düşebilir; hipotermi riski ıslak giysi ve rüzgârla hızlanır. Termal içlik, kuru katman ve uyku tulumu konfor derecesi gece minimumunun 5°C altında seçilmelidir.",
+          "Nem yönetimi her iki uçta da kritiktir: yaz orman kampında iç çadır yoğuşması, kış ve yağmurlu havada ıslak giysi vücut ısısı kaybını hızlandırır. Havalandırma panellerini açık tutun, ıslak eşyayı çadır dışında kurutun ve su geçirmez torba ile kuru giysi yedeğini koruyun.",
+        ],
+        links: [
+          {
+            label: "Kamp Güvenliği Rehberi",
+            href: "/rehberler/kamp-guvenligi-rehberi",
+          },
+        ],
+      },
+      {
+        id: "gece-gunduz-katman-stratejisi",
+        heading: "Gece ve Gündüz Katman Stratejisi",
+        paragraphs: [
+          "Katmanlı giyim (base layer, mid layer, shell) mevsim geçişlerinde en esnek sistemdir. Gündüz aktivite sırasında ince sentetik veya merino tişört teri dışarı taşır; durduğunuzda polar veya hafif yelek ekleyin. Yağmur ve rüzgârda dış kabuk (shell) nem ve rüzgârı keser.",
+          "Gece uyku katmanı aktivite giyiminden ayrı tutulmalıdır: terli giysiyle uyumak soğuk gece riskini artırır. Uyku tulumu içinde ince termal içlik yeterlidir; ağır mont tuluma sıkıştırır ve ısı yalıtımını bozar.",
+          "Deniz kenarında gün batımından sonra kıyı sıcaklığı hızla düşer; meltem gece serinliği getirir. Orman kampında gündüz gölge serinliği, gece nem artışı farklı katman ihtiyacı yaratır. Çantada her zaman bir 'gece katmanı' (polar veya termal) hazır bulundurun; gündüz çıkardığınız katmanı akşam geri eklemeyi unutmayın.",
+        ],
+      },
+      {
+        id: "mevsim-karar-rehberi",
+        heading: "Hangi Mevsim Size Uygun? Karar Verme Rehberi",
+        paragraphs: [
+          "İlk kez kamp yapacaksanız mayıs-haziran veya eylül-ekim geçiş mevsimi en düşük riskli penceredir: hafif ekipman yeterlidir, gece soğuğu yönetilebilir düzeydedir ve gün ışığı planlamayı kolaylaştırır. Kış kampı deneyim ve pahalı ekipman gerektirir; dört mevsim çadır, -10°C tulum ve katmanlı giyim olmadan kış rotasına çıkmayın.",
+          "Yaz kampı en geniş rota seçeneğini sunar ancak kalabalık, fiyat artışı ve güneş riski getirir. Deniz kenarı isteyenler yaz ağırlıklı plan yapmalı; orman gölgesi ve yüksek rakım isteyenler geçiş mevsimini tercih etmelidir. Aileler için yaz ve erken sonbahar altyapılı tesislerle daha öngörülebilir bir deneyim sunar.",
+          "Mevsim seçimini ekipman bütçesiyle birlikte değerlendirin: yaz seti (3 mevsim çadır, +5°C tulum) giriş maliyeti düşüktür; kış seti yatırımı yüksektir ancak yıl boyunca kullanım imkânı verir. Tek seferlik deneyim için kiralama veya tesisli alan tercih etmek, satın almadan önce test etmek akıllıca bir stratejidir.",
+          "Hava durumu tahminini mevsim kararının parçası yapın: ani sıcaklık dalgası yaz rotasında hidrasyon planını, erken kar yağışı kış rotasında erişim planını değiştirir. Esnek tarih seçimi (±1 hafta) mevsim riskini azaltır; katı tarihte kamp planı hava koşullarına uyum gerektirir.",
+          "Ekipman kiralama veya tesisli altyapı kullanımı, mevsim dışı deneme yapmadan önce deneyim kazanmanın ekonomik yoludur. İlk kış kampı denemesi rehberli tesis veya deneyimli grup eşliğinde planlanmalıdır.",
+        ],
+        links: [
+          { label: "İlk Kez Kamp Rehberi", href: "/rehberler/ilk-kez-kamp-rehberi" },
+          { label: "Çadır Seçme Rehberi", href: "/rehberler/cadir-secme-rehberi" },
         ],
       },
     ],

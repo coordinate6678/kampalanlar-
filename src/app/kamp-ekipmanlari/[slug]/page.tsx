@@ -146,6 +146,15 @@ export default async function EquipmentDetailPage({ params }: PageProps) {
             </ul>
           </section>
 
+          {content.buyingGuide ? (
+            <section className="mt-8 rounded-xl bg-forest-50 border border-forest-100 p-6">
+              <h2 className="mb-3 font-display text-xl font-bold text-forest-800">
+                Satın Alma Rehberi
+              </h2>
+              <p className="text-gray-700 leading-relaxed">{content.buyingGuide}</p>
+            </section>
+          ) : null}
+
           <section className="mt-8">
             <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
               İlgili Rehberler

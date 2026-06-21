@@ -141,3 +141,15 @@ export interface FaqItem {
   question: string;
   answer: string;
 }
+
+export interface EquipmentContent {
+  image: string;
+  intro: string;
+  purpose: string;
+  paragraphs: string[];
+  features: string[];
+  tips: string[];
+  related: { label: string; href: string }[];
+  /** Genel bütçe/segment karşılaştırması; marka/model içermez */
+  buyingGuide?: string;
+}

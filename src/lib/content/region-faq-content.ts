@@ -132,6 +132,21 @@ export const provinceFaqOverrides: Record<string, FaqItem[]> = {
       answer:
         "Efes, Bergama ve Teos çevresinde konaklama genelde belirlenmiş tesislerle sınırlıdır; sit alanı içinde çadır kurmak yasaktır. Antik kent ziyaretini gündüz, akşam yakın mesafedeki kamp tesisinde konaklama modeli en doğru yaklaşımdır.",
     },
+    {
+      question: "İzmir'de kamp yaparken meltem için minimum ekipman nedir?",
+      answer:
+        "3 mevsim çadır, ekstra gerdirme ipi ve kum/ağırlık sistemi meltem gecelerinde stabilite sağlar. Korunaklı koy seçimi uyku kalitesini artırır.",
+    },
+    {
+      question: "İzmir kamp alanlarında ücretsiz plaj kampı mümkün mü?",
+      answer:
+        "Kamuya açık plajlarda gece kalış çoğunlukla yasaktır veya sınırlıdır. Konaklama için tesis onaylı alanlar tercih edilmelidir.",
+    },
+    {
+      question: "İzmir bölgesindeki kamp alanları listesine nereden bakabilirim?",
+      answer:
+        "İzmir il rehber sayfamızdan ilçe filtreleriyle mevcut tesis kayıtlarına ulaşabilirsiniz.",
+    },
   ],
   mugla: [
     {
@@ -241,6 +256,21 @@ export const provinceFaqOverrides: Record<string, FaqItem[]> = {
       question: "Antalya Havalimanı'ndan kamp alanlarına ulaşım seçenekleri neler?",
       answer:
         "Havalimanından Lara ve Kundu hattına yakın tesisler kısa mesafededir. Olympos, Kaş ve Side gibi noktalara transfer, kiralık araç veya otobüs kombinasyonu gerekir. Kaş yönü virajlı sahil yolu 3–4 saat sürebilir; mola noktalarını önceden planlayın.",
+    },
+    {
+      question: "Antalya'da deniz kenarı kampında caretta caretta kuralları neler?",
+      answer:
+        "Yumurtlama sezonunda gece ışık kısıtlaması ve sessizlik uygulanır; kırmızı ışık kullanın. Plastik atık bırakmayın.",
+    },
+    {
+      question: "Antalya kamp alanlarında yaz ortasında rezervasyon gerekir mi?",
+      answer:
+        "Popüler kıyı tesislerinde temmuz-ağustos döneminde erken rezervasyon önerilir. Geçiş mevsimleri daha sakin alternatifler sunar.",
+    },
+    {
+      question: "Antalya ilindeki kamp tesislerini nasıl karşılaştırırım?",
+      answer:
+        "Antalya il sayfamızdaki ilçe listelerinden tesis özelliklerini, harita ve ulaşım notlarını yan yana inceleyebilirsiniz.",
     },
   ],
   mersin: [
@@ -395,6 +425,21 @@ export const provinceFaqOverrides: Record<string, FaqItem[]> = {
       question: "Ankara kamp alanlarında su kaynağı ve altyapı beklentisi nasıl?",
       answer:
         "Başkent çevresinde iklim kurak ve yaz sıcağı yüksektir; bol su taşıyın. Orman alanlarında elektrik ve duş imkânı sınırlı olabilir. Rüzgâr açık platolarda çadır stabilitesini etkiler.",
+    },
+    {
+      question: "Ankara'da kamp yaparken hangi mevsim daha uygundur?",
+      answer:
+        "İlkbahar ve sonbahar gündüz sıcaklığı ve gece soğuğu dengesi açısından idealdir. Yaz ortasında açık alanlarda sıcaklık yüksektir; gölge ve su stoku planlayın.",
+    },
+    {
+      question: "Ankara kamp alanlarında yangın yasağı döneminde ne yapılmalı?",
+      answer:
+        "Yaz kuraklığında orman girişleri kısıtlanabilir; açık ateş yerine gaz ocak kullanın. Orman Genel Müdürlüğü duyurularını gitmeden kontrol edin.",
+    },
+    {
+      question: "Ankara'daki kamp alanları listesine nasıl ulaşırım?",
+      answer:
+        "Site rehberimizdeki Ankara il sayfasından ilçe bazlı listeye erişebilirsiniz; yalnızca doğrulanmış tesis kayıtları gösterilir.",
     },
   ],
   konya: [

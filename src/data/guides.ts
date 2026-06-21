@@ -100,6 +100,38 @@ export const guides: Guide[] = [
     icon: "✅",
     category: "ekipman",
   },
+  {
+    slug: "kamp-atesi-rehberi",
+    title: "Kamp Ateşi Rehberi",
+    description:
+      "Güvenli ateş çukuru kurulumu, yangın yasağı dönemleri ve söndürme protokolü.",
+    icon: "🔥",
+    category: "guvenlik",
+  },
+  {
+    slug: "kampta-yemek-pisirme-rehberi",
+    title: "Kampta Yemek Pişirme Rehberi",
+    description:
+      "Kamp mutfağı temelleri, ocak kullanımı, malzeme saklama ve yiyecek güvenliği.",
+    icon: "🍳",
+    category: "ekipman",
+  },
+  {
+    slug: "sirt-cantasiyla-kamp-rehberi",
+    title: "Sırt Çantasıyla Kamp Rehberi",
+    description:
+      "Backpacking temelleri, ultralight mantık, su arıtma ve rota planlama ilkeleri.",
+    icon: "🥾",
+    category: "baslangic",
+  },
+  {
+    slug: "aile-ile-kamp-rehberi",
+    title: "Aile ile Kamp Rehberi",
+    description:
+      "Çocuklu kampta güvenlik, eğlence aktiviteleri ve yaş gruplarına göre paketleme.",
+    icon: "👨‍👩‍👧‍👦",
+    category: "baslangic",
+  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | undefined {

@@ -9,6 +9,8 @@ export const equipmentSupplements: Record<string, GuideSupplement> = {
       "Hafta sonu, deniz kenarı ve dağ rotası için örnek çanta listeleri somut ekipman adlarıyla sunulur.",
       "Paketleme hataları ve ağırlık optimizasyonu pratik örneklerle açıklanır.",
       "Kamp öncesi son kontrol adımları rehberin sonunda listelenir.",
+      "Süreye göre paketleme listeleri (1 gece, 3 gece, 1 hafta) checklist formatında sunulur; her liste ağırlık ve hacim hedefleriyle birlikte okunmalıdır.",
+      "Ağırlık tavanı, dry bag düzeni ve grup ekipman paylaşımı paketleme verimliliğini doğrudan etkiler.",
     ],
     sections: [
       {
@@ -94,6 +96,94 @@ export const equipmentSupplements: Record<string, GuideSupplement> = {
           "Assos feribotlu rotada el bagajında su ve atıştırmalık bulundurun; feribot gecikmelerinde açlık ve susuzluk riski artar. Yusufeli rotasında su arıtma tableti ve yedek filtre çanta listesinin vazgeçilmez maddesidir.",
         ],
       },
+      {
+        id: "packing-1-gece",
+        heading: "1 Gece Kampı Paketleme Listesi",
+        paragraphs: [
+          "Tek gece kaçamağı minimum ekipmanla yapılabilir; araç yanı kampında ağır eşyalar bagajda kalır. Aşağıdaki liste 2 kişilik 1 gece için temel çerçeveyi sunar; mevsime göre giyim katmanlarını ekleyin.",
+        ],
+        checklist: [
+          "3 mevsim çadır + kazık + ip + zemin örtüsü",
+          "Uyku matı (R2–3) ve +5°C tulum",
+          "Ocak + 1 kartuş + 1 tencere",
+          "Su matarası (kişi başı 2–3L)",
+          "Kafa lambası + yedek pil",
+          "İlk yardım çantası + powerbank",
+          "Market stoku (2 öğün + atıştırmalık)",
+          "Yağmurluk ve ince polar",
+        ],
+      },
+      {
+        id: "packing-3-gece",
+        heading: "3 Gece Kampı Paketleme Listesi",
+        paragraphs: [
+          "Üç gece konaklamada yedek giysi, ekstra yakıt ve gıda stoku zorunlu hale gelir. Su stokunu rota altyapısına göre planlayın; musluk suyu sınırlı alanlarda kişi başı günde 3–4 litre hedefleyin.",
+        ],
+        checklist: [
+          "1 gece listesindeki tüm barınma ve mutfak ekipmanı",
+          "Yedek ocak kartuşu ve ek tencere/kapak",
+          "Kişi başı 9–12L su veya su arıtma tableti",
+          "2 set iç çamaşırı ve yedek çorap",
+          "Biyobozunur deterjan ve hızlı kuruyan havlu",
+          "Güneş kremi, böcek kovucu, şapka (yaz)",
+          "Offline harita ve yedek powerbank",
+          "Çöp torbası ve kuru torba (dry bag)",
+        ],
+      },
+      {
+        id: "packing-1-hafta",
+        heading: "1 Hafta Kampı Paketleme Listesi",
+        paragraphs: [
+          "Bir haftalık kamp uzun süreli konfor ve bakım ekipmanı gerektirir. Ağırlık dağılımını haftalık yeniden düzenleyin; tüketilen gıda ve yakıt yerine temiz su ve kuru giysi eklenmelidir.",
+        ],
+        checklist: [
+          "3 gece listesindeki tüm maddeler",
+          "Ekstra tulum liner veya yedek iç katman",
+          "Tam mutfak seti (tava, kesim tahtası, sünger)",
+          "Kişisel hijyen kiti (diş fırçası, sabun, tuvalet kağıdı)",
+          "Onarım seti (duct tape, ip, yedek kazık)",
+          "7 günlük gıda planı + acil enerji barı stoku",
+          "Solar şarj veya 2. powerbank",
+          "Mevsime göre termal içlik / yağmurluk / güneş koruma",
+        ],
+        links: [
+          {
+            label: "Kamp Ekipmanları Kontrol Listesi",
+            href: "/rehberler/kamp-ekipmanlari-kontrol-listesi",
+          },
+        ],
+      },
+      {
+        id: "packing-prensipler-ozet",
+        heading: "Paketleme Prensipleri ve Ağırlık Yönetimi",
+        paragraphs: [
+          "Süre uzadıkça çanta hacmi katmanlı büyür: bir gece için 40–45 litre yeterliyken bir haftada 55–65 litre gerekebilir. En ağır parçalar (su, ocak, tencere) sırt çantasının orta-alt bölgesine, sık kullanılan eşyalar üst ceplere yerleştirilir.",
+          "Dry bag sistemi hem hacim kazandırır hem yağmurda koruma sağlar: renk kodlu torbalar (kırmızı ilk yardım, mavi mutfak, yeşil giysi) kamp alanında arama süresini kısaltır. Checklist'i yazdırıp paketleme sırasında işaretleyin.",
+          "Gıda planını süreyle eşleştirin: kısa kaçamakta taze gıda, uzun rotada kuru ve dayanıklı gıda ağırlıklı stok. Buz ve soğutucu üç günü aşan konaklamalarda yenilenmeli; termos ve kuru gıda yedek planı her sürede bulunmalıdır.",
+          "Kamp sonrası çanta düzenini gözden geçirin: kullanılmayan eşya çıkarılmalı, eksik madde listeye eklenmelidir. Deneyim arttıkça gereksiz 'just in case' eşyalar azalır.",
+          "Hafta sonu kaçamaklarında ağırlık optimizasyonu konforu doğrudan etkiler: gereksiz kıyafet katmanı, fazla tencere ve ağır güneş kremi şişesi çıkarılabilir. Her seferinde çantayı tartmak farkındalık yaratır.",
+        ],
+        links: [
+          { label: "Sırt Çantası Rehberi", href: "/kamp-ekipmanlari/sirt-cantasi" },
+        ],
+      },
+      {
+        id: "packing-hata-onleme",
+        heading: "Paketleme Hataları ve Optimizasyon",
+        paragraphs: [
+          "En sık paketleme hataları: ağır suyu üst cebe koymak, çadırı sırt çantası içine sıkıştırmak (dış bağlantı daha dengeli), yağmurluğu en alta gömmek. Her hata yürüyüş ve kurulum stresini artırır.",
+          "Ağırlık taraması yapın: her eşyayı tartıp 'gerekli / lüks / gereksiz' diye etiketleyin. İkinci kamp sonrası çanta genelde 1–2 kg hafifler; deneyim gereksiz eşyayı eler.",
+          "Grup kampında ortak ekipman (ocak, tencere, ilk yardım) paylaşımı kişi başı ağırlığı düşürür. Paylaşım listesini yola çıkmadan yazılı netleştirin.",
+        ],
+      },
+      {
+        id: "cantaya-gore-son-kontrol",
+        heading: "Süreye Göre Son Kontrol Özeti",
+        paragraphs: [
+          "Bir gece kaçamağında çanta hacmi 40–45 litre yeterlidir; üç gece rotasında yedek giysi ve gıda stoğu eklenir; bir haftalık turda su arıtma, yedek pil ve tam ilk yardım seti zorunludur. Her süre diliminde ağırlık tavanını tartarak doğrulayın.",
+          "Kamp sonrası çantayı boşaltıp kurutun; nemli saklama küf ve koku oluşturur. Kullanılmayan eşyayı bir sonraki listeden çıkarın; deneyim paketlemeyi her seferinde sadeleştirir.",
+        ],
+      },
     ],
     relatedGuides: [
       {
@@ -114,6 +204,8 @@ export const equipmentSupplements: Record<string, GuideSupplement> = {
       "Satın alma öncesi kurulum testi ve bakım ipuçları rehberin son bölümünde yer alır.",
       "Meltem, kış fırtınası ve orman nemine karşı model seçimi rotaya göre ayrı ayrı değerlendirilir.",
       "Bütçe aralığı ve garanti koşulları satın alma bölümünde karşılaştırılır.",
+      "Kişi sayısı, mevsim etiketi ve flysheet malzemesi kararını birlikte belirler; tek kriter yeterli değildir.",
+      "Kurulum süresi ve gerdirme noktası sayısı sahada performansı doğrudan etkiler.",
     ],
     sections: [
       {
@@ -209,6 +301,73 @@ export const equipmentSupplements: Record<string, GuideSupplement> = {
           "Olympos vadisinde ağaç gölgesi nem oranını artırır; nefes alan flysheet kumaşı bu rotada yoğuşmayı azaltır. Kabak yamaçlarında rüzgâr yönü akşam saatlerinde değişebilir; en az 6 gerdirme noktalı modeller tercih edilmelidir.",
         ],
       },
+      {
+        id: "cadir-kisi-sayisi",
+        heading: "Kişi Sayısına Göre Çadır Seçimi",
+        paragraphs: [
+          "Çadır etiketindeki kişi sayısı minimum uyku alanını ifade eder; ekipman paylaşımı için bir kişi fazla kapasite seçmek konforu artırır. 2 kişilik kamp için 3 kişilik çadır, sırt çantası ve ayakkabı için ek alan sağlar.",
+          "Aile kampında büyük kubbe veya tünel çadırlar (4–6 kişi) ortak oturma alanı sunar; ancak kurulum alanı ve rüzgâr direnci daha fazla test edilir. Çocuklu ailelerde ayrı küçük çadır yerine tek geniş çadır gece gözetimini kolaylaştırır.",
+          "Solo kampçılar için 1–2 kişilik hafif modeller taşınabilirlik avantajı sağlar; yürüyüş kampında çadır ağırlığı toplam yükün önemli kısmını oluşturur. Kişi sayısı arttıkça flysheet yüzeyi ve gerdirme noktası sayısı da artmalıdır.",
+        ],
+      },
+      {
+        id: "cadir-mevsim-karsilastirma",
+        heading: "Mevsime Göre Çadır Karşılaştırması",
+        paragraphs: [
+          "3 MEVSİM ÇADIR — İlkbahar, yaz, sonbahar için tasarlanmıştır. Hafif, iyi havalandırmalı, mesh panelli. Kar yükü ve aşırı soğuk için yetersizdir. Türkiye'de deniz kenarı ve orman yaz kampının standart tercihidir.",
+          "4 MEVSİM ÇADIR — Kalın flysheet, az mesh, düşük profil. Kış karı, fırtına ve yüksek rakım için uygundur. Ağırlığı ve hacmi 3 mevsime göre %30–50 fazladır. Kış kampı ve dağ rotalarında zorunlu sayılır.",
+          "Geçiş mevsiminde yağmur olasılığı yüksektir; 3 mevsim çadırın su sütunu değeri (2000 mm+ flysheet) yeterli olmalıdır. Kış ekipmanı olmadan 3 mevsim çadırla kış kampı hipotermi riski yaratır.",
+        ],
+        links: [
+          {
+            label: "Yaz Kampı vs Kış Kampı",
+            href: "/rehberler/yaz-kampi-vs-kis-kampi",
+          },
+        ],
+      },
+      {
+        id: "cadir-malzeme-karsilastirma",
+        heading: "Malzeme Karşılaştırması: Polyester, Nylon ve Pole",
+        paragraphs: [
+          "POLYESTER FLYsheet — UV direnci yüksek, fiyat/performans dengesi iyi. Biraz ağır olabilir. Türkiye güneşinde uzun ömürlü; deniz kenarı rotalarında yaygın tercih.",
+          "NYLON FLYsheet — Hafif, paket hacmi küçük. Dikkatli kullanım gerektirir; UV'de zamanla zayıflar. Yürüyüş ve hafif kamp için ideal; düzenli bakım şarttır.",
+          "ALÜMİNYUM KAZIK — Orta ağırlık, iyi dayanıklılık, uygun fiyat. Çoğu 3 mevsim çadırda standart. KARBON / DAC KAZIK — Ultra hafif, pahalı, yürüyüş kampında tercih edilir. Fırtına anında alüminyum daha toleranslı olabilir.",
+          "Zemin naylonu kalınlığı (denier) ve su sütunu değeri (3000 mm+) çadır ömrünü belirler. Kum ve kayalık zeminlerde footprint kullanımı taban kumaşını korur.",
+        ],
+        links: [
+          {
+            label: "Çadır Ekipman Rehberi",
+            href: "/kamp-ekipmanlari/cadir",
+          },
+        ],
+      },
+      {
+        id: "cadir-satin-alma-ozet",
+        heading: "Çadır Seçiminde Son Kontrol Soruları",
+        paragraphs: [
+          "Satın almadan önce şu soruları yanıtlayın: Kaç kişi ve ne kadar ekipman paylaşımı? Hangi mevsimlerde kullanılacak? Ağırlık mı dayanıklılık mı öncelikli? Kurulum süresi ve tek kişi kurulumu mümkün mü?",
+          "Giriş seviyesi çadırlar hafta sonu yaz kampı için yeterli olabilir; fırtına, kar ve yüksek rakım için üst segment veya dört mevsim model gerekir. Fiyat farkı genelde flysheet kalınlığı, kazık sayısı ve havalandırma detaylarından gelir.",
+          "İlk kurulumu evde yapın: kazık sayısını sayın, gerdirme noktalarını öğrenin, eksik parça varsa iade sürecini başlatın. Çadır torbasına yedek ip ve plastik kazık eklemek uzun vadede kurtarıcıdır.",
+          "Bakım çadır ömrünü belirler: kuru saklama, UV'den koruma, flysheet ve zemin temizliği. Nemli çadırı katlamak küf riski yaratır; her kamp sonrası havalandırma zorunludur.",
+        ],
+      },
+      {
+        id: "cadir-kurulum-performans",
+        heading: "Kurulum ve Sahada Performans",
+        paragraphs: [
+          "Kurulum süresi gece varış planında belirleyicidir: tünel çadır 10–15 dakika, pop-up 2–5 dakika, geodesic 15–25 dakika. İlk kurulumu evde ölçün; gece hedefinizin iki katı süre ayırın.",
+          "Gerdirme noktası sayısı fırtına performansını belirler: minimum 4 kazık + 4 gerdirme; deniz kenarında 6+ nokta tercih edilir. Kazık açısı dışa doğru 45° daha iyi tutuş sağlar.",
+          "İç çadır havalandırması kapalıyken yoğuşma artar; gece uyanınca nemli duvarlar normaldir ancak damla birikimi uyku tulumunu ıslatır. Flysheet ile iç çadır arasına dokunmayın.",
+        ],
+      },
+      {
+        id: "cadir-bakim-depolama",
+        heading: "Çadır Bakımı ve Depolama",
+        paragraphs: [
+          "Her kamp sonrası çadırı kuruyarak kurutun; nemli katlama küf ve koku oluşturur. Flysheet ve zemin naylonunu hafif deterjanla silin; UV koruyucu sprey uzun vadede kumaş ömrünü uzatır.",
+          "Kazık ve iplerde çatlak veya aşınma kontrolü yapın; fırtına öncesi zayıf parçayı değiştirmek gece güvenliğini artırır. Çadır torbasına yedek ip ve plastik kazık eklemek pratik bir alışkanlıktır.",
+        ],
+      },
     ],
     relatedGuides: [
       {
@@ -226,6 +385,8 @@ export const equipmentSupplements: Record<string, GuideSupplement> = {
     extraIntro: [
       "Kontrol listesi kamp türüne göre uyarlanmalıdır; deniz kenarı, dağ ve kış kampı ek maddeler gerektirir ve aşağıdaki bölümlerde her senaryo ayrı ayrı ele alınır.",
       "Kartepe hafta sonu, Assos deniz kenarı ve Abant kış kampı için ayrı checklist varyasyonları bu rehberde adım adım listelenir; yazdırılabilir format olarak kullanılabilir.",
+      "Barınma, mutfak, giyim ve güvenlik kategorileri genişletilmiş checklist maddeleriyle ayrı bölümlerde sunulur.",
+      "Dijital ve basılı checklist kullanımı, grup sorumluluğu ve kamp sonrası revizyon adımları rehberin sonunda özetlenir.",
     ],
     sections: [
       {
@@ -345,6 +506,114 @@ export const equipmentSupplements: Record<string, GuideSupplement> = {
             label: "Kartepe Orman Kampı",
             href: "/kamp-alanlari/izmit/kartepe/kartepe-orman-kampi",
           },
+        ],
+      },
+      {
+        id: "barinma-genis-checklist",
+        heading: "Barınma: Genişletilmiş Kontrol Listesi",
+        paragraphs: [
+          "Barınma ekipmanı gece konforunun ve güvenliğin temelini oluşturur. Aşağıdaki liste temel maddeleri tamamlayıcı detayları içerir; mevsime göre tulum konfor derecesi ve mat R-değerini ayarlayın.",
+        ],
+        checklist: [
+          "Çadır (flysheet + iç çadır + kazık + ip + tamir seti)",
+          "Zemin örtüsü (footprint) ve ekstra gerdirme ipi",
+          "Uyku matı (yaz R2–3, kış R5+)",
+          "Uyku tulumu (gece min. -5°C altı konfor)",
+          "Tulum liner veya iç çadır (nem yönetimi)",
+          "Yastık veya katlanır yastık / kıyafet torbası",
+          "Acil battaniye (hafif, çanta içinde)",
+          "Çadır tamir bandı (duct tape) ve yedek kazık",
+        ],
+      },
+      {
+        id: "mutfak-genis-checklist",
+        heading: "Mutfak: Genişletilmiş Kontrol Listesi",
+        paragraphs: [
+          "Mutfak seti basit tutulabilir ancak su, yakıt ve gıda planlaması ihmal edilmemelidir. Uzun rotalarda yedek kartuş ve su arıtma ekleyin.",
+        ],
+        checklist: [
+          "Ocak + yedek kartuş (3+ gece için 2. kartuş)",
+          "Tencere, tava, kapak, tabak, çatal-bıçak, bardak",
+          "Su matarası (kişi başı 2–4L/gün) veya arıtma tableti",
+          "Kamp soğutucusu ve buz aküsü (yaz)",
+          "Ateş çakmağı / çakmak (su geçirmez kılıf)",
+          "Biyobozunur deterjan, sünger, çöp torbası",
+          "Kesim tahtası ve mutfak bıçağı",
+          "Atıştırmalık ve acil enerji barı stoku",
+        ],
+      },
+      {
+        id: "giyim-genis-checklist",
+        heading: "Giyim: Genişletilmiş Kontrol Listesi",
+        paragraphs: [
+          "Katmanlı giyim sistemi mevsim geçişlerinde en esnek çözümdür. Terli giysiyle uyumayın; gece için kuru iç katman ayırın.",
+        ],
+        checklist: [
+          "Termal içlik (sentetik veya merino)",
+          "Polar veya yelek (mid layer)",
+          "Yağmurluk / rüzgâr kesici (shell)",
+          "Yedek çorap ve iç çamaşırı (günlük)",
+          "Şapka, eldiven, bere (mevsime göre)",
+          "Güneş kremi SPF 50+ ve güneş gözlüğü (yaz)",
+          "Sandalet (kamp alanı) + yürüyüş ayakkabısı",
+          "Hızlı kuruyan havlu veya bandana",
+        ],
+      },
+      {
+        id: "guvenlik-genis-checklist",
+        heading: "Güvenlik: Genişletilmiş Kontrol Listesi",
+        paragraphs: [
+          "Güvenlik ekipmanı her kamp türünde zorunludur. Acil numaraları telefona kaydedin; izole alanlarda offline harita indirin.",
+        ],
+        checklist: [
+          "Kafa lambası + yedek pil / şarjlı model",
+          "İlk yardım çantası (kişisel ilaçlar dahil)",
+          "Powerbank veya solar şarj",
+          "Düdük ve acil ayna (sinyal)",
+          "Offline harita (Maps.me, Gaia GPS vb.)",
+          "112 ve 177 (orman yangını) kayıtlı",
+          "Böcek kovucu ve kene pensi (orman)",
+          "Su geçirmez torba (elektronik ve kuru giysi)",
+        ],
+        links: [
+          {
+            label: "Kamp Güvenliği Rehberi",
+            href: "/rehberler/kamp-guvenligi-rehberi",
+          },
+          {
+            label: "İlk Yardım Çantası",
+            href: "/kamp-ekipmanlari/ilk-yardim",
+          },
+        ],
+      },
+      {
+        id: "kontrol-listesi-master-ozet",
+        heading: "Kamp Türüne Göre Master Checklist Özeti",
+        paragraphs: [
+          "Barınma, mutfak, giyim ve güvenlik dört sütun tüm kamp türlerinde geçerlidir; fark kamp türüne göre ek maddelerde ortaya çıkar. Deniz kenarında rüzgâr sabitleme, dağda termal katman, kışta dört mevsim barınma listeye eklenir.",
+          "Checklist'i dijital veya basılı kullanın; paketleme sırasında ve yola çıkmadan bir saat önce iki kez gözden geçirin. Grup kampında sorumluluk paylaşımı (A barınma, B mutfak) unutmayı azaltır.",
+          "Kamp sonrası checklist güncellemesi rutin haline getirin: hangi madde kullanıldı, hangisi gereksizdi, hangisi eksikti? Bu döngü bir sonraki paketlemeyi hızlandırır ve ağırlığı optimize eder.",
+          "Acil durum maddeleri (ilk yardım, düdük, powerbank, offline harita) hiçbir senaryoda listeden çıkarılmamalıdır. Konfor eşyaları (sandalye, masa) araç kampında mantıklı, sırt çantası trekkinginde genelde elenir.",
+        ],
+        links: [
+          { label: "Kamp Ekipmanları Ana Sayfa", href: "/kamp-ekipmanlari" },
+        ],
+      },
+      {
+        id: "kontrol-dijital-sablon",
+        heading: "Dijital Checklist ve Grup Sorumluluğu",
+        paragraphs: [
+          "Checklist'i telefon notları veya yazdırılmış kağıt olarak kullanın; hafıza paketlemede güvenilir değildir. Her madde için sorumlu kişi atayın: barınma, mutfak ve güvenlik sorumluları.",
+          "Kamp sonrası retrospektif 5 dakika sürer: ne eksikti, ne fazlaydı, ne değişmeli? Bu not bir sonraki checklist revizyonunu besler.",
+          "Mevsim geçişlerinde checklist şablonunuzu güncelleyin; yaz listesinden kış listesine geçişte tulum ve çadır değişimi en kritik adımdır.",
+        ],
+      },
+      {
+        id: "kontrol-kategori-oncelik",
+        heading: "Kategori Önceliklendirme ve Minimum Set",
+        paragraphs: [
+          "Minimum kamp seti barınma (çadır, mat, tulum), mutfak (ocak, su), güvenlik (lamba, ilk yardım) ve giyim (yağmurluk, katman) dört kategorisinden oluşur. Diğer maddeler konfor ve rota tipine göre eklenir.",
+          "Öncelik sırası: güvenlik maddeleri asla listeden çıkarılmaz; konfor eşyaları (sandalye, büyük mutfak seti) araç kampında kalır, sırt çantası trekkinginde elenir. Her kategori için sorumlu kişi atamak unutmayı azaltır.",
         ],
       },
     ],
