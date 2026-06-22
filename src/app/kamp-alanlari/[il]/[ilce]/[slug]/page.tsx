@@ -122,7 +122,11 @@ export default async function CampsiteDetailPage({ params }: PageProps) {
                 <div className="flex justify-between gap-4">
                   <dt className="text-gray-500">Puan</dt>
                   <dd className="font-medium text-amber-600">
-                    ★ {campsite.rating}
+                    {campsite.reviewCount > 0 ? (
+                      <>★ {campsite.rating}</>
+                    ) : (
+                      <span className="text-forest-400">Yeni eklendi</span>
+                    )}
                   </dd>
                 </div>
                 <div className="flex justify-between gap-4">
@@ -147,7 +151,13 @@ export default async function CampsiteDetailPage({ params }: PageProps) {
 
           <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-gray-600">
             <span className="font-medium text-amber-600">
-              ★ {campsite.rating} ({campsite.reviewCount} değerlendirme)
+              {campsite.reviewCount > 0 ? (
+                <>
+                  ★ {campsite.rating} ({campsite.reviewCount} değerlendirme)
+                </>
+              ) : (
+                <span className="text-forest-400">Yeni eklendi</span>
+              )}
             </span>
             <span>·</span>
             <span className="capitalize">{campsite.category.replace(/-/g, " ")}</span>

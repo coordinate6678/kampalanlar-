@@ -33,7 +33,11 @@ export function CampsiteCard({ campsite, variant = "list" }: CampsiteCardProps) 
             sizes="(max-width: 768px) 100vw, 33vw"
           />
           <div className="absolute right-2 top-2 rounded-full bg-white/90 px-2 py-0.5 text-xs font-semibold text-amber-700">
-            ★ {campsite.rating}
+            {campsite.reviewCount > 0 ? (
+              <>★ {campsite.rating}</>
+            ) : (
+              <span className="text-forest-500">Yeni</span>
+            )}
           </div>
         </div>
         <div className="p-4">
@@ -77,7 +81,13 @@ export function CampsiteCard({ campsite, variant = "list" }: CampsiteCardProps) 
           <span>{district?.name}</span>
           <span>·</span>
           <span className="font-medium text-amber-600">
-            ★ {campsite.rating} ({campsite.reviewCount})
+            {campsite.reviewCount > 0 ? (
+              <>
+                ★ {campsite.rating} ({campsite.reviewCount})
+              </>
+            ) : (
+              <span className="text-forest-400">Yeni eklendi</span>
+            )}
           </span>
         </div>
 

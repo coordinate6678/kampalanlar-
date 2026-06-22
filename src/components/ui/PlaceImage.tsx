@@ -15,12 +15,26 @@ export function PlaceImage({
   src,
   quality = 90,
   wikimediaWidth,
+  className,
+  fill,
   ...props
 }: PlaceImageProps) {
   const srcStr = typeof src === "string" ? src : "";
-  const unoptimized = srcStr ? isWikimediaUrl(srcStr) : false;
+  if (!srcStr) {
+    return (
+      <div
+        className={`flex items-center justify-center bg-forest-100 text-forest-400 text-sm ${
+          fill ? "absolute inset-0 h-full w-full" : ""
+        } ${className ?? ""}`}
+      >
+        Görsel yakında eklenecek
+      </div>
+    );
+  }
+
+  const unoptimized = isWikimediaUrl(srcStr);
   const resolvedSrc =
-    srcStr && wikimediaWidth && isWikimediaUrl(srcStr)
+    wikimediaWidth && isWikimediaUrl(srcStr)
       ? resizeWikimediaUrl(srcStr, wikimediaWidth)
       : src;
 
@@ -29,6 +43,8 @@ export function PlaceImage({
       src={resolvedSrc}
       quality={quality}
       unoptimized={unoptimized}
+      className={className}
+      fill={fill}
       {...props}
     />
   );
