@@ -210,4 +210,32 @@ export const akdenizCampsites: Campsite[] = [
       "Kemer ilçe merkezinde, Yeni Mahalle'de yer alır. Plaja yürüme mesafesindedir. Antalya şehir merkezine yaklaşık 40km.",
     createdAt: "2026-06-22",
   },
+  {
+    slug: "gokcesu-camping-rafting",
+    name: "Gökçesu Camping Rafting",
+    provinceSlug: "antalya",
+    districtSlug: "manavgat",
+    shortDescription:
+      "1994'ten beri Köprülü Kanyon Millî Parkı içinde hizmet veren, nehir kıyısında çadır ve karavan kampı imkanı sunan, rafting turlarıyla bilinen bir kamp ve doğa sporları tesisi.",
+    description:
+      "Gökçesu Camping Rafting, Antalya'nın Manavgat ilçesi Karabük Mahallesi, Köprülü Kanyon Millî Parkı, 07550 Manavgat/Antalya adresinde, Köprüçay (Köprü) Nehri kıyısında konumlanmış köklü bir kamp ve doğa sporları tesisidir. 1994'ten bu yana hizmet veren tesis, bölgenin en tanınmış nehir kıyısı konaklama noktalarından biridir.\n\nKöprülü Kanyon Millî Parkı 1973'te ilan edilmiş olup Akdeniz Bölgesi'nin en büyük servi (sedir) ormanlarından birinin içinde yer alır. Parka giriş ücretsizdir; rafting, kanyon turu, ip inişi (rappelling) ve jeep safari gibi aktiviteler ise ayrı ücretlendirilir. Tesis hem çadır hem karavan kampına uygundur; 25'ten fazla karavan kapasiteli alan sunar. Nehir üzerinde çardaklar, restoran, sıcak su ve duş, elektrik bağlantısı, kablosuz internet ve ortak mangal alanları mevcuttur.\n\nAntalya şehir merkezine yaklaşık 90 km, Manavgat merkeze yaklaşık 65 km mesafededir. Köprüçay'ın serin suları yaz aylarında rafting ve nehir kenarı kampı için ideal bir ortam oluşturur; sedir ormanı gölgesi çadır kurulumunda doğal serinlik sağlar. Antik Selge Kenti ve Manavgat Şelalesi günübirlik keşif rotaları olarak planlanabilir.\n\nRezervasyon, güncel fiyat ve aktivite programı için tesisin resmi web sitesi üzerinden veya doğrudan tesisle iletişime geçilmesi önerilir. Telefon numarası farklı kaynaklarda tutarsız göründüğünden burada paylaşılmamıştır. Kamp öncesi nehir seviyesi ve hava durumunu kontrol edin; rafting günlerinde ekipman ve kıyafet listesini aktivite sağlayıcısından teyit edin.",
+    features: [
+      { icon: "🏕️", label: "Çadır ve Karavan" },
+      { icon: "🛶", label: "Rafting" },
+      { icon: "🍽️", label: "Restoran" },
+      { icon: "🚿", label: "Sıcak Su/Duş" },
+      { icon: "⚡", label: "Elektrik Bağlantısı" },
+      { icon: "📶", label: "Wi-Fi" },
+    ],
+    images: [],
+    rating: 0,
+    reviewCount: 0,
+    category: "orman",
+    website: "https://www.gokcesu.net/",
+    coordinates: { lat: 37.18382, lng: 31.17085 },
+    googleMapsEmbed: "",
+    transport:
+      "Antalya-Alanya yolunun 45. kilometresinden Beşkonak yönüne dönülerek Köprüçay Irmağı boyunca ilerleyen yoldan ulaşılır. Toplu taşıma yok, özel araçla gidilmesi gerekir.",
+    createdAt: "2026-06-22",
+  },
 ];

@@ -497,6 +497,19 @@
               "featured": true
             },
             {
+              "slug": "manavgat",
+              "name": "Manavgat",
+              "description": "Antalya'nın doğusunda, Köprülü Kanyon Millî Parkı'na ev sahipliği yapan Manavgat, Köprüçay (Köprülü) Nehri üzerindeki rafting turizmi, antik Selge Kenti ve Manavgat Şelalesi ile bilinir.",
+              "neighbors": [
+                "kemer"
+              ],
+              "coordinates": {
+                "lat": 37.18382,
+                "lng": 31.17085
+              },
+              "featured": true
+            },
+            {
               "slug": "olympos",
               "name": "Olympos",
               "description": "Olympos, antik kent kalıntıları arasında kamp yapma imkânı sunan dünyaca ünlü bir destinasyondur.",
