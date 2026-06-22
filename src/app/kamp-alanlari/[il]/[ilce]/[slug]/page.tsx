@@ -166,21 +166,34 @@ export default async function CampsiteDetailPage({ params }: PageProps) {
           <PageUpdatedBar updatedAt={updatedAt} />
 
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            {campsite.images.map((image, i) => (
-              <div
-                key={image}
-                className={`relative overflow-hidden rounded-xl ${i === 0 ? "sm:col-span-2 aspect-[21/9]" : "aspect-[16/10]"}`}
-              >
+            {campsite.images.length === 0 ? (
+              <div className="relative overflow-hidden rounded-xl sm:col-span-2 aspect-[21/9]">
                 <PlaceImage
-                  src={image}
-                  alt={`${campsite.name} kamp alanı — ${district.name}, ${province.name} — fotoğraf ${i + 1}`}
+                  src={undefined}
+                  alt={`${campsite.name} kamp alanı — ${district.name}, ${province.name}`}
                   fill
                   className="object-cover"
-                  sizes={i === 0 ? "100vw" : "50vw"}
-                  priority={i === 0}
+                  sizes="100vw"
+                  priority
                 />
               </div>
-            ))}
+            ) : (
+              campsite.images.map((image, i) => (
+                <div
+                  key={image}
+                  className={`relative overflow-hidden rounded-xl ${i === 0 ? "sm:col-span-2 aspect-[21/9]" : "aspect-[16/10]"}`}
+                >
+                  <PlaceImage
+                    src={image}
+                    alt={`${campsite.name} kamp alanı — ${district.name}, ${province.name} — fotoğraf ${i + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes={i === 0 ? "100vw" : "50vw"}
+                    priority={i === 0}
+                  />
+                </div>
+              ))
+            )}
           </div>
 
           <VideoSection

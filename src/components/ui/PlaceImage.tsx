@@ -4,7 +4,8 @@ import {
   resizeWikimediaUrl,
 } from "@/lib/media/wikimedia";
 
-type PlaceImageProps = Omit<ImageProps, "quality"> & {
+type PlaceImageProps = Omit<ImageProps, "quality" | "src"> & {
+  src?: ImageProps["src"];
   quality?: number;
   /** Wikimedia kaynakları için thumb genişliği (LCP optimizasyonu) */
   wikimediaWidth?: number;
@@ -36,7 +37,7 @@ export function PlaceImage({
   const resolvedSrc =
     wikimediaWidth && isWikimediaUrl(srcStr)
       ? resizeWikimediaUrl(srcStr, wikimediaWidth)
-      : src;
+      : srcStr;
 
   return (
     <Image
