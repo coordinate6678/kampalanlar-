@@ -184,4 +184,30 @@ export const akdenizCampsites: Campsite[] = [
       "Antalya merkeze 60km. Kemer-Kumluca yolunda Tekirova kavşağından Alacasu Koyu'na, ardından Likya Yolu'na bağlanılarak ulaşılır. Toplu taşıma yok, özel araçla gidilmesi gerekir.",
     createdAt: "2026-06-19",
   },
+  {
+    slug: "kindil-camping-kemer",
+    name: "Kındıl Camping",
+    provinceSlug: "antalya",
+    districtSlug: "kemer",
+    shortDescription:
+      "Kemer merkeze yakın, denize yürüme mesafesinde, ortak mutfak ve çamaşırhane imkanı olan çadır ve karavan kamp alanı.",
+    description:
+      "Kındıl Camping, Antalya'nın Kemer ilçesi Yeni Mahalle, Kındıl Sokak, 07980 Kemer/Antalya adresinde konumlanmış; yaklaşık 15 dönümlük arazi üzerinde hem çadır hem karavan konaklamasına uygun bir kamp alanıdır. Kemer ilçe merkezine yakın olması sayesinde ulaşım kolaydır; plaja yürüme mesafesinde konumlanması deniz kenarı kampı arayanlar için pratik bir avantaj sunar.\n\nTesis altyapısında ortak mutfak bulunur; kampçılar kendi yemeklerini pişirebilir. Çamaşırhane, gölgelik dinlenme alanları ve ortak WC/duş imkânları mevcuttur. Yakın çevrede market ve restoranlara ulaşım kolaydır; günlük ihtiyaçlar için kısa mesafeli alışveriş mümkündür. Çadır ve karavan alanları aynı tesis bünyesinde düzenlenmiştir; karavan sahipleri için elektrik ve su bağlantısı gibi detaylar için güncel bilgi alınması önerilir.\n\nRezervasyon, güncel fiyat ve kontenjan bilgisi için tesisle doğrudan iletişime geçilmesi gerekir; sezon yoğunluğu ve oda/alan durumu değişkenlik gösterebilir. Antalya şehir merkezine yaklaşık 40 km mesafede olan Kemer, hafta sonu kaçamakları için de uygundur. Denize yürüme mesafesindeki konumu sayesinde sabah yüzme ve akşam sahil yürüyüşü kamp rutininin parçası olabilir.\n\nKamp öncesi ekipman listesini tamamlayın; ortak mutfak kullanımında hijyen ve sıra kurallarına uyum komşu konforunu artırır. Gölgelik alanlar yaz sıcaklarında dinlenme imkânı sunar; çadır kurulumunda rüzgâr yönünü değerlendirin. Tesisle iletişime geçerek giriş saati, kurallar ve güncel ücretlendirme hakkında teyit almanız önerilir.",
+    features: [
+      { icon: "🏕️", label: "Çadır ve Karavan" },
+      { icon: "🍳", label: "Ortak Mutfak" },
+      { icon: "🧺", label: "Çamaşırhane" },
+      { icon: "🌳", label: "Gölgelik Alan" },
+      { icon: "🚿", label: "Ortak Duş/WC" },
+    ],
+    images: [],
+    rating: 0,
+    reviewCount: 0,
+    category: "deniz-kenari",
+    coordinates: { lat: 36.602789, lng: 30.559761 },
+    googleMapsEmbed: "",
+    transport:
+      "Kemer ilçe merkezinde, Yeni Mahalle'de yer alır. Plaja yürüme mesafesindedir. Antalya şehir merkezine yaklaşık 40km.",
+    createdAt: "2026-06-22",
+  },
 ];

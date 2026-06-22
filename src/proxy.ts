@@ -5,7 +5,7 @@ import { resolveSlugRedirect } from "@/lib/seo/slug-redirects";
 const CANONICAL_HOST =
   process.env.NEXT_PUBLIC_CANONICAL_HOST ?? "kampalanlari.co";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get("host") ?? "";
   const protocol = request.headers.get("x-forwarded-proto") ?? "https";

@@ -11,7 +11,11 @@ interface GuideTableOfContentsProps {
 export function GuideTableOfContents({ entries }: GuideTableOfContentsProps) {
   if (entries.length === 0) return null;
 
-  let h2Index = 0;
+  let counter = 0;
+  const numbered = entries.map((entry) => ({
+    ...entry,
+    number: entry.level === 2 ? ++counter : null,
+  }));
 
   return (
     <nav
@@ -22,9 +26,8 @@ export function GuideTableOfContents({ entries }: GuideTableOfContentsProps) {
         İçindekiler
       </h2>
       <ol className="space-y-2 text-sm">
-        {entries.map((entry) => {
-          if (entry.level === 2) h2Index += 1;
-          const prefix = entry.level === 2 ? `${h2Index}.` : "–";
+        {numbered.map((entry) => {
+          const prefix = entry.level === 2 ? `${entry.number}.` : "–";
 
           return (
             <li
