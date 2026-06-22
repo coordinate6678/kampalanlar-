@@ -4,7 +4,7 @@ export const ORGANIZATION = {
   legalName: "Kamp Alanları Rehberi",
   brandName: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/globe.svg`,
+  logo: `${SITE_URL}/logo-512.png`,
   email: "info@kampalanlari.co",
   foundingDate: "2025",
   description:

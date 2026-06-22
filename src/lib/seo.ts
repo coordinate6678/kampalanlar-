@@ -110,10 +110,6 @@ export const rootMetadata = {
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
-  icons: {
-    icon: "/globe.svg",
-    shortcut: "/globe.svg",
-  },
   robots: {
     index: true,
     follow: true,
