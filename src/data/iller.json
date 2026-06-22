@@ -483,6 +483,20 @@
               "hiddenGemSummary": "Kaputaş üstünde turist kalabalığından uzak koylar"
             },
             {
+              "slug": "kemer",
+              "name": "Kemer",
+              "description": "Antalya'nın batısında, Beydağları Sahil Milli Parkı'nın sınırları içinde yer alan Kemer, Likya Yolu üzerindeki antik kentleri (Phaselis, Olympos, Idyros) ve çam ormanlarıyla çevrili koylarıyla bilinir.",
+              "neighbors": [
+                "olympos",
+                "kalkan"
+              ],
+              "coordinates": {
+                "lat": 36.602789,
+                "lng": 30.559761
+              },
+              "featured": true
+            },
+            {
               "slug": "olympos",
               "name": "Olympos",
               "description": "Olympos, antik kent kalıntıları arasında kamp yapma imkânı sunan dünyaca ünlü bir destinasyondur.",

@@ -158,4 +158,30 @@ export const akdenizCampsites: Campsite[] = [
       "Kumluca'dan Olympos yönüne, Adrasan çıkışını takip edin. Koy girişinde kamp alanı.",
     createdAt: "2025-11-12",
   },
+  {
+    slug: "phaselis-kamp-alani",
+    name: "Phaselis Kamp Alanı",
+    provinceSlug: "antalya",
+    districtSlug: "kemer",
+    shortDescription:
+      "Beydağları Sahil Milli Parkı içinde, Phaselis Antik Kenti yakınında ücretsiz, doğal bir koy kampı.",
+    description:
+      "Phaselis Kamp Alanı, Antalya'nın Kemer ilçesinde, Beydağları Sahil Milli Parkı sınırları içinde, antik Phaselis kentinin üç koyunu çevreleyen doğal bir alanda konumlanır. Tekirova yönünden Alacasu Koyu'na geçilerek, ardından Likya Yolu patikalarına bağlanılarak ulaşılan bu nokta resmi bir işletme veya ücretli tesis değildir; kampçılar burada doğayla iç içe, ücretsiz konaklama deneyimi yaşayabilir. Phaselis Antik Kenti'nin liman kalıntıları, tiyatro ve sütunlu cadde izleri koy manzarasıyla birleşerek hem tarih hem doğa tutkunlarına eşsiz bir çerçeve sunar.\n\nKamp alanında ticari tesis bulunmadığından su, gıda ve yakıt ihtiyacının Antalya veya Tekirova'dan önceden temin edilmesi gerekir; en yakın market yaklaşık bir kilometre mesafededir. Kontrollü ateş yakılabilen alanlarda yangın güvenliği kurallarına uyulmalı; milli park yönetiminin güncel duyuruları kamp öncesi kontrol edilmelidir. Koy sularında balık tutulabilir; sabah ve akşam saatleri hem balıkçılık hem fotoğraf için verimli olur.\n\nLikya Yolu'nun önemli duraklarından biri olan Phaselis hattı, Tekirova'dan Çıralı ve Olympos yönüne uzanan yürüyüş rotalarına yakındır. Beydağları Sahil Milli Parkı'nın koruma altındaki flora ve faunası arasında Akdeniz foku ve endemik Likya semenderi gibi türler bulunur; bu canlılara saygılı mesafe bırakmak ve gürültüyü minimumda tutmak çevresel sorumluluğun parçasıdır. Çam ormanları ve koy birleşimi deniz kenarı kampı ile orman kampının özelliklerini aynı anda taşır; meltem gecelerinde sağlam çadır kurulumu ve rüzgâr ipi kullanımı önerilir. Plastik atık bırakmamak, deniz ekosistemine zarar vermemek ve Leave No Trace ilkesine uymak sürdürülebilir kampın temelidir.",
+    features: [
+      { icon: "🏛️", label: "Antik Kent Yakını" },
+      { icon: "🔥", label: "Kontrollü Ateş" },
+      { icon: "🐟", label: "Balık Tutma" },
+      { icon: "🥾", label: "Likya Yolu" },
+      { icon: "🌲", label: "Milli Park" },
+    ],
+    images: [],
+    rating: 0,
+    reviewCount: 0,
+    category: "deniz-kenari",
+    coordinates: { lat: 36.50281, lng: 30.52413 },
+    googleMapsEmbed: "",
+    transport:
+      "Antalya merkeze 60km. Kemer-Kumluca yolunda Tekirova kavşağından Alacasu Koyu'na, ardından Likya Yolu'na bağlanılarak ulaşılır. Toplu taşıma yok, özel araçla gidilmesi gerekir.",
+    createdAt: "2026-06-19",
+  },
 ];
