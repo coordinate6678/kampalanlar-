@@ -38,7 +38,6 @@ export const egeCampsites: Campsite[] = [
     description:
       "Çeşme Ilıca Sahil Kampı, ünlü Ilıca Plajı'nın hemen yanında, deniz suyuyla karışan termal kaynakların yakınında konumlanmış benzersiz bir kamp tesisidir. Kumlu plaja sıfır mesafede kurulan çadırlar, sabah denizde yüzme ve akşam termal suda dinlenme imkânı sunar. Karavan parselleri tam donanımlı olup elektrik, su ve gri su bağlantısı içerir. Çeşme merkezine 5 km mesafede olan tesis, marina ve restoranlara bisikletle ulaşılabilir. Yaz aylarında düzenlenen yelken ve sörf etkinliklerine katılım imkânı sunulur. Gün batımında Ege'nin turkuaz suları altın rengine bürünürken kamp ateşi sohbetleri başlar. Aileler için güvenli, sığ deniz alanları ve çocuk oyun köşesi mevcuttur. Çeşme Yarımadası'nın gece hayatına yakın ama yeterince sakin bir konumdadır. Ilıca'nın termal sularında yıl boyunca yüzme keyfi yaşanabilir. Marina ve gece hayatına yakınlık genç grupların ilgisini çeker. Ilıca plajının sıcak su kaynakları romatizma ve cilt hastalıklarına iyi geldiğine inanılır.",
     features: [
-      { icon: "🌊", label: "Deniz Kenarı" },
       { icon: "♨️", label: "Termal Yakını" },
       { icon: "🚐", label: "Karavan Parkı" },
       { icon: "🏄", label: "Su Sporları" },
@@ -64,7 +63,6 @@ export const egeCampsites: Campsite[] = [
     description:
       "Urla Sahil Kampı, Ege'nin en sakin kıyılarından birinde, Barbaros Koyu'na bakan teraslı bir alanda konumlanmış deniz kenarı kamp tesisidir. Gün batımı manzarası bölgenin en etkileyici görüntülerinden birini sunar; akşamları güneş İzmir Körfezi üzerinde batarken kamp alanı turuncu ve mor tonlara bürünür. Tesis çadır ve bungalov seçenekleri sunar; bungalovlar ahşap teras ve deniz manzaralı verandaya sahiptir. Urla'nın ünlü bağ evleri, şarap atölyeleri ve farm-to-table restoranlarına bisikletle 10 dakikada ulaşılabilir. Deniz kenarında yüzme ve kano imkânı mevcuttur. Urla Enginar Festivali döneminde özel etkinlikler düzenlenir. Sakin atmosferi ve kaliteli hizmetiyle çiftler ve küçük gruplar tarafından sıkça tercih edilir. Urla Cittaslow ruhu kamp alanına da yansır; geri dönüşüm ve sıfır atık politikası uygulanır. Bağ bozumu döneminde özel hasat turları organize edilir. Barbaros Koyu'nda kano ve paddle board kiralama imkânı yaz aylarında mevcuttur.",
     features: [
-      { icon: "🌊", label: "Deniz Kenarı" },
       { icon: "🏡", label: "Bungalov" },
       { icon: "🚿", label: "Duş" },
       { icon: "🍽️", label: "Mutfak" },
@@ -119,7 +117,6 @@ export const egeCampsites: Campsite[] = [
       { icon: "🏰", label: "Tarihi Konum" },
       { icon: "🍊", label: "Organik Kahvaltı" },
       { icon: "🚲", label: "Bisiklet Kiralama" },
-      { icon: "🌊", label: "Deniz Kenarı" },
       { icon: "🏛️", label: "Teos Antik Kenti" },
     ],
     images: [IMAGES.sunset, IMAGES.forest, IMAGES.coast],
@@ -221,7 +218,6 @@ export const egeCampsites: Campsite[] = [
       "Kabak Koyu Kamp, Fethiye'nin en ünlü koylarından Kabak'ta, deniz seviyesinden başlayarak orman içine uzanan teraslı alanlarda konumlanır. Turkuaz deniz manzarası Likya kıyılarının en etkileyici görüntülerinden birini sunar. Yoga ve meditasyon kampları, doğa sporları etkinlikleri ve rehberli Likya Yolu yürüyüşleri düzenli olarak organize edilir. Koya iniş yürüyüş mesafesindedir; patika yol çam ormanından geçerek plaja ulaşır. Organik mutfakta hazırlanan yemekler tesis bahçesinden toplanan sebzelerle sunulur. Kabak'ın alternatif yaşam tarzı ve hippi atmosferi kamp deneyimine özgün bir karakter katar. Faralya köyüne yürüyüş mesafesinde olan tesis, Ölüdeniz ve Kelebekler Vadisi turlarına başlangıç noktası olabilir. Yıldızlı gecelerde kamp ateşi eşliğinde gitar sesleri yükselir. Kabak'ın alternatif yaşam kültürü yeni gelenleri sıcak karşılar. Likya Yolu'nda yürüyüş planlıyorsanız Faralya'dan başlangıç yapabilirsiniz. Kabak'ta internet bağlantısı sınırlıdır; doğayla baş başa kalmak isteyenler için avantajdır.",
     features: [
       { icon: "🧘", label: "Yoga Alanı" },
-      { icon: "🌊", label: "Deniz Kenarı" },
       { icon: "🥾", label: "Likya Yolu" },
       { icon: "🍽️", label: "Organik Yemek" },
       { icon: "🌲", label: "Orman Terası" },
@@ -299,7 +295,6 @@ export const egeCampsites: Campsite[] = [
       "Datça Hayıtbükü Kampı, Datça Yarımadası'nın güney ucunda, üç koyun birleştiği eşsiz Hayıtbükü manzarasında konumlanmış butik bir kamp tesisidir. Nisan ayında badem çiçekleriyle kaplanan yamaçlar kamp alanına romantik bir atmosfer katar. Küçük ölçekli yapısı sayesinde kalabalıktan uzak, özel bir deneyim sunar. Koya özel patika yol 10 dakikalık yürüyüşle ulaşılır; yol boyunca Datça'nın virajlı sahil manzaraları eşlik eder. Çadır ve bungalov seçenekleri mevcuttur; bungalovlar taş ve ahşap karışımı yerel mimariyle inşa edilmiştir. Knidos antik kentine 12 km mesafede olan tesis, günübirlik antik kent turları için ideal konumdadır. Akşamları Datça'nın ünlü badem şekeri ve balı ürünleri tadılabilir. Rüzgârsız koy suları sakin yüzme imkânı sağlar. Badem çiçeği festivali döneminde konaklama yoğunluğu artar; önceden rezervasyon şarttır. Hayıtbükü'ne iniş patikası rahat ayakkabı gerektirir. Hayıtbükü'nün üç koy manzarası her mevsim farklı renk tonlarıyla değişir.",
     features: [
       { icon: "🌸", label: "Badem Çiçeği" },
-      { icon: "🏡", label: "Bungalov" },
       { icon: "🌊", label: "Üç Koy Manzarası" },
       { icon: "🥾", label: "Patika Yol" },
       { icon: "🏛️", label: "Knidos Yakını" },

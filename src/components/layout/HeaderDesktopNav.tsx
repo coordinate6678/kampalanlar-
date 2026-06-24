@@ -10,6 +10,9 @@ interface HeaderDesktopNavProps {
   provinces: Province[];
 }
 
+const navLinkClass =
+  "cursor-pointer list-none rounded-lg px-3 py-2 text-sm font-medium text-forest-700 transition-colors hover:bg-forest-50 hover:text-forest-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400";
+
 function NavDropdown({
   label,
   children,
@@ -21,11 +24,9 @@ function NavDropdown({
 }) {
   return (
     <details className="group relative [&_summary::-webkit-details-marker]:hidden">
-      <summary className="cursor-pointer list-none rounded-lg px-4 py-2 text-sm font-medium text-cream hover:bg-forest-700 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400">
-        {label}
-      </summary>
+      <summary className={navLinkClass}>{label}</summary>
       <div
-        className={`absolute left-0 top-full z-50 ${panelClassName} rounded-b-xl bg-white p-4 shadow-2xl border border-forest-100`}
+        className={`absolute left-0 top-full z-50 ${panelClassName} rounded-b-xl border border-forest-100 bg-white p-4 shadow-2xl`}
       >
         {children}
       </div>
@@ -35,18 +36,13 @@ function NavDropdown({
 
 export function HeaderDesktopNav({ provinces }: HeaderDesktopNavProps) {
   return (
-    <nav
-      className="hidden items-center gap-1 lg:flex"
-      aria-label="Ana navigasyon"
-    >
+    <nav className="flex items-center gap-1" aria-label="Ana navigasyon">
       <details className="group relative [&_summary::-webkit-details-marker]:hidden">
-        <summary className="cursor-pointer list-none rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-forest-900 transition-colors hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300">
-          Kamp Alanları
-        </summary>
-        <div className="absolute left-0 top-full z-50 w-[600px] rounded-b-xl bg-white p-6 shadow-2xl border border-forest-100">
+        <summary className={navLinkClass}>Kamp Alanları</summary>
+        <div className="absolute left-0 top-full z-50 w-[600px] rounded-b-xl border border-forest-100 bg-white p-6 shadow-2xl">
           <Link
             href="/kamp-alanlari"
-            className="mb-4 inline-flex items-center gap-2 rounded-lg bg-forest-50 px-4 py-2 text-sm font-semibold text-forest-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
+            className="mb-4 inline-flex items-center gap-2 rounded-lg bg-forest-50 px-4 py-2 text-sm font-semibold text-forest-800 transition-colors hover:bg-amber-50 hover:text-amber-800"
           >
             Tüm kamp alanları rehberi →
           </Link>
@@ -59,7 +55,7 @@ export function HeaderDesktopNav({ provinces }: HeaderDesktopNavProps) {
                   <Link
                     href={`/kamp-alanlari/${province.slug}`}
                     title={provinceLinkText}
-                    className="mb-2 block font-semibold text-forest-800 hover:text-amber-600 break-words"
+                    className="mb-2 block break-words font-semibold text-forest-800 hover:text-amber-600"
                   >
                     {provinceLinkText}
                   </Link>
@@ -73,7 +69,7 @@ export function HeaderDesktopNav({ provinces }: HeaderDesktopNavProps) {
                           <Link
                             href={`/kamp-alanlari/${province.slug}/${district.slug}`}
                             title={districtLinkText}
-                            className="text-sm text-gray-600 hover:text-forest-700 break-words"
+                            className="break-words text-sm text-gray-600 hover:text-forest-700"
                           >
                             {districtLinkText}
                           </Link>
@@ -88,13 +84,13 @@ export function HeaderDesktopNav({ provinces }: HeaderDesktopNavProps) {
         </div>
       </details>
 
-      <NavDropdown label="Kategoriler ▾">
+      <NavDropdown label="Kategoriler">
         <ul className="space-y-1">
           {categories.map((cat) => (
             <li key={cat.slug}>
               <Link
                 href={`/kategori/${cat.slug}`}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-forest-50 transition-colors"
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-forest-50"
               >
                 <span aria-hidden="true">{cat.icon}</span>
                 {cat.name}
@@ -104,10 +100,13 @@ export function HeaderDesktopNav({ provinces }: HeaderDesktopNavProps) {
         </ul>
       </NavDropdown>
 
-      <NavDropdown label="Kamp Ekipmanları ▾" panelClassName="w-72 max-h-[70vh] overflow-y-auto">
+      <NavDropdown
+        label="Kamp Ekipmanları"
+        panelClassName="max-h-[70vh] w-72 overflow-y-auto"
+      >
         <Link
           href="/kamp-ekipmanlari"
-          className="mb-3 block rounded-lg bg-forest-50 px-3 py-2 text-sm font-semibold text-forest-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
+          className="mb-3 block rounded-lg bg-forest-50 px-3 py-2 text-sm font-semibold text-forest-800 transition-colors hover:bg-amber-50 hover:text-amber-800"
         >
           Tüm ekipman rehberi →
         </Link>
@@ -116,7 +115,7 @@ export function HeaderDesktopNav({ provinces }: HeaderDesktopNavProps) {
             <li key={item.slug}>
               <Link
                 href={`/kamp-ekipmanlari/${item.slug}`}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-forest-50 transition-colors"
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-forest-50"
               >
                 <span aria-hidden="true">{item.icon}</span>
                 {item.name}
@@ -126,10 +125,13 @@ export function HeaderDesktopNav({ provinces }: HeaderDesktopNavProps) {
         </ul>
       </NavDropdown>
 
-      <NavDropdown label="Rehberler ▾" panelClassName="w-80 max-h-[70vh] overflow-y-auto">
+      <NavDropdown
+        label="Rehberler"
+        panelClassName="max-h-[70vh] w-80 overflow-y-auto"
+      >
         <Link
           href="/rehberler"
-          className="mb-3 block rounded-lg bg-forest-50 px-3 py-2 text-sm font-semibold text-forest-800 hover:bg-amber-50 hover:text-amber-800 transition-colors"
+          className="mb-3 block rounded-lg bg-forest-50 px-3 py-2 text-sm font-semibold text-forest-800 transition-colors hover:bg-amber-50 hover:text-amber-800"
         >
           Tüm rehberler →
         </Link>
@@ -138,7 +140,7 @@ export function HeaderDesktopNav({ provinces }: HeaderDesktopNavProps) {
             <li key={guide.slug}>
               <Link
                 href={`/rehberler/${guide.slug}`}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-forest-50 transition-colors"
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-forest-50"
               >
                 <span aria-hidden="true">{guide.icon}</span>
                 <span className="line-clamp-2">{guide.title}</span>

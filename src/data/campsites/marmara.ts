@@ -66,7 +66,6 @@ export const marmaraCampsites: Campsite[] = [
     features: [
       { icon: "🏛️", label: "Antik Kent" },
       { icon: "🌅", label: "Gün Batımı" },
-      { icon: "🌊", label: "Deniz Kenarı" },
       { icon: "🍷", label: "Yerel Şarap" },
       { icon: "🚐", label: "Karavan Uyumlu" },
     ],
@@ -142,7 +141,6 @@ export const marmaraCampsites: Campsite[] = [
     description:
       "Gökçeada Kuzu Koyu Kampı, adanın güney sahillerinde yer alan sakin Kuzu Koyu'nun çam ve zeytin ağaçlarıyla çevrili kıyı şeridinde hizmet verir. Aydıncık'ın aksine daha sakin ve dalgasız sularıyla aileler ve çocuklu kampçılar tarafından tercih edilir. Küçük ölçekli butik yapısı sayesinde kalabalıktan uzak, huzurlu bir ortam sunar. Tesis bungalov ve çadır seçenekleriyle konaklama imkânı verir; sabah kahvaltısında adanın meşhur keçi peyniri ve zeytinyağı servis edilir. Koyun etrafındaki yürüyüş patikaları deniz manzaralı fotoğraf noktalarına çıkar. Gün batımında koyun sakin suları turkuazdan pembeye dönüşür. Adanın merkezine 15 km mesafede olan kamp alanı, Gökçeada'nın doğal güzelliklerini keşfetmek isteyenler için ideal bir başlangıç noktasıdır. Adanın en sakin koylarından biri olan burada gece sessizliği hakimdir. Yerel köy pazarından taze sebze ve peynir temin edebilirsiniz. Koyun batı yönündeki kayalık alanlar gün batımı fotoğrafları için mükemmel çerçeveler sunar.",
     features: [
-      { icon: "🏡", label: "Bungalov" },
       { icon: "🫒", label: "Zeytinlik" },
       { icon: "🌊", label: "Sakin Koy" },
       { icon: "🍽️", label: "Kahvaltı Servisi" },

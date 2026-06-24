@@ -65,7 +65,6 @@ export const akdenizCampsites: Campsite[] = [
       "Kalkan Kalamar Koyu Kampı, Antalya'nın en şık tatil beldelerinden Kalkan'ın sakin Kalamar Koyu'nda, zeytin ve çam ağaçlarının gölgesinde konumlanmış butik bir kamp tesisidir. Kalkan merkezin kalabalığından uzak bu koy, huzurlu bir kamp atmosferi sunar. Koyun sakin suları yüzme ve küçük tekne turları için idealdir. Çadır ve bungalov seçenekleri mevcuttur; bungalovlar taş ve ahşap karışımı Akdeniz mimarisiyle inşa edilmiştir. Kalkan çarşısına 3 km mesafede olan tesis, restoranlara ve marketlere kolay erişim sağlar. Akşamları Kalkan'ın ünlü teras restoranlarında gün batımı yemeği yapılabilir. Patara antik kenti ve Kaputaş Plajı günübirlik turlarla ulaşılabilir mesafededir. Kalkan'ın teraslı mimarisi kampçılara da ilham verir. Kalamar Koyu'nda gün batımı tekne turu düzenlenebilir. Kalamar Koyu'nda su sıcaklığı yaz aylarında yüzmek için idealdir. Kalkan'ın butik otelleri ve sanat galerileri kamp sonrası kültür turu için keşfedilebilir.",
     features: [
       { icon: "🫒", label: "Zeytinlik" },
-      { icon: "🏡", label: "Bungalov" },
       { icon: "🌊", label: "Sakin Koy" },
       { icon: "⛵", label: "Tekne Turları" },
       { icon: "🏛️", label: "Patara Yakını" },
