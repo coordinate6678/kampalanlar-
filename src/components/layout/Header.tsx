@@ -5,9 +5,12 @@ import { HeaderDesktopNav } from "@/components/layout/HeaderDesktopNav";
 import { HeaderShell } from "@/components/layout/HeaderShell";
 import { buildMobileNavData } from "@/components/layout/header-nav-data";
 import { SITE_NAME } from "@/lib/constants";
+import { isProvinceIndexable } from "@/lib/seo/indexability";
 
 export function Header() {
-  const provinces = getAllProvinces();
+  const provinces = getAllProvinces().filter((p) =>
+    isProvinceIndexable(p.slug)
+  );
   const mobileNav = buildMobileNavData(provinces);
 
   return (
