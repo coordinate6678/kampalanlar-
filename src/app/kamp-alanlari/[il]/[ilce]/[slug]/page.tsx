@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PlaceImage } from "@/components/ui/PlaceImage";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { NearbyCampsites } from "@/components/campsite/NearbyCampsites";
+import { CampsiteGallery } from "@/components/campsite/CampsiteGallery";
+import { CampsiteQuickInfo } from "@/components/campsite/CampsiteQuickInfo";
+import { CampsiteShareButton } from "@/components/campsite/CampsiteShareButton";
+import { CampsiteFeaturePills } from "@/components/campsite/CampsiteFeaturePills";
 import { ContentGrid } from "@/components/layout/ContentGrid";
 import { SearchWidget } from "@/components/layout/SearchWidget";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -21,6 +24,7 @@ import {
   buildCampsitePageTitle,
 } from "@/lib/seo/page-metadata";
 import { buildMetadata } from "@/lib/seo";
+import { SITE_URL } from "@/lib/constants";
 import { getCampsiteFullContent } from "@/lib/content/get-page-content";
 import { VideoSection } from "@/components/media/VideoSection";
 import { getVideoForCampsite } from "@/data/media/videos";
@@ -30,7 +34,10 @@ import {
   buildVideoJsonLd,
   buildWebPageJsonLd,
 } from "@/lib/seo/json-ld";
-import { getKampAlaniLinkText } from "@/lib/utils/seoText";
+import {
+  extractTransportDistance,
+  pickHighlightParagraph,
+} from "@/lib/utils/campsite-page";
 
 export const revalidate = 3600;
 
@@ -47,7 +54,6 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { il, ilce, slug } = await params;
   const campsite = getCampsiteBySlug(il, ilce, slug);
-  const province = getProvinceBySlug(il);
   const district = getDistrictBySlug(il, ilce);
 
   if (!campsite) return {};
@@ -57,7 +63,7 @@ export async function generateMetadata({
     description: buildCampsitePageDescription(
       campsite.name,
       district?.name ?? "",
-      province?.name ?? "",
+      getProvinceBySlug(il)?.name ?? "",
       campsite.shortDescription
     ),
     path: `/kamp-alanlari/${il}/${ilce}/${slug}`,
@@ -80,6 +86,10 @@ export default async function CampsiteDetailPage({ params }: PageProps) {
   const content = getCampsiteFullContent(campsite, province.name, district.name);
   const campsiteVideo = getVideoForCampsite(campsite, district.name);
   const updatedAt = getCampsiteUpdatedAt(campsite);
+  const shareUrl = `${SITE_URL}${path}`;
+  const highlightParagraph = pickHighlightParagraph(content.mainParagraphs);
+  const transportDistance = extractTransportDistance(content.transport);
+  const galleryAlt = `${campsite.name} kamp alanı — ${district.name}, ${province.name}`;
 
   const breadcrumbItems = [
     { label: "Ana Sayfa", href: "/" },
@@ -109,211 +119,175 @@ export default async function CampsiteDetailPage({ params }: PageProps) {
       <ContentGrid
         sidebar={
           <>
+            <CampsiteQuickInfo
+              campsite={campsite}
+              districtName={district.name}
+              provinceName={province.name}
+            />
             <SearchWidget />
-            <div className="rounded-xl bg-white p-5 shadow-sm border border-forest-100">
-              <h2 className="mb-3 font-semibold text-forest-800">Hızlı Bilgi</h2>
-              <dl className="space-y-2 text-sm">
-                <div className="flex justify-between gap-4">
-                  <dt className="text-gray-500">Kategori</dt>
-                  <dd className="font-medium text-forest-800 text-right capitalize">
-                    {campsite.category.replace(/-/g, " ")}
-                  </dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt className="text-gray-500">Puan</dt>
-                  <dd className="font-medium text-amber-600">
-                    {campsite.reviewCount > 0 ? (
-                      <>★ {campsite.rating}</>
-                    ) : (
-                      <span className="text-forest-400">Yeni eklendi</span>
-                    )}
-                  </dd>
-                </div>
-                <div className="flex justify-between gap-4">
-                  <dt className="text-gray-500">Konum</dt>
-                  <dd className="font-medium text-forest-800 text-right">
-                    {district.name}, {province.name}
-                  </dd>
-                </div>
-              </dl>
-            </div>
           </>
         }
         main={
           <>
-          <h1 className="font-display text-3xl font-bold text-forest-800 lg:text-4xl">
-            {campsite.name}
-          </h1>
+            <CampsiteGallery images={campsite.images} altBase={galleryAlt} />
 
-          <p className="mt-2 text-gray-600">
-            {getKampAlaniLinkText(district.name)} · {province.name}
-          </p>
-
-          <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-gray-600">
-            <span className="font-medium text-amber-600">
-              {campsite.reviewCount > 0 ? (
-                <>
-                  ★ {campsite.rating} ({campsite.reviewCount} değerlendirme)
-                </>
-              ) : (
-                <span className="text-forest-400">Yeni eklendi</span>
-              )}
-            </span>
-            <span>·</span>
-            <span className="capitalize">{campsite.category.replace(/-/g, " ")}</span>
-          </div>
-
-          <PageUpdatedBar updatedAt={updatedAt} />
-
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
-            {campsite.images.length === 0 ? (
-              <div className="relative overflow-hidden rounded-xl sm:col-span-2 aspect-[21/9]">
-                <PlaceImage
-                  src={undefined}
-                  alt={`${campsite.name} kamp alanı — ${district.name}, ${province.name}`}
-                  fill
-                  className="object-cover"
-                  sizes="100vw"
-                  priority
-                />
+            <div className="mt-6 flex flex-wrap items-start justify-between gap-4">
+              <div className="min-w-0 flex-1">
+                <h1 className="font-display text-3xl font-bold text-forest-800 lg:text-4xl">
+                  {campsite.name}
+                </h1>
+                <p className="mt-2 flex items-center gap-1.5 text-forest-600">
+                  <svg
+                    className="h-4 w-4 shrink-0 text-amber-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  {district.name}, {province.name}
+                </p>
               </div>
-            ) : (
-              campsite.images.map((image, i) => (
-                <div
-                  key={image}
-                  className={`relative overflow-hidden rounded-xl ${i === 0 ? "sm:col-span-2 aspect-[21/9]" : "aspect-[16/10]"}`}
-                >
-                  <PlaceImage
-                    src={image}
-                    alt={`${campsite.name} kamp alanı — ${district.name}, ${province.name} — fotoğraf ${i + 1}`}
-                    fill
-                    className="object-cover"
-                    sizes={i === 0 ? "100vw" : "50vw"}
-                    priority={i === 0}
+              <CampsiteShareButton title={campsite.name} url={shareUrl} />
+            </div>
+
+            <div className="mt-4">
+              <CampsiteFeaturePills features={campsite.features} />
+            </div>
+
+            <PageUpdatedBar updatedAt={updatedAt} />
+
+            <VideoSection
+              video={campsiteVideo}
+              heading={`${campsite.name} Tanıtım Videosu`}
+              className="mt-8"
+            />
+
+            <section className="prose-seo mt-8">
+              <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
+                {campsite.name} Hakkında
+              </h2>
+              {content.mainParagraphs.map((paragraph, i) => (
+                <div key={`main-${i}`}>
+                  <p>{paragraph}</p>
+                  {highlightParagraph === paragraph && (
+                    <blockquote className="my-6 border-l-4 border-amber-400 bg-amber-50/60 px-5 py-4 text-forest-700 italic">
+                      {paragraph}
+                    </blockquote>
+                  )}
+                </div>
+              ))}
+              {content.extraParagraphs.map((paragraph, i) => (
+                <p key={`extra-${i}`}>{paragraph}</p>
+              ))}
+            </section>
+
+            {content.campType && (
+              <section className="prose-seo mt-8">
+                <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
+                  Kamp Türü ve Konsept
+                </h2>
+                <p>{content.campType}</p>
+              </section>
+            )}
+
+            <section className="prose-seo mt-8">
+              <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
+                En İyi Kamp Sezonu
+              </h2>
+              <p>{content.bestSeason}</p>
+            </section>
+
+            {content.suitableFor && (
+              <section className="prose-seo mt-8">
+                <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
+                  Kimler İçin Uygun?
+                </h2>
+                <p>{content.suitableFor}</p>
+              </section>
+            )}
+
+            <section className="mt-8">
+              <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
+                Kamp İpuçları
+              </h2>
+              <ul className="list-disc space-y-2 pl-5 text-gray-700">
+                {content.tips.map((tip) => (
+                  <li key={tip}>{tip}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="mt-8">
+              <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
+                Yakın Gezilecek Yerler
+              </h2>
+              <ul className="list-disc space-y-2 pl-5 text-gray-700">
+                {content.nearbyAttractions.map((place) => (
+                  <li key={place}>{place}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section className="mt-8">
+              <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
+                Konum ve Ulaşım
+              </h2>
+              <p className="prose-seo mb-4">{content.transport}</p>
+              {campsite.googleMapsEmbed && (
+                <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-forest-100">
+                  {transportDistance && (
+                    <div className="absolute left-4 top-4 z-10 flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-sm font-medium text-forest-800 shadow-md">
+                      <svg
+                        className="h-4 w-4 text-forest-600"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                        />
+                      </svg>
+                      {transportDistance}
+                    </div>
+                  )}
+                  <iframe
+                    src={campsite.googleMapsEmbed}
+                    className="absolute inset-0 h-full w-full border-0"
+                    loading="lazy"
+                    title={`${campsite.name} kamp alanı haritası — ${district.name}`}
+                    allowFullScreen
                   />
                 </div>
-              ))
-            )}
-          </div>
-
-          <VideoSection
-            video={campsiteVideo}
-            heading={`${campsite.name} Tanıtım Videosu`}
-            className="mt-8"
-          />
-
-          <section className="mt-8 prose-seo">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              {campsite.name} Hakkında
-            </h2>
-            {content.mainParagraphs.map((paragraph, i) => (
-              <p key={`main-${i}`}>{paragraph}</p>
-            ))}
-            {content.extraParagraphs.map((paragraph, i) => (
-              <p key={`extra-${i}`}>{paragraph}</p>
-            ))}
-          </section>
-
-          {content.campType && (
-            <section className="mt-8 prose-seo">
-              <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-                Kamp Türü ve Konsept
-              </h2>
-              <p>{content.campType}</p>
+              )}
             </section>
-          )}
 
-          <section className="mt-8 prose-seo">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              En İyi Kamp Sezonu
-            </h2>
-            <p>{content.bestSeason}</p>
-          </section>
+            <NearbyCampsites
+              campsites={nearby}
+              title={`${district.name} Yakınındaki Kamp Alanları`}
+            />
 
-          {content.suitableFor && (
-            <section className="mt-8 prose-seo">
-              <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-                Kimler İçin Uygun?
-              </h2>
-              <p>{content.suitableFor}</p>
-            </section>
-          )}
-
-          <section className="mt-8">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              Kamp İpuçları
-            </h2>
-            <ul className="list-disc space-y-2 pl-5 text-gray-700">
-              {content.tips.map((tip) => (
-                <li key={tip}>{tip}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="mt-8">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              Yakın Gezilecek Yerler
-            </h2>
-            <ul className="list-disc space-y-2 pl-5 text-gray-700">
-              {content.nearbyAttractions.map((place) => (
-                <li key={place}>{place}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="mt-8">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              Kamp Alanı Özellikleri
-            </h2>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {campsite.features.map((feature) => (
-                <div
-                  key={feature.label}
-                  className="flex items-center gap-3 rounded-lg bg-white p-4 border border-forest-100"
-                >
-                  <span className="text-2xl" aria-hidden="true">
-                    {feature.icon}
-                  </span>
-                  <span className="font-medium text-forest-800">
-                    {feature.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="mt-8">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              Ulaşım Bilgileri
-            </h2>
-            <p className="prose-seo">{content.transport}</p>
-          </section>
-
-          <section className="mt-8">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              {campsite.name} Konumu
-            </h2>
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-forest-100">
-              <iframe
-                src={campsite.googleMapsEmbed}
-                className="absolute inset-0 h-full w-full border-0"
-                loading="lazy"
-                title={`${campsite.name} kamp alanı haritası — ${district.name}`}
-                allowFullScreen
-              />
-            </div>
-          </section>
-
-          <NearbyCampsites
-            campsites={nearby}
-            title={`${district.name} Yakınındaki Kamp Alanları`}
-          />
-
-          <CampsiteRelatedLinks
-            campsite={campsite}
-            provinceName={province.name}
-            districtName={district.name}
-          />
+            <CampsiteRelatedLinks
+              campsite={campsite}
+              provinceName={province.name}
+              districtName={district.name}
+            />
           </>
         }
       />
