@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { PlaceImage } from "@/components/ui/PlaceImage";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
-import { ContentGrid } from "@/components/layout/ContentGrid";
-import { SearchWidget } from "@/components/layout/SearchWidget";
+import { EquipmentHero } from "@/components/equipment/EquipmentHero";
+import { EquipmentBuyingGuide } from "@/components/equipment/EquipmentBuyingGuide";
+import { EquipmentExpertTip } from "@/components/equipment/EquipmentExpertTip";
+import { EquipmentRelated } from "@/components/equipment/EquipmentRelated";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   equipmentItems,
@@ -13,6 +14,7 @@ import {
 import { getEquipmentContent } from "@/lib/content/equipment-content";
 import { buildMetadata, metaDescription } from "@/lib/seo";
 import { buildArticleJsonLd, buildBreadcrumbJsonLd } from "@/lib/seo/json-ld";
+import { resolveEquipmentRelatedItems } from "@/lib/utils/equipment-page";
 
 export const revalidate = 3600;
 
@@ -61,9 +63,11 @@ export default async function EquipmentDetailPage({ params }: PageProps) {
   ];
 
   const equipmentPath = `/kamp-ekipmanlari/${slug}`;
+  const relatedItems = resolveEquipmentRelatedItems(content.related);
+  const remainingTips = content.tips.slice(1);
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 lg:px-6">
+    <article className="mx-auto max-w-4xl px-4 py-8 lg:px-6">
       <JsonLd
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, equipmentPath),
@@ -78,124 +82,53 @@ export default async function EquipmentDetailPage({ params }: PageProps) {
 
       <Breadcrumb items={breadcrumbItems} />
 
-      <ContentGrid
-        main={
-          <>
-          <div className="relative mb-8 aspect-[21/9] overflow-hidden rounded-xl">
-            <PlaceImage
-              src={content.image}
-              alt={`${item.name} — kamp ekipmanı rehberi`}
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 1280px) 100vw, 1280px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/75 to-transparent" />
-            <div className="absolute bottom-0 left-0 p-6">
-              <span className="text-3xl" aria-hidden="true">
-                {item.icon}
-              </span>
-              <h1 className="mt-2 font-display text-3xl font-bold text-cream lg:text-4xl">
-                {item.name}
-              </h1>
-              <p className="mt-1 text-forest-200">{item.description}</p>
-            </div>
-          </div>
-
-          <section className="rounded-xl bg-amber-50 border border-amber-200 p-5 mb-8">
-            <h2 className="font-display text-lg font-bold text-amber-900">
-              Ne İşe Yarar?
-            </h2>
-            <p className="mt-2 text-amber-800">{content.purpose}</p>
-          </section>
-
-          <section className="prose-seo">
-            <p className="text-lg font-medium text-forest-800">{content.intro}</p>
-            {content.paragraphs.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
-          </section>
-
-          <section className="mt-8">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              Temel Özellikler
-            </h2>
-            <ul className="grid gap-2 sm:grid-cols-2">
-              {content.features.map((feature) => (
-                <li
-                  key={feature}
-                  className="flex items-start gap-2 rounded-lg bg-white border border-forest-100 px-4 py-3 text-sm text-gray-700"
-                >
-                  <span className="text-amber-500 shrink-0" aria-hidden="true">
-                    ✓
-                  </span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="mt-8">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              Seçim ve Kullanım İpuçları
-            </h2>
-            <ul className="list-disc space-y-2 pl-5 text-gray-700">
-              {content.tips.map((tip) => (
-                <li key={tip}>{tip}</li>
-              ))}
-            </ul>
-          </section>
-
-          {content.buyingGuide ? (
-            <section className="mt-8 rounded-xl bg-forest-50 border border-forest-100 p-6">
-              <h2 className="mb-3 font-display text-xl font-bold text-forest-800">
-                Satın Alma Rehberi
-              </h2>
-              <p className="text-gray-700 leading-relaxed">{content.buyingGuide}</p>
-            </section>
-          ) : null}
-
-          <section className="mt-8">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              İlgili Rehberler
-            </h2>
-            <ul className="flex flex-wrap gap-2">
-              {content.related.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="rounded-full border border-forest-200 bg-white px-4 py-2 text-sm font-medium text-forest-700 hover:border-amber-400 hover:text-amber-700 transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="mt-10">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              Diğer Kamp Ekipmanları
-            </h2>
-            <div className="flex flex-wrap gap-2">
-              {equipmentItems
-                .filter((e) => e.slug !== slug)
-                .map((e) => (
-                  <Link
-                    key={e.slug}
-                    href={`/kamp-ekipmanlari/${e.slug}`}
-                    className="inline-flex items-center gap-2 rounded-lg border border-forest-100 bg-white px-4 py-2 text-sm font-medium text-forest-700 hover:border-amber-300 hover:text-amber-700 transition-colors"
-                  >
-                    <span aria-hidden="true">{e.icon}</span>
-                    {e.name}
-                  </Link>
-                ))}
-            </div>
-          </section>
-          </>
-        }
-        sidebar={<SearchWidget />}
+      <EquipmentHero
+        name={item.name}
+        purpose={content.purpose}
+        featureTags={content.features.slice(0, 2)}
       />
-    </div>
+
+      <div className="relative mb-8 aspect-[21/9] overflow-hidden rounded-xl">
+        <PlaceImage
+          src={content.image}
+          alt={`${item.name} — kamp ekipmanı rehberi`}
+          fill
+          className="object-cover"
+          priority
+          sizes="(max-width: 896px) 100vw, 896px"
+        />
+      </div>
+
+      <section className="prose-seo">
+        <p className="text-lg font-medium text-forest-800">{content.intro}</p>
+        {content.paragraphs.map((paragraph, i) => (
+          <p key={i}>{paragraph}</p>
+        ))}
+      </section>
+
+      {content.buyingGuide ? (
+        <EquipmentBuyingGuide text={content.buyingGuide} />
+      ) : null}
+
+      {content.tips[0] ? <EquipmentExpertTip tip={content.tips[0]} /> : null}
+
+      {remainingTips.length > 0 && (
+        <section className="mt-8" aria-labelledby="equipment-more-tips-heading">
+          <h2
+            id="equipment-more-tips-heading"
+            className="mb-4 font-display text-xl font-bold text-forest-800"
+          >
+            Seçim ve Kullanım İpuçları
+          </h2>
+          <ul className="list-disc space-y-2 pl-5 text-forest-700">
+            {remainingTips.map((tip) => (
+              <li key={tip}>{tip}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <EquipmentRelated items={relatedItems} />
+    </article>
   );
 }
