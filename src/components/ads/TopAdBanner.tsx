@@ -2,11 +2,13 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 
+const ADS_ENABLED = process.env.NEXT_PUBLIC_ADS_ENABLED === "true";
+
 function subscribeNoop() {
   return () => {};
 }
 
-export function TopAdBanner() {
+function TopAdBannerInner() {
   const [open, setOpen] = useState(false);
   const mounted = useSyncExternalStore(subscribeNoop, () => true, () => false);
 
@@ -66,4 +68,9 @@ export function TopAdBanner() {
       </button>
     </div>
   );
+}
+
+export function TopAdBanner() {
+  if (!ADS_ENABLED) return null;
+  return <TopAdBannerInner />;
 }

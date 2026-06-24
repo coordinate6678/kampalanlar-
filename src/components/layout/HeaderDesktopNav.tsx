@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef, type ReactNode } from "react";
 import { categories } from "@/data/categories";
 import { equipmentItems } from "@/data/equipment";
 import { guides } from "@/data/guides";
 import type { Province } from "@/lib/types";
 import { getDistrictsByProvince } from "@/lib/data";
+import { isCategoryIndexable } from "@/lib/seo/indexability";
 import { getKampAlaniLinkText } from "@/lib/utils/seoText";
 
 interface HeaderDesktopNavProps {
@@ -13,13 +17,19 @@ interface HeaderDesktopNavProps {
 const navLinkClass =
   "cursor-pointer list-none rounded-lg px-3 py-2 text-sm font-medium text-forest-700 transition-colors hover:bg-forest-50 hover:text-forest-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-400";
 
+function closeOpenDetails(nav: HTMLElement) {
+  nav.querySelectorAll("details[open]").forEach((details) => {
+    (details as HTMLDetailsElement).open = false;
+  });
+}
+
 function NavDropdown({
   label,
   children,
   panelClassName = "w-64",
 }: {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
   panelClassName?: string;
 }) {
   return (
@@ -35,8 +45,41 @@ function NavDropdown({
 }
 
 export function HeaderDesktopNav({ provinces }: HeaderDesktopNavProps) {
+  const navRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    function handleClick(event: MouseEvent) {
+      if (!navRef.current) return;
+      if (!navRef.current.contains(event.target as Node)) {
+        closeOpenDetails(navRef.current);
+      }
+    }
+
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
+
+  function handleNavigate() {
+    if (navRef.current) {
+      closeOpenDetails(navRef.current);
+    }
+  }
+
+  const indexableCategories = categories.filter((category) =>
+    isCategoryIndexable(category.slug)
+  );
+
   return (
-    <nav className="flex items-center gap-1" aria-label="Ana navigasyon">
+    <nav
+      ref={navRef}
+      className="flex items-center gap-1"
+      aria-label="Ana navigasyon"
+      onClick={(event) => {
+        if ((event.target as HTMLElement).closest("a[href]")) {
+          handleNavigate();
+        }
+      }}
+    >
       <details className="group relative [&_summary::-webkit-details-marker]:hidden">
         <summary className={navLinkClass}>Kamp Alanları</summary>
         <div className="absolute left-0 top-full z-50 w-[600px] rounded-b-xl border border-forest-100 bg-white p-6 shadow-2xl">
@@ -86,7 +129,7 @@ export function HeaderDesktopNav({ provinces }: HeaderDesktopNavProps) {
 
       <NavDropdown label="Kategoriler">
         <ul className="space-y-1">
-          {categories.map((cat) => (
+          {indexableCategories.map((cat) => (
             <li key={cat.slug}>
               <Link
                 href={`/kategori/${cat.slug}`}

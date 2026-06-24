@@ -3,10 +3,14 @@ interface AdSlotProps {
   className?: string;
 }
 
+const ADS_ENABLED = process.env.NEXT_PUBLIC_ADS_ENABLED === "true";
+
 export function AdSlot({
   slot = "sidebar-primary",
   className = "",
 }: AdSlotProps) {
+  if (!ADS_ENABLED) return null;
+
   return (
     <aside
       className={`overflow-hidden rounded-xl border border-forest-100 bg-white shadow-sm ${className}`}

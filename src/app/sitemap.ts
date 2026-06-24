@@ -23,6 +23,7 @@ import {
 import { getGuideContent } from "@/lib/content/guides";
 import { GUIDE_UPDATED_AT } from "@/lib/content/guides/constants";
 import {
+  isCategoryIndexable,
   isDistrictIndexable,
   isProvinceIndexable,
 } from "@/lib/seo/indexability";
@@ -54,7 +55,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.95,
     },
-    ...categories.map((cat) => ({
+    ...categories
+      .filter((cat) => isCategoryIndexable(cat.slug))
+      .map((cat) => ({
       url: `${base}/kategori/${cat.slug}`,
       lastModified: toSitemapDate(CATEGORY_CONTENT_UPDATED_AT),
       changeFrequency: "weekly" as const,

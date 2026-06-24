@@ -19,6 +19,7 @@ import {
   buildCategoryPageDescription,
   buildCategoryPageTitle,
 } from "@/lib/seo/page-metadata";
+import { isCategoryIndexable } from "@/lib/seo/indexability";
 
 export const revalidate = 3600;
 
@@ -39,6 +40,8 @@ export async function generateMetadata({
 
   if (!category || !content) return {};
 
+  const indexable = isCategoryIndexable(slug);
+
   return buildMetadata({
     title: buildCategoryPageTitle(category.name),
     description: buildCategoryPageDescription(
@@ -48,6 +51,7 @@ export async function generateMetadata({
     ),
     path: `/kategori/${slug}`,
     skipOgImage: true,
+    noindex: !indexable,
   });
 }
 

@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { categories } from "@/data/categories";
+import { isCategoryIndexable } from "@/lib/seo/indexability";
 
 export function PopularCategories() {
+  const indexableCategories = categories.filter((category) =>
+    isCategoryIndexable(category.slug)
+  );
+
   return (
     <section aria-labelledby="categories-heading">
       <h2
@@ -11,7 +16,7 @@ export function PopularCategories() {
         Popüler Kategoriler
       </h2>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
-        {categories.map((category) => (
+        {indexableCategories.map((category) => (
           <Link
             key={category.slug}
             href={`/kategori/${category.slug}`}

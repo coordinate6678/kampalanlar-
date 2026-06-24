@@ -1,6 +1,7 @@
 import {
   getCampsiteCountByDistrict,
   getCampsiteCountByProvince,
+  getCampsitesByCategory,
   getDistrictsByProvince,
 } from "@/lib/data";
 
@@ -16,4 +17,8 @@ export function isDistrictIndexable(
   districtSlug: string
 ): boolean {
   return getCampsiteCountByDistrict(provinceSlug, districtSlug) > 0;
+}
+
+export function isCategoryIndexable(slug: string): boolean {
+  return getCampsitesByCategory(slug).length > 0;
 }

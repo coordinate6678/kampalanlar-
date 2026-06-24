@@ -7,10 +7,14 @@ interface InlineAdBannerProps {
   className?: string;
 }
 
+const ADS_ENABLED = process.env.NEXT_PUBLIC_ADS_ENABLED === "true";
+
 export function InlineAdBanner({
   slot = "content-leaderboard",
   className = "",
 }: InlineAdBannerProps) {
+  if (!ADS_ENABLED) return null;
+
   const ad = getInlineAd(slot);
 
   return (
