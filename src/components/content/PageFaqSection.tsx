@@ -7,12 +7,14 @@ interface PageFaqSectionProps {
   items: FaqItem[];
   heading?: string;
   className?: string;
+  centered?: boolean;
 }
 
 export function PageFaqSection({
   items,
   heading = "Sık Sorulan Sorular",
   className = "mt-10",
+  centered = false,
 }: PageFaqSectionProps) {
   if (items.length === 0) return null;
 
@@ -21,7 +23,11 @@ export function PageFaqSection({
       <JsonLd data={buildFaqJsonLd(items)} />
       <h2
         id="page-faq-heading"
-        className="mb-4 font-display text-xl font-bold text-forest-800"
+        className={`mb-4 font-display font-bold text-forest-800 ${
+          centered
+            ? "mb-8 text-center text-2xl lg:text-3xl"
+            : "text-xl"
+        }`}
       >
         {heading}
       </h2>

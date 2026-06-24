@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PlaceImage } from "@/components/ui/PlaceImage";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
-import { DistrictCard } from "@/components/cards/DistrictCard";
-import { ContentGrid } from "@/components/layout/ContentGrid";
 import { SearchWidget } from "@/components/layout/SearchWidget";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
@@ -13,9 +12,10 @@ import {
   getCampsiteCountByProvince,
   getProvinceStaticParams,
 } from "@/lib/data";
-import { CampsiteCard } from "@/components/cards/CampsiteCard";
 import { PageFaqSection } from "@/components/content/PageFaqSection";
 import { ProvinceDistrictLinks } from "@/components/content/RelatedLinks";
+import { DistrictAvatarRow } from "@/components/province/DistrictAvatarRow";
+import { ProvinceCampsiteGrid } from "@/components/province/ProvinceCampsiteGrid";
 import { getProvinceFaqItems } from "@/lib/content/page-faq-content";
 import {
   buildProvincePageDescription,
@@ -81,6 +81,7 @@ export default async function ProvincePage({ params }: PageProps) {
   const campsiteCount = getCampsiteCountByProvince(il);
   const provinceParagraphs = getProvinceContent(il, province.description);
   const provinceVideo = getVideoForProvince(il);
+  const provinceLinkText = getKampAlaniLinkText(province.name);
 
   const breadcrumbItems = [
     { label: "Ana Sayfa", href: "/" },
@@ -90,12 +91,11 @@ export default async function ProvincePage({ params }: PageProps) {
   const districtListItems = districts
     .filter((district) => isDistrictIndexable(il, district.slug))
     .map((district) => ({
-    name: getKampAlaniLinkText(district.name),
-    url: canonicalUrl(`/kamp-alanlari/${il}/${district.slug}`),
-  }));
+      name: getKampAlaniLinkText(district.name),
+      url: canonicalUrl(`/kamp-alanlari/${il}/${district.slug}`),
+    }));
 
   const mapUrl = `https://maps.google.com/maps?q=${province.coordinates.lat},${province.coordinates.lng}&z=8&output=embed`;
-
   const provincePath = `/kamp-alanlari/${il}`;
 
   return (
@@ -104,16 +104,13 @@ export default async function ProvincePage({ params }: PageProps) {
         data={[
           buildBreadcrumbJsonLd(breadcrumbItems, provincePath),
           buildCollectionPageJsonLd({
-            name: getKampAlaniLinkText(province.name),
+            name: provinceLinkText,
             description: provinceParagraphs[0] ?? province.description,
             path: provincePath,
           }),
           ...(districtListItems.length > 0
             ? [
-                buildItemListJsonLd(
-                  districtListItems,
-                  getKampAlaniLinkText(province.name)
-                ),
+                buildItemListJsonLd(districtListItems, provinceLinkText),
               ]
             : []),
         ]}
@@ -121,127 +118,126 @@ export default async function ProvincePage({ params }: PageProps) {
 
       <Breadcrumb items={breadcrumbItems} />
 
-      <ContentGrid
-        main={
-          <>
-          <div className="relative mb-8 aspect-[21/9] overflow-hidden rounded-xl">
-            <PlaceImage
-              src={province.image}
-              alt={getKampAlaniLinkText(province.name)}
-              fill
-              className="object-cover"
-              priority
-              sizes="(max-width: 1024px) 100vw, 66vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/60 to-transparent" />
-            <div className="absolute bottom-6 left-6">
-              <h1 className="font-display text-3xl font-bold text-white lg:text-4xl">
-                {getKampAlaniLinkText(province.name)}
-              </h1>
-              <p className="mt-1 text-forest-200">
-                {districts.length} ilçe · {campsiteCount} kamp alanı
-              </p>
-            </div>
-          </div>
-
-          {provinceCampsites.length > 0 && (
-            <section className="mb-10">
-              <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-                {province.name} Kamp Alanları Listesi
-              </h2>
-              <p className="mb-4 text-gray-600">
-                {province.name} genelinde {provinceCampsites.length} kamp alanı
-                listelenmektedir. Detaylı özellikler, harita ve ulaşım bilgileri
-                için ilgili sayfayı ziyaret edin.
-              </p>
-              <div className="space-y-4">
-                {provinceCampsites.map((campsite) => (
-                  <CampsiteCard key={campsite.slug} campsite={campsite} />
-                ))}
-              </div>
-            </section>
+      <section className="mb-10 grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div>
+          <h1 className="font-display text-3xl font-bold text-forest-800 lg:text-4xl">
+            {provinceLinkText}
+          </h1>
+          <p className="mt-2 text-sm font-medium text-forest-600">
+            {districts.length} ilçe · {campsiteCount} kamp alanı
+          </p>
+          {provinceParagraphs[0] && (
+            <p className="mt-4 leading-relaxed text-forest-600">
+              {provinceParagraphs[0]}
+            </p>
           )}
-
-          {districts.length > 0 ? (
-            <>
-              <ProvinceDistrictLinks
-                provinceSlug={il}
-                provinceName={province.name}
-                districts={districts
-                  .filter((d) => isDistrictIndexable(il, d.slug))
-                  .map((d) => ({ slug: d.slug, name: d.name }))}
-              />
-            <section className="mb-10">
-              <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-                {province.name} İlçeleri
-              </h2>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {districts.map((district) => (
-                  <DistrictCard
-                    key={district.slug}
-                    district={district}
-                    provinceSlug={il}
-                  />
-                ))}
-              </div>
-            </section>
-            </>
-          ) : (
-            <div className="mb-10 rounded-xl bg-amber-50 border border-amber-200 p-6">
-              <p className="text-amber-800">
-                {province.name} için ilçe rehberi yakında eklenecek. Bölge
-                hakkında genel bilgiyi aşağıda bulabilirsiniz.
-              </p>
-            </div>
-          )}
-
-          {provinceVideo && (
-            <VideoSection
-              video={provinceVideo}
-              heading={`${province.name} Bölge Videosu`}
-              className="mb-10"
-            />
-          )}
-
-          <section className="prose-seo">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              {province.name} Kamp Rehberi
-            </h2>
-            {provinceParagraphs.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
-            {campsiteCount > 0 && (
-              <p>
-                {province.name} genelinde listelediğimiz {campsiteCount} kamp
-                alanı; çadır, karavan, bungalov ve deniz kenarı seçenekleriyle
-                farklı ihtiyaçlara hitap eder. İlçe sayfalarından her bölgenin
-                detaylı rehberine ulaşabilirsiniz.
-              </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {provinceCampsites.length > 0 && (
+              <Link
+                href="#kamp-alanlari"
+                className="rounded-lg bg-forest-800 px-5 py-2.5 text-sm font-semibold text-cream transition-colors hover:bg-forest-700"
+              >
+                Keşfetmeye Başla
+              </Link>
             )}
-          </section>
-
-          <section className="mt-10">
-            <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
-              {province.name} Haritası
-            </h2>
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-forest-100">
-              <iframe
-                src={mapUrl}
-                className="absolute inset-0 h-full w-full border-0"
-                loading="lazy"
-                title={`${province.name} kamp alanları haritası`}
-                allowFullScreen
-              />
-            </div>
-          </section>
-
-          <PageFaqSection
-            items={getProvinceFaqItems(il, province.name, campsiteCount)}
+            <Link
+              href="#harita"
+              className="rounded-lg border border-forest-200 bg-white px-5 py-2.5 text-sm font-semibold text-forest-800 transition-colors hover:border-forest-300 hover:bg-forest-50"
+            >
+              Haritada Gör
+            </Link>
+          </div>
+        </div>
+        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-md lg:aspect-[3/4]">
+          <PlaceImage
+            src={province.image}
+            alt={provinceLinkText}
+            fill
+            className="object-cover"
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          </>
-        }
-        sidebar={<SearchWidget />}
+        </div>
+      </section>
+
+      {districts.length > 0 ? (
+        <>
+          <DistrictAvatarRow
+            districts={districts}
+            provinceSlug={il}
+            provinceName={province.name}
+          />
+          <ProvinceDistrictLinks
+            provinceSlug={il}
+            provinceName={province.name}
+            districts={districts
+              .filter((d) => isDistrictIndexable(il, d.slug))
+              .map((d) => ({ slug: d.slug, name: d.name }))}
+          />
+        </>
+      ) : (
+        <div className="mb-10 rounded-xl border border-amber-200 bg-amber-50 p-6">
+          <p className="text-amber-800">
+            {province.name} için ilçe rehberi yakında eklenecek. Bölge
+            hakkında genel bilgiyi aşağıda bulabilirsiniz.
+          </p>
+        </div>
+      )}
+
+      <ProvinceCampsiteGrid
+        campsites={provinceCampsites}
+        provinceName={province.name}
       />
+
+      {provinceVideo && (
+        <VideoSection
+          video={provinceVideo}
+          heading={`${province.name} Bölge Videosu`}
+          className="mb-10"
+        />
+      )}
+
+      <section className="prose-seo mb-10">
+        <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
+          {province.name} Kamp Rehberi
+        </h2>
+        {provinceParagraphs.map((paragraph, i) => (
+          <p key={i}>{paragraph}</p>
+        ))}
+        {campsiteCount > 0 && (
+          <p>
+            {province.name} genelinde listelediğimiz {campsiteCount} kamp
+            alanı; çadır, karavan, bungalov ve deniz kenarı seçenekleriyle
+            farklı ihtiyaçlara hitap eder. İlçe sayfalarından her bölgenin
+            detaylı rehberine ulaşabilirsiniz.
+          </p>
+        )}
+      </section>
+
+      <section id="harita" className="mb-10">
+        <h2 className="mb-4 font-display text-xl font-bold text-forest-800">
+          {province.name} Haritası
+        </h2>
+        <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-forest-100">
+          <iframe
+            src={mapUrl}
+            className="absolute inset-0 h-full w-full border-0"
+            loading="lazy"
+            title={`${province.name} kamp alanları haritası`}
+            allowFullScreen
+          />
+        </div>
+      </section>
+
+      <PageFaqSection
+        items={getProvinceFaqItems(il, province.name, campsiteCount)}
+        centered
+        className="mx-auto mt-16 max-w-3xl"
+      />
+
+      <div className="mx-auto mt-10 max-w-md">
+        <SearchWidget />
+      </div>
     </div>
   );
 }
