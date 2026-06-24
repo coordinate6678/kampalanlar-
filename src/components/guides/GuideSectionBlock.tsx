@@ -1,9 +1,11 @@
 import Link from "next/link";
+import { GuideChecklist } from "@/components/guides/GuideChecklist";
 import type { GuideSection } from "@/lib/content/guides/types";
 import type { ContentLink } from "@/lib/types";
 
 interface GuideSectionBlockProps {
   section: GuideSection;
+  excludedParagraph?: string;
 }
 
 function LinkList({ links }: { links: ContentLink[] }) {
@@ -13,7 +15,7 @@ function LinkList({ links }: { links: ContentLink[] }) {
         <li key={link.href}>
           <Link
             href={link.href}
-            className="rounded-full border border-forest-200 bg-white px-4 py-2 text-sm font-medium text-forest-700 hover:border-amber-400 hover:text-amber-700 transition-colors"
+            className="rounded-full border border-forest-200 bg-white px-4 py-2 text-sm font-medium text-forest-700 transition-colors hover:border-amber-400 hover:text-amber-700"
           >
             {link.label}
           </Link>
@@ -23,7 +25,14 @@ function LinkList({ links }: { links: ContentLink[] }) {
   );
 }
 
-export function GuideSectionBlock({ section }: GuideSectionBlockProps) {
+export function GuideSectionBlock({
+  section,
+  excludedParagraph,
+}: GuideSectionBlockProps) {
+  const paragraphs = excludedParagraph
+    ? section.paragraphs.filter((paragraph) => paragraph !== excludedParagraph)
+    : section.paragraphs;
+
   return (
     <section
       id={section.id}
@@ -37,9 +46,9 @@ export function GuideSectionBlock({ section }: GuideSectionBlockProps) {
         {section.heading}
       </h2>
 
-      {section.paragraphs.length > 0 && (
+      {paragraphs.length > 0 && (
         <div className="prose-seo">
-          {section.paragraphs.map((paragraph, i) => (
+          {paragraphs.map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
           ))}
         </div>
@@ -70,19 +79,7 @@ export function GuideSectionBlock({ section }: GuideSectionBlockProps) {
       ))}
 
       {section.checklist && section.checklist.length > 0 && (
-        <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-          {section.checklist.map((item) => (
-            <li
-              key={item}
-              className="flex items-start gap-2 rounded-lg border border-forest-100 bg-white px-4 py-3 text-sm text-gray-700"
-            >
-              <span className="text-amber-500 shrink-0" aria-hidden="true">
-                ✓
-              </span>
-              {item}
-            </li>
-          ))}
-        </ul>
+        <GuideChecklist title={section.heading} items={section.checklist} />
       )}
 
       {section.links && section.links.length > 0 && (

@@ -20,23 +20,23 @@ export function GuideTableOfContents({ entries }: GuideTableOfContentsProps) {
   return (
     <nav
       aria-label="İçindekiler"
-      className="mb-8 rounded-xl border border-forest-100 bg-forest-50 p-5"
+      className="rounded-xl border border-forest-100 bg-white p-5 shadow-sm"
     >
-      <h2 className="mb-3 font-display text-lg font-bold text-forest-800">
+      <h2 className="mb-4 text-xs font-bold uppercase tracking-wider text-forest-500">
         İçindekiler
       </h2>
-      <ol className="space-y-2 text-sm">
+      <ol className="space-y-2.5 text-sm">
         {numbered.map((entry) => {
           const prefix = entry.level === 2 ? `${entry.number}.` : "–";
 
           return (
             <li
               key={entry.id}
-              className={entry.level === 3 ? "ml-5" : undefined}
+              className={entry.level === 3 ? "ml-4" : undefined}
             >
               <a
                 href={`#${entry.id}`}
-                className="flex gap-2 text-forest-700 hover:text-amber-700 transition-colors"
+                className="flex gap-2 text-forest-700 transition-colors hover:text-amber-700"
               >
                 <span
                   className="shrink-0 font-semibold text-forest-400"
