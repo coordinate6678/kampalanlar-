@@ -1,13 +1,10 @@
 import { HeroSection } from "@/components/home/HeroSection";
-import { PopularProvinces } from "@/components/home/PopularProvinces";
+import { PopularCategories } from "@/components/home/PopularCategories";
+import { FeaturedCampsites } from "@/components/home/FeaturedCampsites";
+import { RecentGuides } from "@/components/home/RecentGuides";
 import { HomeSeoContent } from "@/components/home/HomeSeoContent";
-import { FeaturedHiddenGems } from "@/components/home/FeaturedHiddenGems";
-import { RecentCampsites } from "@/components/home/RecentCampsites";
-import { CampVideoGallery } from "@/components/home/CampVideoGallery";
 import { FaqSection } from "@/components/home/FaqSection";
 import { InlineAdBanner } from "@/components/ads/InlineAdBanner";
-import { ContentGrid } from "@/components/layout/ContentGrid";
-import { SearchWidget } from "@/components/layout/SearchWidget";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { buildFaqJsonLd, buildWebPageJsonLd } from "@/lib/seo/json-ld";
 import { homepageFaqItems } from "@/lib/content/faq-content";
@@ -35,28 +32,13 @@ export default function HomePage() {
       />
       <HeroSection />
 
-      <div className="mx-auto max-w-7xl px-4 py-12 lg:px-6">
-        <ContentGrid
-          mainClassName="space-y-12"
-          main={
-            <>
-              <PopularProvinces />
-              <HomeSeoContent />
-              <InlineAdBanner />
-              <FeaturedHiddenGems />
-              <InlineAdBanner slot="content-leaderboard-2" />
-              <CampVideoGallery />
-              <RecentCampsites />
-              <InlineAdBanner slot="content-leaderboard-4" />
-              <FaqSection />
-            </>
-          }
-          sidebar={
-            <>
-              <SearchWidget />
-            </>
-          }
-        />
+      <div className="mx-auto max-w-7xl space-y-16 px-4 py-16 lg:px-6">
+        <PopularCategories />
+        <FeaturedCampsites />
+        <RecentGuides />
+        <FaqSection />
+        <InlineAdBanner />
+        <HomeSeoContent />
       </div>
     </>
   );

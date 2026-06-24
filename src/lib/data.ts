@@ -67,6 +67,28 @@ export function getRecentCampsites(limit = 6): Campsite[] {
     .slice(0, limit);
 }
 
+export function getFeaturedCampsites(limit = 6): Campsite[] {
+  const rated = [...campsites]
+    .filter((c) => c.reviewCount > 0)
+    .sort((a, b) => {
+      const scoreA = a.rating * Math.log10(a.reviewCount + 1);
+      const scoreB = b.rating * Math.log10(b.reviewCount + 1);
+      return scoreB - scoreA;
+    });
+
+  const featured = rated.slice(0, limit);
+  if (featured.length >= limit) return featured;
+
+  const seen = new Set(
+    featured.map((c) => `${c.provinceSlug}-${c.districtSlug}-${c.slug}`)
+  );
+  const recent = getRecentCampsites(limit).filter(
+    (c) => !seen.has(`${c.provinceSlug}-${c.districtSlug}-${c.slug}`)
+  );
+
+  return [...featured, ...recent].slice(0, limit);
+}
+
 export function getNearbyCampsites(
   campsite: Campsite,
   limit = 4

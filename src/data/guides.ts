@@ -138,6 +138,11 @@ export function getGuideBySlug(slug: string): Guide | undefined {
   return guides.find((g) => g.slug === slug);
 }
 
+/** Son eklenen rehberler — dizideki sıra en yeniden eskiye */
+export function getRecentGuides(limit = 3): Guide[] {
+  return guides.slice(-limit).reverse();
+}
+
 export function getGuidesByCategory(category: GuideCategory): Guide[] {
   return guides.filter((g) => g.category === category);
 }

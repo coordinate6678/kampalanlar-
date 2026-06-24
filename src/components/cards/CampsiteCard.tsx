@@ -1,8 +1,12 @@
 import { PlaceImage } from "@/components/ui/PlaceImage";
 import Link from "next/link";
 import type { Campsite } from "@/lib/types";
-import { getProvinceBySlug } from "@/lib/data";
-import { getDistrictBySlug } from "@/lib/data";
+import { getCategoryBySlug } from "@/data/categories";
+import { getProvinceBySlug, getDistrictBySlug } from "@/lib/data";
+
+function isPopularCampsite(campsite: Campsite): boolean {
+  return campsite.reviewCount >= 50 && campsite.rating >= 4.5;
+}
 
 interface CampsiteCardProps {
   campsite: Campsite;
@@ -18,6 +22,10 @@ export function CampsiteCard({ campsite, variant = "list" }: CampsiteCardProps) 
   const href = `/kamp-alanlari/${campsite.provinceSlug}/${campsite.districtSlug}/${campsite.slug}`;
 
   if (variant === "grid") {
+    const category = getCategoryBySlug(campsite.category);
+    const hasReviews = campsite.reviewCount > 0;
+    const showPopularBadge = hasReviews && isPopularCampsite(campsite);
+
     return (
       <Link
         href={href}
@@ -32,24 +40,68 @@ export function CampsiteCard({ campsite, variant = "list" }: CampsiteCardProps) 
             className="object-cover transition-transform duration-300 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
-          <div className="absolute right-2 top-2 rounded-full bg-white/90 px-2 py-0.5 text-xs font-semibold text-amber-700">
-            {campsite.reviewCount > 0 ? (
-              <>★ {campsite.rating}</>
-            ) : (
-              <span className="text-forest-500">Yeni</span>
-            )}
-          </div>
+          {!hasReviews ? (
+            <span className="absolute left-3 top-3 rounded-md bg-amber-500 px-2 py-0.5 text-xs font-semibold text-forest-900">
+              Yeni Eklendi
+            </span>
+          ) : showPopularBadge ? (
+            <span className="absolute left-3 top-3 rounded-md bg-forest-800 px-2 py-0.5 text-xs font-semibold text-cream">
+              Popüler
+            </span>
+          ) : null}
         </div>
         <div className="p-4">
-          <p className="mb-1 text-xs text-forest-500">
-            {province?.name} / {district?.name}
+          <div className="flex items-start justify-between gap-2">
+            <h3 className="font-display text-lg font-bold text-forest-800 group-hover:text-amber-700 transition-colors line-clamp-2">
+              {campsite.name}
+            </h3>
+            {hasReviews && (
+              <span className="shrink-0 text-sm font-medium text-amber-600">
+                ★ {campsite.rating}{" "}
+                <span className="text-forest-400">
+                  ({campsite.reviewCount})
+                </span>
+              </span>
+            )}
+          </div>
+          <p className="mt-1.5 flex items-center gap-1 text-sm text-forest-500">
+            <svg
+              className="h-3.5 w-3.5 shrink-0"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            {district?.name}, {province?.name}
           </p>
-          <h3 className="font-semibold text-forest-800 group-hover:text-amber-700 transition-colors">
-            {campsite.name}
-          </h3>
-          <p className="mt-1 line-clamp-2 text-sm text-gray-600">
-            {campsite.shortDescription}
-          </p>
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {category && (
+              <span className="rounded-full bg-forest-50 px-2 py-0.5 text-xs text-forest-600">
+                #{category.name}
+              </span>
+            )}
+            {campsite.features.slice(0, 2).map((feature) => (
+              <span
+                key={feature.label}
+                className="rounded-full bg-forest-50 px-2 py-0.5 text-xs text-forest-600"
+              >
+                #{feature.label}
+              </span>
+            ))}
+          </div>
         </div>
       </Link>
     );
