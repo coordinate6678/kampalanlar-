@@ -178,7 +178,7 @@ export const akdenizCampsites: Campsite[] = [
     reviewCount: 0,
     category: "deniz-kenari",
     coordinates: { lat: 36.50281, lng: 30.52413 },
-    googleMapsEmbed: "",
+    googleMapsEmbed: mapEmbed(36.50281, 30.52413, 15),
     transport:
       "Antalya merkeze 60km. Kemer-Kumluca yolunda Tekirova kavşağından Alacasu Koyu'na, ardından Likya Yolu'na bağlanılarak ulaşılır. Toplu taşıma yok, özel araçla gidilmesi gerekir.",
     createdAt: "2026-06-19",
@@ -204,7 +204,7 @@ export const akdenizCampsites: Campsite[] = [
     reviewCount: 0,
     category: "deniz-kenari",
     coordinates: { lat: 36.602789, lng: 30.559761 },
-    googleMapsEmbed: "",
+    googleMapsEmbed: mapEmbed(36.602789, 30.559761, 15),
     transport:
       "Kemer ilçe merkezinde, Yeni Mahalle'de yer alır. Plaja yürüme mesafesindedir. Antalya şehir merkezine yaklaşık 40km.",
     createdAt: "2026-06-22",
@@ -232,7 +232,7 @@ export const akdenizCampsites: Campsite[] = [
     category: "orman",
     website: "https://www.gokcesu.net/",
     coordinates: { lat: 37.18382, lng: 31.17085 },
-    googleMapsEmbed: "",
+    googleMapsEmbed: mapEmbed(37.18382, 31.17085, 13),
     transport:
       "Antalya-Alanya yolunun 45. kilometresinden Beşkonak yönüne dönülerek Köprüçay Irmağı boyunca ilerleyen yoldan ulaşılır. Toplu taşıma yok, özel araçla gidilmesi gerekir.",
     createdAt: "2026-06-22",
